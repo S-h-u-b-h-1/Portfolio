@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Shubhaang Kataruka portfolio Open Graph placeholder</title>
+  <desc id="desc">A premium system-dashboard style preview graphic for the portfolio.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070a12" />
+      <stop offset="0.55" stop-color="#111827" />
+      <stop offset="1" stop-color="#082f49" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee" />
+      <stop offset="0.5" stop-color="#a78bfa" />
+      <stop offset="1" stop-color="#34d399" />
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#38bdf8" stroke-opacity="0.14" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+  <rect x="72" y="72" width="1056" height="486" rx="28" fill="#020617" fill-opacity="0.62" stroke="#22d3ee" stroke-opacity="0.28" />
+  <text x="110" y="138" fill="#22d3ee" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24">// system.identity</text>
+  <text x="110" y="238" fill="#f8fafc" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="70" font-weight="700">Shubhaang Kataruka</text>
+  <text x="110" y="306" fill="#cbd5e1" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="34">CS & AI Student | AI/ML | Data Analytics | Full Stack</text>
+  <rect x="110" y="370" width="810" height="12" rx="6" fill="url(#accent)" />
+  <text x="110" y="450" fill="#94a3b8" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="27">RAG systems, SQL, dashboards, public policy tech, business and finance.</text>
+  <g transform="translate(946 126)">
+    <rect width="126" height="126" rx="24" fill="#22d3ee" fill-opacity="0.11" stroke="#22d3ee" stroke-opacity="0.44" />
+    <text x="63" y="79" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="42" font-weight="700">SK</text>
+  </g>
+</svg>

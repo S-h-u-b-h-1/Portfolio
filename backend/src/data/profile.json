@@ -1,0 +1,78 @@
+{
+  "name": "Shubhaang Kataruka",
+  "headline": "CS & AI Student | AI/ML Engineer | Data Analytics Enthusiast | Full Stack Developer | Business & Finance Enthusiast",
+  "roleSummary": "3rd-year B.Tech CS & AI student at Rishihood University x Newton School of Technology.",
+  "shortBio": "Shubhaang works at the intersection of AI/ML, RAG, analytics, SQL, databases, dashboards, full-stack systems, business thinking, and finance.",
+  "longBio": "Shubhaang Kataruka is a 3rd-year B.Tech Computer Science and Artificial Intelligence student at Rishihood University x Newton School of Technology. His portfolio combines applied AI, data analytics, database thinking, SQL, dashboards, full-stack development, public policy technology, business analytics, stock market analysis, and investment planning.",
+  "location": "India",
+  "currentStatus": "Open to internships, AI/ML roles, data analytics roles, full-stack freelance work, and business-tech collaborations.",
+  "interests": [
+    "AI/ML",
+    "RAG applications",
+    "Data analytics",
+    "SQL",
+    "Databases",
+    "Dashboards",
+    "Full-stack development",
+    "Public policy technology",
+    "Business analytics",
+    "Stock market analysis",
+    "Investment planning"
+  ],
+  "focusAreas": [
+    "Building RAG systems over high-context knowledge domains",
+    "Turning raw data into dashboards and business insights",
+    "Using SQL and database design as a practical engineering foundation",
+    "Connecting technical decisions with business, finance, and user impact"
+  ],
+  "differentiators": [
+    "Combines AI/ML and analytics with business and finance awareness",
+    "Has early internship, freelance, open-source, and leadership experience",
+    "Comfortable moving from research and strategy to implementation",
+    "Interested in systems that explain complex information clearly"
+  ],
+  "stats": [
+    {
+      "label": "GPA",
+      "value": "8.5",
+      "description": "Through first and second year"
+    },
+    {
+      "label": "DSA practice",
+      "value": "300+",
+      "description": "LeetCode problems solved"
+    },
+    {
+      "label": "LeetCode rating",
+      "value": "1700+",
+      "description": "Contest rating"
+    },
+    {
+      "label": "Internships",
+      "value": "2",
+      "description": "AI/ML and hiring research/strategy"
+    },
+    {
+      "label": "Hacktoberfest",
+      "value": "2x",
+      "description": "Super Contributor in 2024 and 2025"
+    },
+    {
+      "label": "MDRT",
+      "value": "FY25",
+      "description": "Youngest qualifier at Aditya Birla Capital / ABSLI"
+    },
+    {
+      "label": "PAN IIT",
+      "value": "2026",
+      "description": "College representative in Long Beach, California"
+    }
+  ],
+  "contact": {
+    "email": "TODO_EMAIL",
+    "linkedin": "TODO_LINKEDIN_URL",
+    "github": "TODO_GITHUB_URL",
+    "leetcode": "TODO_LEETCODE_URL",
+    "resume": "TODO_RESUME_URL"
+  }
+}

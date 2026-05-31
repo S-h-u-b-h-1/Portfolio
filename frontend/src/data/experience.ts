@@ -1,0 +1,56 @@
+import type { ExperienceItem } from "./types";
+
+export const experience = [
+  {
+    id: "rashtram-ai-ml-intern",
+    role: "AI/ML Engineer Intern",
+    organization: "Rashtram School of Public Leadership",
+    type: "Internship",
+    timeframe: "TODO_DATES",
+    location: "India",
+    summary:
+      "Built Rashtram AI, a RAG-based public policy assistant for policies, parliamentary bills, discussions, and citizen impact.",
+    responsibilities: [
+      "Worked on a retrieval-augmented assistant for public policy learners and citizens",
+      "Focused on simplifying complex policy and parliamentary information",
+      "Explored AI, RAG, NLP, vector search, and full-stack delivery patterns"
+    ],
+    tags: ["AI/ML", "RAG", "NLP", "Public Policy", "Full Stack"],
+    proofUrl: "TODO_PROOF_URL"
+  },
+  {
+    id: "rishihood-placement-strategy-intern",
+    role: "Hiring Research and Strategy Intern",
+    organization: "Rishihood / Placement & Career Advancement Team",
+    type: "Internship",
+    timeframe: "First semester",
+    location: "India",
+    summary:
+      "Supported the college placement and career advancement team with hiring research and strategy.",
+    responsibilities: [
+      "Researched hiring patterns, roles, and company needs",
+      "Helped the placement team think through outreach and career opportunities",
+      "Built early exposure to recruiting, strategy, and employability research"
+    ],
+    tags: ["Hiring Research", "Strategy", "Career Advancement", "Business"],
+    proofUrl: "TODO_PROOF_URL"
+  },
+  {
+    id: "freelance-full-stack-developer",
+    role: "Full-Stack Website Developer",
+    organization: "Freelance",
+    type: "Freelance",
+    timeframe: "Ongoing / project-based",
+    location: "Remote",
+    summary:
+      "Builds responsive websites using modern full-stack tools, including a hair salon website with service, booking, and contact sections.",
+    responsibilities: [
+      "Designed and built modern responsive website interfaces",
+      "Implemented service, booking/contact, and business-facing sections",
+      "Worked with client needs, presentation quality, and practical delivery constraints"
+    ],
+    tags: ["Full Stack", "Freelance", "React", "Business Websites"],
+    proofUrl: "TODO_PROJECT_URL"
+  }
+] satisfies ExperienceItem[];
+

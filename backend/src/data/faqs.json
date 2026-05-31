@@ -1,0 +1,50 @@
+[
+  {
+    "id": "what-is-rashtram-ai",
+    "question": "What is Rashtram AI?",
+    "answer": "Rashtram AI is Shubhaang's RAG-based public policy assistant built during his AI/ML internship at Rashtram School of Public Leadership. It helps users understand public policies, parliamentary bills, discussions, and real-world citizen impact.",
+    "keywords": ["rashtram", "rag", "public policy", "policy", "bills", "parliament"]
+  },
+  {
+    "id": "internships",
+    "question": "What internships has he completed?",
+    "answer": "He has worked as an AI/ML Engineer Intern at Rashtram School of Public Leadership and as a Hiring Research and Strategy Intern with the Rishihood placement and career advancement team.",
+    "keywords": ["internship", "internships", "experience", "rashtram", "placement", "completed"]
+  },
+  {
+    "id": "strongest-skills",
+    "question": "What are his strongest technical skills?",
+    "answer": "His strongest areas are AI/ML, RAG applications, SQL, databases, data analytics, dashboards, and full-stack development with React and Node.js.",
+    "keywords": ["skills", "technical", "stack", "strongest"]
+  },
+  {
+    "id": "why-hire",
+    "question": "Why should I hire Shubhaang?",
+    "answer": "Shubhaang combines CS & AI fundamentals with applied AI project work, analytics, SQL, full-stack development, leadership, business awareness, and finance-facing execution experience.",
+    "keywords": ["hire", "recruit", "why", "different"]
+  },
+  {
+    "id": "ai-projects",
+    "question": "What projects show his AI/ML skills?",
+    "answer": "Rashtram AI is the clearest AI/ML project because it applies RAG and NLP concepts to public policy, parliamentary discussions, and citizen-impact explanations.",
+    "keywords": ["ai", "ml", "machine learning", "projects"]
+  },
+  {
+    "id": "what-makes-different",
+    "question": "What makes him different from other CS students?",
+    "answer": "He is not only focused on coding. His profile mixes AI, analytics, SQL, full-stack work, business, finance, sponsorship, leadership, and public policy technology.",
+    "keywords": ["different", "unique", "stand out"]
+  },
+  {
+    "id": "finance-business",
+    "question": "What is his business and finance background?",
+    "answer": "He is interested in stock market patterns, sentiment, investment planning, and business analytics. He was also the youngest MDRT qualifier at Aditya Birla Capital / ABSLI in FY25.",
+    "keywords": ["finance", "business", "investment", "stock", "mdrt"]
+  },
+  {
+    "id": "target-roles",
+    "question": "What kind of roles is he looking for?",
+    "answer": "He is positioned for AI/ML engineering, data analytics, SQL/database-heavy roles, full-stack development, RAG applications, and business analytics internships or early-career opportunities.",
+    "keywords": ["roles", "career", "job", "looking"]
+  }
+]

@@ -1,0 +1,100 @@
+import type { SkillGroup } from "./types";
+
+export const skills = [
+  {
+    id: "programming",
+    title: "Programming",
+    summary: "Core implementation skills for software, data, and AI projects.",
+    skills: [
+      { name: "Python", level: "Strong", proof: "AI/ML and analytics project work" },
+      { name: "JavaScript", level: "Strong", proof: "Full-stack website development" },
+      { name: "TypeScript", level: "Working", proof: "Modern React and Node.js projects" },
+      { name: "SQL", level: "Strong", proof: "Database, analytics, and dashboard work" }
+    ]
+  },
+  {
+    id: "frontend",
+    title: "Frontend",
+    summary: "Modern responsive interfaces for portfolio, product, and freelance work.",
+    skills: [
+      { name: "React", level: "Strong", proof: "Portfolio and full-stack web projects" },
+      { name: "Tailwind CSS", level: "Strong", proof: "Responsive UI systems" },
+      { name: "Vite", level: "Working", proof: "Fast React project setup" }
+    ]
+  },
+  {
+    id: "backend",
+    title: "Backend",
+    summary: "API and server-side foundations for full-stack applications.",
+    skills: [
+      { name: "Node.js", level: "Working", proof: "Express API development" },
+      { name: "Express", level: "Working", proof: "REST API routes and services" },
+      { name: "Prisma", level: "Working", proof: "Database schema and ORM setup" }
+    ]
+  },
+  {
+    id: "database",
+    title: "Databases",
+    summary: "Database thinking for reliable apps, analytics, and retrieval systems.",
+    skills: [
+      { name: "PostgreSQL", level: "Working", proof: "Neon-ready backend schema" },
+      { name: "Neon", level: "Exploring", proof: "Deployment target for portfolio backend" },
+      { name: "Database design", level: "Working", proof: "Structured data and schema planning" }
+    ]
+  },
+  {
+    id: "ai-ml",
+    title: "AI/ML",
+    summary: "Applied AI focus with RAG, NLP, embeddings, and data preparation.",
+    skills: [
+      { name: "RAG", level: "Strong", proof: "Rashtram AI" },
+      { name: "NLP", level: "Working", proof: "Policy assistant use case" },
+      { name: "Embeddings", level: "Working", proof: "Retrieval-oriented AI systems" },
+      { name: "Vector databases", level: "Working", proof: "RAG project architecture" },
+      { name: "Data preprocessing", level: "Strong", proof: "Analytics and AI workflows" }
+    ]
+  },
+  {
+    id: "analytics",
+    title: "Data Analytics",
+    summary: "Turning raw data into dashboards, stories, and business decisions.",
+    skills: [
+      { name: "Tableau", level: "Working", proof: "Dashboard work placeholder" },
+      { name: "Google Sheets", level: "Strong", proof: "Analytics and reporting workflows" },
+      { name: "Dashboards", level: "Strong", proof: "Zomato and SQL dashboard work" },
+      { name: "EDA", level: "Strong", proof: "Zomato Data Analysis" }
+    ]
+  },
+  {
+    id: "business-finance",
+    title: "Business & Finance",
+    summary: "Business-aware technical thinking shaped by finance and sponsorship experience.",
+    skills: [
+      { name: "Stock market analysis", level: "Working", proof: "Personal interest and analytics focus" },
+      { name: "Investment planning", level: "Working", proof: "Business and finance background" },
+      { name: "Sponsorship", level: "Strong", proof: "College tech fest sponsorship manager" },
+      { name: "Insurance advisory", level: "Working", proof: "Youngest MDRT qualifier FY25" }
+    ]
+  },
+  {
+    id: "dsa",
+    title: "DSA",
+    summary: "Consistent problem-solving practice for interviews and core CS strength.",
+    skills: [
+      { name: "LeetCode", level: "Strong", proof: "1700+ rating and 300+ problems solved" },
+      { name: "Problem solving", level: "Strong", proof: "Contest and practice record" },
+      { name: "Algorithms", level: "Working", proof: "DSA practice" }
+    ]
+  },
+  {
+    id: "leadership",
+    title: "Leadership",
+    summary: "Leadership and ownership across school, college, events, sponsorship, and representation.",
+    skills: [
+      { name: "School leadership", level: "Strong", proof: "Served as House Captain" },
+      { name: "Event coordination", level: "Working", proof: "National Integration Camp participation and management" },
+      { name: "Sponsorship management", level: "Strong", proof: "College tech fest Sponsorship Manager" },
+      { name: "Representation", level: "Working", proof: "PAN IIT 2026 college representative" }
+    ]
+  }
+] satisfies SkillGroup[];

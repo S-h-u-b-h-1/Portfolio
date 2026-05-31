@@ -1,0 +1,23 @@
+import type { TestimonialItem } from "./types";
+
+export const testimonials = [
+  {
+    id: "mentor-testimonial-placeholder",
+    name: "TODO_NAME",
+    role: "Mentor / Faculty / Manager",
+    organization: "TODO_ORGANIZATION",
+    quote:
+      "Placeholder testimonial. Replace this with a verified quote from a mentor, faculty member, internship manager, client, or collaborator.",
+    status: "placeholder"
+  },
+  {
+    id: "client-testimonial-placeholder",
+    name: "TODO_NAME",
+    role: "Client / Collaborator",
+    organization: "TODO_ORGANIZATION",
+    quote:
+      "Placeholder testimonial for freelance or project work. Add only after receiving explicit approval to publish.",
+    status: "placeholder"
+  }
+] satisfies TestimonialItem[];
+
