@@ -47,7 +47,7 @@ Set `DATABASE_URL` before running Prisma commands.
 Manual service settings:
 
 - Root directory: `backend`
-- Build command: `npm install && npm run build && npx prisma generate`
+- Build command: `npm install --include=dev && npm run build && npx prisma generate && npx prisma migrate deploy`
 - Start command: `npm run start`
 - Health check path: `/api/health`
 

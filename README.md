@@ -136,7 +136,7 @@ This repository includes `render.yaml` for a Render web service configured with 
 Manual Render settings:
 
 - Root directory: `backend`
-- Build command: `npm install && npm run build && npx prisma generate`
+- Build command: `npm install --include=dev && npm run build && npx prisma generate && npx prisma migrate deploy`
 - Start command: `npm run start`
 - Health check path: `/api/health`
 - Runtime: Node 20+
@@ -235,6 +235,7 @@ Use the final custom domain in:
 
 - Frontend cannot reach backend: confirm `VITE_API_BASE_URL` ends with `/api` and points to Render.
 - CORS error in browser: confirm Render has `FRONTEND_URL` and `CORS_ORIGIN` set to the Vercel/custom domain.
+- Render TypeScript build cannot find Express/CORS/Node types: confirm the Render build command uses `npm install --include=dev`.
 - Render build fails on Prisma: confirm `DATABASE_URL` and `DIRECT_URL` are valid Neon PostgreSQL URLs with `sslmode=require`.
 - Contact form fails: check Render logs, Neon connection strings, and the `/api/health` endpoint.
 - AI returns local fallback only: add `AI_API_KEY`, `AI_BASE_URL`, and `AI_MODEL`, or keep this behavior intentionally for no-key mode.
