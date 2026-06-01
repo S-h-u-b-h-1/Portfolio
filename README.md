@@ -24,7 +24,7 @@ portfolio/
 - Premium responsive portfolio UI with dark/light mode
 - Home, About, Projects, Experience, Skills, Achievements, Writing, Ask AI, and Contact pages
 - Filterable project case studies with search
-- Ask Shubhaang AI chat backed by a local knowledge base and optional OpenAI-compatible provider
+- Ask Shubhaang AI chat with verified portfolio context, Gemini/OpenAI-compatible provider support, and safe local fallback
 - Contact form API with Prisma persistence
 - Keyboard shortcuts, command palette, mobile menu, animated grid, and section progress
 - SEO metadata, favicon placeholder, Open Graph placeholder, robots file, and resume placeholder
@@ -85,10 +85,18 @@ AI_API_KEY=
 AI_BASE_URL=https://api.openai.com/v1
 AI_MODEL=gpt-4o-mini
 
+# Gemini native option:
+# AI_PROVIDER=gemini
+# AI_API_KEY=
+# AI_BASE_URL=https://generativelanguage.googleapis.com/v1beta
+# AI_MODEL=gemini-3.5-flash
+
 # Optional backward-compatible aliases:
 OPENAI_API_KEY=
 OPENAI_BASE_URL=https://api.openai.com/v1
 OPENAI_MODEL=gpt-4o-mini
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-3.5-flash
 ```
 
 Do not commit real `.env` files. Only `.env.example` files should be tracked.
@@ -150,12 +158,30 @@ Production environment variables:
 - `DIRECT_URL`: Neon direct PostgreSQL connection string
 - `FRONTEND_URL`: Vercel production URL or custom domain
 - `CORS_ORIGIN`: Vercel preview/production domains and custom domain, comma-separated
-- `AI_PROVIDER=openai-compatible`
-- `AI_API_KEY`: optional provider key
-- `AI_BASE_URL`: optional OpenAI-compatible base URL
-- `AI_MODEL`: optional model name
+- `AI_PROVIDER`: `local`, `openai-compatible`, or `gemini`
+- `AI_API_KEY`: optional provider key. If missing, chat uses verified local fallback.
+- `AI_BASE_URL`: provider base URL
+- `AI_MODEL`: provider model name
 
-The backend also supports `OPENAI_API_KEY`, `OPENAI_BASE_URL`, and `OPENAI_MODEL` aliases.
+For Gemini native mode, use:
+
+```txt
+AI_PROVIDER=gemini
+AI_API_KEY=<GEMINI_API_KEY>
+AI_BASE_URL=https://generativelanguage.googleapis.com/v1beta
+AI_MODEL=gemini-3.5-flash
+```
+
+For Gemini through OpenAI-compatible mode, use:
+
+```txt
+AI_PROVIDER=openai-compatible
+AI_API_KEY=<GEMINI_API_KEY>
+AI_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai
+AI_MODEL=gemini-3.5-flash
+```
+
+The backend also supports `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `OPENAI_MODEL`, `GEMINI_API_KEY`, and `GEMINI_MODEL` aliases.
 
 ## Neon + Prisma
 
@@ -239,7 +265,7 @@ Use the final custom domain in:
 - Render TypeScript build cannot find Express/CORS/Node types: confirm the Render build command uses `npm install --include=dev`.
 - Render build fails on Prisma: confirm `DATABASE_URL` and `DIRECT_URL` are valid Neon PostgreSQL URLs with `sslmode=require`.
 - Contact form fails: check Render logs, Neon connection strings, and the `/api/health` endpoint.
-- AI returns local fallback only: add `AI_API_KEY`, `AI_BASE_URL`, and `AI_MODEL`, or keep this behavior intentionally for no-key mode.
+- AI returns local fallback only: confirm Render has `AI_PROVIDER`, `AI_API_KEY`, `AI_BASE_URL`, and `AI_MODEL` set for the provider you actually use. For Gemini native mode, `AI_BASE_URL` should be `https://generativelanguage.googleapis.com/v1beta`.
 - Vercel routes show 404 on refresh: confirm `frontend/vercel.json` is included and the Vercel root directory is `frontend`.
 - Resume button opens placeholder: replace the placeholder file and set `VITE_RESUME_URL=/resume/Shubhaang_Kataruka_Resume.pdf`.
 

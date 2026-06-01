@@ -78,6 +78,20 @@ export const shubhaangKnowledge = {
   ],
   responses: [
     {
+      id: "overview",
+      question: "Who is Shubhaang Kataruka?",
+      keywords: ["shubhaang", "who is", "about", "profile", "portfolio", "background", "summary", "intro", "introduction"],
+      answer:
+        "Shubhaang Kataruka is a 3rd-year B.Tech CS & AI student at Rishihood University x Newton School of Technology, positioned as an AI Engineer + Data Systems Builder. He focuses on AI/ML, RAG, data analytics, SQL, databases, and full-stack development."
+    },
+    {
+      id: "featured-projects",
+      question: "What projects has Shubhaang built?",
+      keywords: ["projects", "project", "work", "built", "demo", "live", "links", "dashboard", "website"],
+      answer:
+        "Shubhaang's featured work includes Rashtram AI, a public policy RAG system (https://rashtramai.vercel.app/); Zomato Data Analysis, a Tableau-backed analytics project (https://public.tableau.com/app/profile/kush.puri/viz/Zomato_Delivery_Analysis/Dashboard1); and a freelance Hair Salon Website (https://www.themaxxsalon.shop/)."
+    },
+    {
       id: "rashtram-ai",
       question: "What is Rashtram AI?",
       keywords: ["rashtram", "rag", "public policy", "policy", "bills", "parliament"],

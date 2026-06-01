@@ -3,7 +3,7 @@ import { getApiUrl } from "../config/env";
 export type ChatApiResponse = {
   answer: string;
   source?: "local-knowledge" | "ai-provider";
-  provider: "local" | "openai-compatible";
+  provider: "local" | "openai-compatible" | "gemini";
   sources: string[];
 };
 

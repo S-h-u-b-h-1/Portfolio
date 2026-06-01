@@ -64,10 +64,28 @@ Required production variables:
 
 Optional AI variables:
 
-- `AI_PROVIDER=openai-compatible`
+- `AI_PROVIDER`: `local`, `openai-compatible`, or `gemini`
 - `AI_API_KEY`
 - `AI_BASE_URL`
 - `AI_MODEL`
+
+Gemini native mode:
+
+```env
+AI_PROVIDER=gemini
+AI_API_KEY=<GEMINI_API_KEY>
+AI_BASE_URL=https://generativelanguage.googleapis.com/v1beta
+AI_MODEL=gemini-3.5-flash
+```
+
+Gemini OpenAI-compatible mode:
+
+```env
+AI_PROVIDER=openai-compatible
+AI_API_KEY=<GEMINI_API_KEY>
+AI_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai
+AI_MODEL=gemini-3.5-flash
+```
 
 With no `AI_API_KEY`, the assistant still answers from the local knowledge base and refuses unverified topics.
 

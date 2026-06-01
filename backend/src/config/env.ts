@@ -7,14 +7,37 @@ function numberFromEnv(key: string, fallback: number) {
   return Number.isFinite(parsed) ? parsed : fallback;
 }
 
+function normalizeUrl(value: string) {
+  return value.replace(/\/+$/, "");
+}
+
+function normalizeProvider(value: string | undefined) {
+  const normalized = value?.trim().toLowerCase();
+
+  if (normalized === "local") {
+    return "local";
+  }
+
+  if (normalized === "gemini" || normalized === "google" || normalized === "google-gemini") {
+    return "gemini";
+  }
+
+  return "openai-compatible";
+}
+
+const AI_PROVIDER = normalizeProvider(process.env.AI_PROVIDER);
+const DEFAULT_AI_BASE_URL =
+  AI_PROVIDER === "gemini" ? "https://generativelanguage.googleapis.com/v1beta" : "https://api.openai.com/v1";
+const DEFAULT_AI_MODEL = AI_PROVIDER === "gemini" ? "gemini-3.5-flash" : "gpt-4o-mini";
+
 export const env = {
   NODE_ENV: process.env.NODE_ENV ?? "development",
   PORT: numberFromEnv("PORT", 5001),
   FRONTEND_URL: process.env.FRONTEND_URL,
   CORS_ORIGIN: process.env.CORS_ORIGIN,
   DATABASE_URL: process.env.DATABASE_URL,
-  AI_PROVIDER: process.env.AI_PROVIDER ?? "openai-compatible",
-  AI_API_KEY: process.env.AI_API_KEY ?? process.env.OPENAI_API_KEY,
-  AI_BASE_URL: (process.env.AI_BASE_URL ?? process.env.OPENAI_BASE_URL ?? "https://api.openai.com/v1").replace(/\/+$/, ""),
-  AI_MODEL: process.env.AI_MODEL ?? process.env.OPENAI_MODEL ?? "gpt-4o-mini"
+  AI_PROVIDER,
+  AI_API_KEY: process.env.AI_API_KEY ?? process.env.OPENAI_API_KEY ?? process.env.GEMINI_API_KEY,
+  AI_BASE_URL: normalizeUrl(process.env.AI_BASE_URL ?? process.env.OPENAI_BASE_URL ?? DEFAULT_AI_BASE_URL),
+  AI_MODEL: process.env.AI_MODEL ?? process.env.OPENAI_MODEL ?? process.env.GEMINI_MODEL ?? DEFAULT_AI_MODEL
 };

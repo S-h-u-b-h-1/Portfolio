@@ -13,6 +13,12 @@ type ChatMessageBubbleProps = {
   message: ChatMessage;
 };
 
+const providerLabels: Record<ChatApiResponse["provider"], string> = {
+  local: "Local knowledge fallback",
+  "openai-compatible": "OpenAI-compatible provider",
+  gemini: "Gemini provider"
+};
+
 export function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
   const isAssistant = message.role === "assistant";
   const Icon = isAssistant ? Bot : UserRound;
@@ -37,7 +43,7 @@ export function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
         {message.meta ? (
           <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-white/10 pt-3 text-xs text-slate-400 light:border-slate-950/10 light:text-slate-600">
             <ShieldCheck aria-hidden="true" size={14} className="text-accent-emerald" />
-            <span>{message.meta.provider === "local" ? "Local knowledge base" : "OpenAI-compatible provider"}</span>
+            <span>{providerLabels[message.meta.provider]}</span>
             <span className="text-slate-600 light:text-slate-400">/</span>
             <span>{message.meta.sources.join(", ")}</span>
           </div>
@@ -52,4 +58,3 @@ export function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
     </article>
   );
 }
-

@@ -21,10 +21,10 @@ const initialMessage: ChatMessage = {
   id: "assistant-intro",
   role: "assistant",
   content:
-    "Hi, I’m Ask Shubhaang AI. I answer from Shubhaang’s verified portfolio knowledge base first. If something is not verified yet, I’ll say so clearly.",
+    "Hi, I’m Ask Shubhaang AI. If an AI provider is configured, I answer with Shubhaang’s verified portfolio knowledge as context. If not, I safely fall back to local verified answers.",
   meta: {
     provider: "local",
-    sources: ["local-knowledge-base"]
+    sources: ["verified-portfolio-knowledge"]
   }
 };
 
@@ -32,8 +32,8 @@ const CONNECTION_ERROR_MESSAGE = "I could not connect to the AI service right no
 
 const guardrailCards = [
   {
-    title: "Grounded first",
-    description: "Local knowledge base matching happens before provider fallback.",
+    title: "Provider-ready",
+    description: "Uses Gemini or any OpenAI-compatible provider when configured on the backend.",
     icon: Database
   },
   {
@@ -122,7 +122,7 @@ export function AskAIPage() {
             content: CONNECTION_ERROR_MESSAGE,
             meta: {
               provider: "local",
-              sources: ["local-knowledge-base"]
+              sources: ["verified-portfolio-knowledge"]
             }
           }
         ]);
@@ -188,7 +188,7 @@ export function AskAIPage() {
                 message={{
                   id: "assistant-loading",
                   role: "assistant",
-                  content: "Reading the verified portfolio knowledge base..."
+                  content: "Reading verified portfolio context..."
                 }}
               />
             ) : null}
