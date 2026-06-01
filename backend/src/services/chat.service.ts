@@ -1,3 +1,8 @@
+import { AIMessage, HumanMessage, SystemMessage } from "@langchain/core/messages";
+import type { BaseChatModel } from "@langchain/core/language_models/chat_models";
+import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
+import { Annotation, END, START, StateGraph } from "@langchain/langgraph";
+import { ChatOpenAI } from "@langchain/openai";
 import { env } from "../config/env";
 import { shubhaangKnowledge, UNVERIFIED_FALLBACK, type KnowledgeResponse } from "../data/shubhaangKnowledge";
 import { prisma } from "../utils/prisma";
@@ -14,7 +19,7 @@ type LocalChatResponse = ChatResponse & {
 };
 
 const KNOWLEDGE_SOURCE = "verified-portfolio-knowledge";
-const AI_PROVIDER_TIMEOUT_MS = 4500;
+const LANGGRAPH_SOURCE = "langgraph-langchain";
 const STOP_WORDS = new Set([
   "a",
   "an",
@@ -36,6 +41,16 @@ const STOP_WORDS = new Set([
   "who",
   "why"
 ]);
+
+const AssistantGraphState = Annotation.Root({
+  question: Annotation<string>(),
+  answer: Annotation<string>(),
+  provider: Annotation<"openai-compatible" | "gemini">()
+});
+
+type AssistantGraph = ReturnType<typeof buildAssistantGraph>;
+
+let cachedAssistantGraph: AssistantGraph | undefined;
 
 export async function createChatResponse(message: string): Promise<ChatResponse> {
   const trimmedMessage = message.trim();
@@ -125,11 +140,23 @@ function findBestLocalAnswer(normalizedMessage: string): KnowledgeResponse | und
 }
 
 async function createProviderResponse(message: string): Promise<ChatResponse> {
-  if (shouldUseGeminiNativeApi()) {
-    return createGeminiResponse(message);
-  }
+  const provider = shouldUseGeminiNativeApi() ? "gemini" : "openai-compatible";
+  const graph = getAssistantGraph();
+  const result = await withTimeout(
+    graph.invoke({
+      question: message,
+      answer: "",
+      provider
+    }),
+    env.AI_TIMEOUT_MS
+  );
 
-  return createOpenAICompatibleResponse(message);
+  return {
+    answer: result.answer?.trim() || UNVERIFIED_FALLBACK,
+    source: "ai-provider",
+    provider,
+    sources: [KNOWLEDGE_SOURCE, LANGGRAPH_SOURCE, provider === "gemini" ? "langchain-google-genai" : "langchain-openai"]
+  };
 }
 
 function shouldUseGeminiNativeApi() {
@@ -153,96 +180,85 @@ function createSystemPrompt() {
   ].join("\n\n");
 }
 
-function readGeminiText(payload: {
-  candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
-}) {
-  return payload.candidates?.[0]?.content?.parts?.map((part) => part.text).filter(Boolean).join("").trim();
+function getAssistantGraph() {
+  cachedAssistantGraph ??= buildAssistantGraph();
+  return cachedAssistantGraph;
 }
 
-async function fetchWithTimeout(url: string, init: RequestInit) {
-  const abortController = new AbortController();
-  const timeoutId = setTimeout(() => abortController.abort(), AI_PROVIDER_TIMEOUT_MS);
+function buildAssistantGraph() {
+  const chatModel = createLangChainChatModel();
+
+  async function generateAnswer(state: typeof AssistantGraphState.State) {
+    const response = await chatModel.invoke([
+      new SystemMessage(createSystemPrompt()),
+      new HumanMessage(state.question)
+    ]);
+
+    return {
+      answer: readMessageContent(response.content)
+    };
+  }
+
+  return new StateGraph(AssistantGraphState)
+    .addNode("generate_answer", generateAnswer)
+    .addEdge(START, "generate_answer")
+    .addEdge("generate_answer", END)
+    .compile();
+}
+
+function createLangChainChatModel(): BaseChatModel {
+  if (shouldUseGeminiNativeApi()) {
+    return new ChatGoogleGenerativeAI({
+      model: env.AI_MODEL,
+      apiKey: env.AI_API_KEY,
+      temperature: 0.2,
+      maxOutputTokens: 420,
+      maxRetries: 0
+    });
+  }
+
+  return new ChatOpenAI({
+    model: env.AI_MODEL,
+    apiKey: env.AI_API_KEY,
+    temperature: 0.2,
+    maxTokens: 420,
+    maxRetries: 0,
+    timeout: env.AI_TIMEOUT_MS,
+    configuration: {
+      baseURL: env.AI_BASE_URL
+    }
+  });
+}
+
+function readMessageContent(content: AIMessage["content"]) {
+  if (typeof content === "string") {
+    return content.trim();
+  }
+
+  return content
+    .map((part) => {
+      if (typeof part === "string") {
+        return part;
+      }
+
+      return "text" in part && typeof part.text === "string" ? part.text : "";
+    })
+    .join("")
+    .trim();
+}
+
+async function withTimeout<T>(promise: Promise<T>, timeoutMs: number) {
+  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+  const timeoutPromise = new Promise<never>((_resolve, reject) => {
+    timeoutId = setTimeout(() => reject(new Error("AI provider timed out.")), timeoutMs);
+  });
 
   try {
-    return await fetch(url, {
-      ...init,
-      signal: abortController.signal
-    });
+    return await Promise.race([promise, timeoutPromise]);
   } finally {
-    clearTimeout(timeoutId);
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
   }
-}
-
-async function createOpenAICompatibleResponse(message: string): Promise<ChatResponse> {
-  const systemPrompt = createSystemPrompt();
-
-  const response = await fetchWithTimeout(`${env.AI_BASE_URL}/chat/completions`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${env.AI_API_KEY}`
-    },
-    body: JSON.stringify({
-      model: env.AI_MODEL,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: message }
-      ],
-      temperature: 0.2
-    })
-  });
-
-  if (!response.ok) {
-    throw new Error(`AI provider failed with status ${response.status}`);
-  }
-
-  const payload = (await response.json()) as {
-    choices?: Array<{ message?: { content?: string } }>;
-  };
-
-  return {
-    answer: payload.choices?.[0]?.message?.content?.trim() ?? UNVERIFIED_FALLBACK,
-    source: "ai-provider",
-    provider: "openai-compatible",
-    sources: [KNOWLEDGE_SOURCE, "openai-compatible-provider"]
-  };
-}
-
-async function createGeminiResponse(message: string): Promise<ChatResponse> {
-  const response = await fetchWithTimeout(`${env.AI_BASE_URL}/models/${env.AI_MODEL}:generateContent`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-goog-api-key": env.AI_API_KEY ?? ""
-    },
-    body: JSON.stringify({
-      system_instruction: {
-        parts: [{ text: createSystemPrompt() }]
-      },
-      contents: [
-        {
-          role: "user",
-          parts: [{ text: message }]
-        }
-      ],
-      generationConfig: {
-        temperature: 0.2
-      }
-    })
-  });
-
-  if (!response.ok) {
-    throw new Error(`Gemini provider failed with status ${response.status}`);
-  }
-
-  const payload = (await response.json()) as {
-    candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
-  };
-
-  return {
-    answer: readGeminiText(payload) ?? UNVERIFIED_FALLBACK,
-    source: "ai-provider",
-    provider: "gemini",
-    sources: [KNOWLEDGE_SOURCE, "gemini-provider"]
-  };
 }

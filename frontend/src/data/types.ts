@@ -11,6 +11,11 @@ export type Profile = {
   shortBio: string;
   longBio: string;
   location: string;
+  photo: {
+    src: string;
+    alt: string;
+    status: "placeholder" | "ready";
+  };
   currentStatus: string;
   interests: string[];
   focusAreas: string[];
@@ -128,4 +133,3 @@ export type WritingInsight = {
   tags: string[];
   status: "draft" | "outline" | "published";
 };
-

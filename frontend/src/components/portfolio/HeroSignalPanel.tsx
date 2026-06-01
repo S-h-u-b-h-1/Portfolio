@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BrainCircuit, Code2, Database, ServerCog } from "lucide-react";
+import { profile } from "../../data";
 
 const signalRows = [
   { label: "AI systems", value: "RAG + LLM apps", icon: BrainCircuit },
@@ -30,6 +31,22 @@ export function HeroSignalPanel() {
             <span className="size-2.5 rounded-full bg-accent-emerald" />
             <span className="size-2.5 rounded-full bg-accent-cyan" />
             <span className="size-2.5 rounded-full bg-accent-purple" />
+          </div>
+        </div>
+
+        <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] light:border-slate-950/10 light:bg-slate-950/[0.035]">
+          <div className="aspect-[4/5] max-h-[18rem] w-full overflow-hidden">
+            <img
+              src={profile.photo.src}
+              alt={profile.photo.alt}
+              className="size-full object-cover"
+              loading="eager"
+            />
+          </div>
+          <div className="border-t border-white/10 px-3 py-2 light:border-slate-950/10">
+            <p className="font-mono text-xs text-slate-500 light:text-slate-600">
+              {profile.photo.status === "placeholder" ? "// replace.with.real.photo" : "// verified.portrait"}
+            </p>
           </div>
         </div>
 

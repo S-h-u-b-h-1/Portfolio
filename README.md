@@ -15,6 +15,7 @@ portfolio/
 
 - Frontend: React, Vite, TypeScript, Tailwind CSS, Framer Motion, React Router, Lucide React
 - Backend: Node.js, Express, TypeScript, Prisma ORM
+- AI orchestration: LangGraph + LangChain chat models
 - Database: Neon PostgreSQL
 - Deployment: Vercel for frontend, Render for backend
 - Domain: Namecheap DNS connected to Vercel
@@ -86,19 +87,20 @@ AI_PROVIDER=openai-compatible
 AI_API_KEY=
 AI_BASE_URL=https://api.openai.com/v1
 AI_MODEL=gpt-4o-mini
+AI_TIMEOUT_MS=7000
 
 # Gemini native option:
 # AI_PROVIDER=gemini
 # AI_API_KEY=
 # AI_BASE_URL=https://generativelanguage.googleapis.com/v1beta
-# AI_MODEL=gemini-3.5-flash
+# AI_MODEL=gemini-flash-latest
 
 # Optional backward-compatible aliases:
 OPENAI_API_KEY=
 OPENAI_BASE_URL=https://api.openai.com/v1
 OPENAI_MODEL=gpt-4o-mini
 GEMINI_API_KEY=
-GEMINI_MODEL=gemini-3.5-flash
+GEMINI_MODEL=gemini-flash-latest
 ```
 
 Do not commit real `.env` files. Only `.env.example` files should be tracked.
@@ -167,6 +169,7 @@ Production environment variables:
 - `AI_API_KEY`: optional provider key. If missing, chat uses verified local fallback.
 - `AI_BASE_URL`: provider base URL
 - `AI_MODEL`: provider model name
+- `AI_TIMEOUT_MS`: maximum time to wait for the model before fallback, default `7000`
 
 For Gemini native mode, use:
 
@@ -174,7 +177,7 @@ For Gemini native mode, use:
 AI_PROVIDER=gemini
 AI_API_KEY=<GEMINI_API_KEY>
 AI_BASE_URL=https://generativelanguage.googleapis.com/v1beta
-AI_MODEL=gemini-3.5-flash
+AI_MODEL=gemini-flash-latest
 ```
 
 For Gemini through OpenAI-compatible mode, use:
@@ -183,7 +186,7 @@ For Gemini through OpenAI-compatible mode, use:
 AI_PROVIDER=openai-compatible
 AI_API_KEY=<GEMINI_API_KEY>
 AI_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai
-AI_MODEL=gemini-3.5-flash
+AI_MODEL=gemini-flash-latest
 ```
 
 The backend also supports `OPENAI_API_KEY`, `OPENAI_BASE_URL`, `OPENAI_MODEL`, `GEMINI_API_KEY`, and `GEMINI_MODEL` aliases.

@@ -7,6 +7,7 @@ Node.js + Express + TypeScript API for the portfolio website.
 - Express
 - TypeScript
 - Prisma ORM
+- LangGraph + LangChain
 - PostgreSQL / Neon
 - CORS
 - dotenv
@@ -71,6 +72,7 @@ Optional AI variables:
 - `AI_API_KEY`
 - `AI_BASE_URL`
 - `AI_MODEL`
+- `AI_TIMEOUT_MS`
 
 Gemini native mode:
 
@@ -78,7 +80,7 @@ Gemini native mode:
 AI_PROVIDER=gemini
 AI_API_KEY=<GEMINI_API_KEY>
 AI_BASE_URL=https://generativelanguage.googleapis.com/v1beta
-AI_MODEL=gemini-3.5-flash
+AI_MODEL=gemini-flash-latest
 ```
 
 Gemini OpenAI-compatible mode:
@@ -87,7 +89,7 @@ Gemini OpenAI-compatible mode:
 AI_PROVIDER=openai-compatible
 AI_API_KEY=<GEMINI_API_KEY>
 AI_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai
-AI_MODEL=gemini-3.5-flash
+AI_MODEL=gemini-flash-latest
 ```
 
 With no `AI_API_KEY`, the assistant still answers from the local knowledge base and refuses unverified topics.

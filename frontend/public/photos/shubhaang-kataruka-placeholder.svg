@@ -1,0 +1,13 @@
+<svg width="720" height="900" viewBox="0 0 720 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait placeholder for Shubhaang Kataruka</title>
+  <desc id="desc">A clean portfolio portrait placeholder with initials SK.</desc>
+  <rect width="720" height="900" rx="32" fill="#07111f"/>
+  <rect x="1" y="1" width="718" height="898" rx="31" stroke="#22d3ee" stroke-opacity="0.22" stroke-width="2"/>
+  <path d="M0 690C130 598 252 570 366 606C478 640 590 614 720 516V900H0V690Z" fill="#0f766e" fill-opacity="0.22"/>
+  <path d="M0 0H720V220C590 162 455 145 315 170C190 193 86 176 0 118V0Z" fill="#2563eb" fill-opacity="0.18"/>
+  <circle cx="360" cy="345" r="118" fill="#0f172a" stroke="#22d3ee" stroke-opacity="0.35" stroke-width="2"/>
+  <path d="M231 650C252 574 302 531 360 531C418 531 468 574 489 650" stroke="#22d3ee" stroke-opacity="0.42" stroke-width="28" stroke-linecap="round"/>
+  <text x="360" y="374" text-anchor="middle" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="700" letter-spacing="4">SK</text>
+  <text x="360" y="735" text-anchor="middle" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">Add verified portrait</text>
+  <text x="360" y="778" text-anchor="middle" fill="#22d3ee" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20">// photos/profile</text>
+</svg>

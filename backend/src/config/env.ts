@@ -28,7 +28,7 @@ function normalizeProvider(value: string | undefined) {
 const AI_PROVIDER = normalizeProvider(process.env.AI_PROVIDER);
 const DEFAULT_AI_BASE_URL =
   AI_PROVIDER === "gemini" ? "https://generativelanguage.googleapis.com/v1beta" : "https://api.openai.com/v1";
-const DEFAULT_AI_MODEL = AI_PROVIDER === "gemini" ? "gemini-3.5-flash" : "gpt-4o-mini";
+const DEFAULT_AI_MODEL = AI_PROVIDER === "gemini" ? "gemini-flash-latest" : "gpt-4o-mini";
 
 export const env = {
   NODE_ENV: process.env.NODE_ENV ?? "development",
@@ -40,5 +40,6 @@ export const env = {
   AI_PROVIDER,
   AI_API_KEY: process.env.AI_API_KEY ?? process.env.OPENAI_API_KEY ?? process.env.GEMINI_API_KEY,
   AI_BASE_URL: normalizeUrl(process.env.AI_BASE_URL ?? process.env.OPENAI_BASE_URL ?? DEFAULT_AI_BASE_URL),
-  AI_MODEL: process.env.AI_MODEL ?? process.env.OPENAI_MODEL ?? process.env.GEMINI_MODEL ?? DEFAULT_AI_MODEL
+  AI_MODEL: process.env.AI_MODEL ?? process.env.OPENAI_MODEL ?? process.env.GEMINI_MODEL ?? DEFAULT_AI_MODEL,
+  AI_TIMEOUT_MS: numberFromEnv("AI_TIMEOUT_MS", 7000)
 };
