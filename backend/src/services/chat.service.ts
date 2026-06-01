@@ -14,6 +14,7 @@ type LocalChatResponse = ChatResponse & {
 };
 
 const KNOWLEDGE_SOURCE = "verified-portfolio-knowledge";
+const AI_PROVIDER_TIMEOUT_MS = 4500;
 const STOP_WORDS = new Set([
   "a",
   "an",
@@ -45,7 +46,7 @@ export async function createChatResponse(message: string): Promise<ChatResponse>
     ? await createProviderResponse(trimmedMessage).catch(() => toChatResponse(localResponse))
     : toChatResponse(localResponse);
 
-  await prisma.chatLog
+  prisma.chatLog
     .create({
       data: {
         question: trimmedMessage,
@@ -158,10 +159,24 @@ function readGeminiText(payload: {
   return payload.candidates?.[0]?.content?.parts?.map((part) => part.text).filter(Boolean).join("").trim();
 }
 
+async function fetchWithTimeout(url: string, init: RequestInit) {
+  const abortController = new AbortController();
+  const timeoutId = setTimeout(() => abortController.abort(), AI_PROVIDER_TIMEOUT_MS);
+
+  try {
+    return await fetch(url, {
+      ...init,
+      signal: abortController.signal
+    });
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
 async function createOpenAICompatibleResponse(message: string): Promise<ChatResponse> {
   const systemPrompt = createSystemPrompt();
 
-  const response = await fetch(`${env.AI_BASE_URL}/chat/completions`, {
+  const response = await fetchWithTimeout(`${env.AI_BASE_URL}/chat/completions`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -194,7 +209,7 @@ async function createOpenAICompatibleResponse(message: string): Promise<ChatResp
 }
 
 async function createGeminiResponse(message: string): Promise<ChatResponse> {
-  const response = await fetch(`${env.AI_BASE_URL}/models/${env.AI_MODEL}:generateContent`, {
+  const response = await fetchWithTimeout(`${env.AI_BASE_URL}/models/${env.AI_MODEL}:generateContent`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

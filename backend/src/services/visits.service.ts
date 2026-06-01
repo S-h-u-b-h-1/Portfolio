@@ -13,6 +13,7 @@ export type CreatePortfolioVisitInput = {
 export type PortfolioVisitCounts = {
   totalViews: number;
   uniqueVisitors: number;
+  storageAvailable: boolean;
 };
 
 const MAX_PATH_LENGTH = 2048;
@@ -36,29 +37,40 @@ function hashIpAddress(ipAddress: string | undefined) {
 }
 
 export async function createPortfolioVisit(input: CreatePortfolioVisitInput) {
-  await prisma.portfolioVisit.create({
-    data: {
-      visitorId: input.visitorId,
-      path: truncate(input.path, MAX_PATH_LENGTH) ?? "/",
-      referrer: truncate(input.referrer, MAX_REFERRER_LENGTH),
-      userAgent: truncate(input.userAgent, MAX_USER_AGENT_LENGTH),
-      ipHash: hashIpAddress(input.ipAddress)
-    }
-  });
+  await prisma.portfolioVisit
+    .create({
+      data: {
+        visitorId: input.visitorId,
+        path: truncate(input.path, MAX_PATH_LENGTH) ?? "/",
+        referrer: truncate(input.referrer, MAX_REFERRER_LENGTH),
+        userAgent: truncate(input.userAgent, MAX_USER_AGENT_LENGTH),
+        ipHash: hashIpAddress(input.ipAddress)
+      }
+    })
+    .catch(() => undefined);
 
   return getPortfolioVisitCounts();
 }
 
 export async function getPortfolioVisitCounts(): Promise<PortfolioVisitCounts> {
-  const [totalViews, visitorGroups] = await Promise.all([
-    prisma.portfolioVisit.count(),
-    prisma.portfolioVisit.groupBy({
-      by: ["visitorId"]
-    })
-  ]);
+  try {
+    const [totalViews, visitorGroups] = await Promise.all([
+      prisma.portfolioVisit.count(),
+      prisma.portfolioVisit.groupBy({
+        by: ["visitorId"]
+      })
+    ]);
 
-  return {
-    totalViews,
-    uniqueVisitors: visitorGroups.length
-  };
+    return {
+      totalViews,
+      uniqueVisitors: visitorGroups.length,
+      storageAvailable: true
+    };
+  } catch {
+    return {
+      totalViews: 0,
+      uniqueVisitors: 0,
+      storageAvailable: false
+    };
+  }
 }

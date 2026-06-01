@@ -3,6 +3,7 @@ import { getApiUrl } from "../config/env";
 export type VisitCounts = {
   totalViews: number;
   uniqueVisitors: number;
+  storageAvailable?: boolean;
 };
 
 export type VisitPayload = {
