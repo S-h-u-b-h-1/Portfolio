@@ -11,10 +11,10 @@ const suggestedQuestions = [
   "What is Rashtram AI?",
   "Why should I hire Shubhaang?",
   "What are his strongest technical skills?",
-  "What internships has he completed?",
-  "What makes him different from other CS students?",
-  "What projects show his AI/ML skills?",
-  "What is his business and finance background?"
+  "Which projects show his AI/ML ability?",
+  "What is his data analytics experience?",
+  "What is his full-stack experience?",
+  "Tell me about his leadership and business background."
 ] as const;
 
 const initialMessage: ChatMessage = {
@@ -27,6 +27,8 @@ const initialMessage: ChatMessage = {
     sources: ["local-knowledge-base"]
   }
 };
+
+const CONNECTION_ERROR_MESSAGE = "I could not connect to the AI service right now. Please try again.";
 
 const guardrailCards = [
   {
@@ -111,14 +113,13 @@ export function AskAIPage() {
           return;
         }
 
-        const fallback = "I don’t have verified information about that yet.";
-        setErrorMessage(error instanceof Error ? error.message : "Ask Shubhaang AI could not respond.");
+        setErrorMessage(error instanceof Error ? error.message : CONNECTION_ERROR_MESSAGE);
         setMessages((currentMessages) => [
           ...currentMessages,
           {
             id: createMessageId("assistant-error"),
             role: "assistant",
-            content: fallback,
+            content: CONNECTION_ERROR_MESSAGE,
             meta: {
               provider: "local",
               sources: ["local-knowledge-base"]
@@ -139,7 +140,7 @@ export function AskAIPage() {
       <SectionHeader
         eyebrow="// ask.shubhaang.ai"
         title="Ask Shubhaang AI."
-        description="A grounded portfolio assistant for questions about Shubhaang’s projects, technical skills, internships, achievements, business background, and career fit."
+        description="A grounded portfolio assistant for questions about Shubhaang’s AI projects, data work, software skills, internships, and career fit."
         headingLevel="h1"
       />
 
@@ -222,7 +223,7 @@ export function AskAIPage() {
             <div className="mt-3 space-y-3 text-sm leading-7 text-slate-400 light:text-slate-600">
               <p>The assistant should answer only from verified portfolio data. Missing details use:</p>
               <p className="rounded-lg border border-white/10 bg-slate-950/45 px-3 py-2 font-mono text-xs text-slate-300 light:border-slate-950/10 light:bg-white light:text-slate-700">
-                I don’t have verified information about that yet.
+                I do not have verified information about that yet.
               </p>
             </div>
           </section>

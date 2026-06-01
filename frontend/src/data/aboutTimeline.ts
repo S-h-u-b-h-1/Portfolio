@@ -15,13 +15,13 @@ export const aboutTimeline = [
     title: "School leadership",
     period: "School years",
     description:
-      "Built early responsibility through academics, House Captain duties, and National Integration Camp participation.",
+      "Built early responsibility through school leadership and team coordination.",
     details: [
       "Class 10 CBSE: 93% and Class 12 CBSE: 91%",
       "Served as House Captain",
       "Participated in and helped manage National Integration Camp"
     ],
-    tags: ["Leadership", "Discipline", "Coordination"],
+    tags: ["Leadership", "Coordination"],
     icon: ShieldCheck
   },
   {
@@ -90,14 +90,13 @@ export const aboutTimeline = [
     title: "Current AI/data/full-stack goals",
     period: "Now",
     description:
-      "Building a portfolio around AI/ML, RAG, analytics, SQL, databases, dashboards, full-stack systems, business, and finance.",
+      "Building a portfolio around AI engineering, data analytics, databases, and scalable software.",
     details: [
       "Targeting internships and projects in AI/ML, analytics, and full-stack development",
       "Strengthening SQL, dashboards, and database-backed product thinking",
-      "Combining technical execution with business and investment planning interests"
+      "Combining technical execution with real-world product and user needs"
     ],
-    tags: ["AI/ML", "Analytics", "Full Stack", "Finance"],
+    tags: ["AI/ML", "Analytics", "Full Stack"],
     icon: Rocket
   }
 ] satisfies TimelineItem[];
-

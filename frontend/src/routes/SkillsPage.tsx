@@ -2,37 +2,25 @@ import {
   BarChart3,
   Binary,
   BrainCircuit,
-  BriefcaseBusiness,
-  Code2,
-  Database,
-  Layout,
   ServerCog,
-  Trophy,
-  UsersRound
+  Trophy
 } from "lucide-react";
 import { SkillGroupCard } from "../components/skills/SkillGroupCard";
 import { SectionHeader } from "../components/portfolio/SectionHeader";
 import { skills } from "../data";
 
 const skillIcons = {
-  programming: Code2,
-  frontend: Layout,
-  backend: ServerCog,
-  database: Database,
   "ai-ml": BrainCircuit,
-  analytics: BarChart3,
-  dsa: Binary,
-  "business-finance": BriefcaseBusiness,
-  leadership: UsersRound
+  "data-analytics": BarChart3,
+  "software-engineering": ServerCog,
+  "problem-solving": Binary
 } as const;
 
 const skillHighlights = [
-  { label: "Core stack", value: "Python / TS / SQL" },
-  { label: "AI focus", value: "RAG + NLP" },
-  { label: "Analytics", value: "EDA + dashboards" },
-  { label: "DSA proof", value: "1700+ rating" },
-  { label: "Business", value: "MDRT FY25" },
-  { label: "Leadership", value: "PAN IIT 2026" }
+  { label: "AI focus", value: "RAG + LLM apps" },
+  { label: "Data", value: "SQL + PostgreSQL" },
+  { label: "Software", value: "React + Node.js" },
+  { label: "Problem solving", value: "1700+ rating" }
 ] as const;
 
 export function SkillsPage() {
@@ -40,12 +28,12 @@ export function SkillsPage() {
     <div className="space-y-10 pb-8">
       <SectionHeader
         eyebrow="// skills.matrix"
-        title="A technical skill matrix with data, AI, full-stack, and business depth."
-        description="Organized for recruiters to quickly see where Shubhaang can contribute: implementation, analytics, databases, AI systems, DSA, finance-aware product thinking, and leadership."
+        title="A lean technical stack for AI, data, and software roles."
+        description="Organized around the work Shubhaang wants to do next: AI systems, data products, full-stack software, and problem solving."
         headingLevel="h1"
       />
 
-      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {skillHighlights.map((highlight) => (
           <div
             key={highlight.label}
@@ -57,7 +45,7 @@ export function SkillsPage() {
         ))}
       </section>
 
-      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <section className="grid gap-4 md:grid-cols-2">
         {skills.map((group, index) => (
           <SkillGroupCard
             key={group.id}
@@ -70,4 +58,3 @@ export function SkillsPage() {
     </div>
   );
 }
-

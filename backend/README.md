@@ -42,6 +42,8 @@ cp .env.example .env
 
 Set `DATABASE_URL` before running Prisma commands.
 
+The local API defaults to `http://localhost:5001`. `GET /api/health` returns `{ "status": "ok" }`.
+
 ## Render Deployment
 
 Manual service settings:

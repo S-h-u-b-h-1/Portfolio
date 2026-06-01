@@ -2,14 +2,13 @@ import type { Profile } from "./types";
 
 export const profile = {
   name: "Shubhaang Kataruka",
-  headline:
-    "CS & AI Student | AI/ML Engineer | Data Analytics Enthusiast | Full Stack Developer | Business & Finance Enthusiast",
+  headline: "AI Engineer | Data Analytics | Software Development",
   roleSummary:
-    "3rd-year B.Tech CS & AI student at Rishihood University x Newton School of Technology.",
+    "CS & AI student focused on AI/ML, data analytics, databases, and full-stack engineering.",
   shortBio:
-    "Shubhaang works at the intersection of AI/ML, RAG, analytics, SQL, databases, full-stack systems, business thinking, and finance.",
+    "Building AI-powered systems, data products, and scalable software.",
   longBio:
-    "Shubhaang Kataruka is a 3rd-year B.Tech Computer Science and Artificial Intelligence student at Rishihood University x Newton School of Technology. His portfolio combines applied AI, data analytics, database thinking, SQL, dashboards, full-stack development, public policy technology, business analytics, stock market analysis, and investment planning. He is building a profile for technical roles where disciplined execution and business-aware product thinking both matter.",
+    "I am a CS & AI student at Rishihood University x Newton School of Technology, focused on building AI systems, data products, and software that solve real-world problems. My work combines machine learning, analytics, databases, and full-stack development. My flagship project is Rashtram AI, a RAG-based assistant for understanding public policies and their impact.",
   location: "India",
   currentStatus:
     "Open to internships, AI/ML roles, data analytics roles, full-stack freelance work, and business-tech collaborations.",
@@ -27,32 +26,27 @@ export const profile = {
     "Investment planning"
   ],
   focusAreas: [
-    "Building RAG systems over high-context knowledge domains",
-    "Turning raw data into dashboards and business insights",
+    "Building RAG and LLM applications over high-context knowledge domains",
+    "Turning raw data into dashboards, models, and business insights",
     "Using SQL and database design as a practical engineering foundation",
-    "Connecting technical decisions with business, finance, and user impact"
+    "Shipping full-stack software with clear APIs and responsive interfaces"
   ],
   differentiators: [
-    "Combines AI/ML and analytics with business and finance awareness",
-    "Has early internship, freelance, open-source, and leadership experience",
+    "Combines AI engineering, data analytics, and full-stack implementation",
+    "Has internship, freelance, open-source, and applied project experience",
     "Comfortable moving from research and strategy to implementation",
-    "Interested in systems that explain complex information clearly"
+    "Interested in systems that make complex information easier to use"
   ],
   stats: [
-    {
-      label: "GPA",
-      value: "8.5",
-      description: "Through first and second year"
-    },
-    {
-      label: "DSA practice",
-      value: "300+",
-      description: "LeetCode problems solved"
-    },
     {
       label: "LeetCode rating",
       value: "1700+",
       description: "Contest rating"
+    },
+    {
+      label: "DSA problems",
+      value: "300+",
+      description: "LeetCode problems solved"
     },
     {
       label: "Internships",
@@ -63,11 +57,6 @@ export const profile = {
       label: "Hacktoberfest",
       value: "2x",
       description: "Super Contributor in 2024 and 2025"
-    },
-    {
-      label: "MDRT",
-      value: "FY25",
-      description: "Youngest qualifier at Aditya Birla Capital / ABSLI"
     },
     {
       label: "PAN IIT",

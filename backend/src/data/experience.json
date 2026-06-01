@@ -4,13 +4,13 @@
     "role": "AI/ML Engineer Intern",
     "organization": "Rashtram School of Public Leadership",
     "type": "Internship",
-    "timeframe": "TODO_DATES",
+    "timeframe": "Dates to be added",
     "location": "India",
     "summary": "Built Rashtram AI, a RAG-based public policy assistant for policies, parliamentary bills, discussions, and citizen impact.",
     "responsibilities": [
-      "Worked on a retrieval-augmented assistant for public policy learners and citizens",
-      "Focused on simplifying complex policy and parliamentary information",
-      "Explored AI, RAG, NLP, vector search, and full-stack delivery patterns"
+      "Built a RAG-based assistant for policy learners and citizens",
+      "Worked with retrieval, NLP, and public policy knowledge flows",
+      "Focused on grounded explanations of bills, policies, and citizen impact"
     ],
     "tags": ["AI/ML", "RAG", "NLP", "Public Policy", "Full Stack"],
     "proofUrl": "TODO_PROOF_URL"
@@ -24,28 +24,27 @@
     "location": "India",
     "summary": "Supported the college placement and career advancement team with hiring research and strategy.",
     "responsibilities": [
-      "Researched hiring patterns, roles, and company needs",
-      "Helped the placement team think through outreach and career opportunities",
-      "Built early exposure to recruiting, strategy, and employability research"
+      "Researched hiring patterns, role expectations, and company needs",
+      "Supported placement strategy and career opportunity research",
+      "Built early exposure to recruiting and employability signals"
     ],
-    "tags": ["Hiring Research", "Strategy", "Career Advancement", "Business"],
+    "tags": ["Research", "Strategy", "Hiring Signals"],
     "proofUrl": "TODO_PROOF_URL"
   },
   {
     "id": "freelance-full-stack-developer",
-    "role": "Full-Stack Website Developer",
-    "organization": "Freelance",
+    "role": "Freelance Full-Stack Developer",
+    "organization": "Hair Salon Website",
     "type": "Freelance",
     "timeframe": "Ongoing / project-based",
     "location": "Remote",
     "summary": "Builds responsive websites using modern full-stack tools, including a hair salon website with service, booking, and contact sections.",
     "responsibilities": [
-      "Designed and built modern responsive website interfaces",
-      "Implemented service, booking/contact, and business-facing sections",
-      "Worked with client needs, presentation quality, and practical delivery constraints"
+      "Built a modern responsive website for a client-facing salon business",
+      "Implemented service, booking/contact, and conversion-focused sections",
+      "Worked with real client needs, presentation quality, and delivery constraints"
     ],
     "tags": ["Full Stack", "Freelance", "React", "Business Websites"],
     "proofUrl": "TODO_PROJECT_URL"
   }
 ]
-

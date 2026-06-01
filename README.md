@@ -1,6 +1,6 @@
 # Shubhaang Kataruka Portfolio
 
-Professional portfolio and resume website for Shubhaang Kataruka, a 3rd-year B.Tech CS & AI student focused on AI/ML, RAG, data analytics, SQL, full-stack development, business, and finance.
+Professional portfolio and resume website for Shubhaang Kataruka, a 3rd-year B.Tech CS & AI student positioned as an AI Engineer + Data Systems Builder.
 
 ## Structure
 
@@ -59,15 +59,15 @@ npm run dev
 Default local URLs:
 
 - Frontend: `http://localhost:5173`
-- Backend: `http://localhost:8080`
-- Health check: `http://localhost:8080/api/health`
+- Backend: `http://localhost:5001`
+- Health check: `http://localhost:5001/api/health`
 
 ## Environment
 
 Frontend variables:
 
 ```txt
-VITE_API_BASE_URL=http://localhost:8080/api
+VITE_API_BASE_URL=http://localhost:5001
 VITE_SITE_URL=
 VITE_RESUME_URL=/resume/Shubhaang_Kataruka_Resume_PLACEHOLDER.html
 ```
@@ -76,18 +76,19 @@ Backend variables:
 
 ```txt
 NODE_ENV=development
-PORT=8080
-CORS_ORIGIN=http://localhost:5173
+PORT=5001
 FRONTEND_URL=http://localhost:5173
 DATABASE_URL=postgresql://USER:PASSWORD@HOST-pooler.REGION.aws.neon.tech/DATABASE?sslmode=require
 DIRECT_URL=postgresql://USER:PASSWORD@HOST.REGION.aws.neon.tech/DATABASE?sslmode=require
-AI_PROVIDER=local
-OPENAI_API_KEY=
-OPENAI_BASE_URL=https://api.openai.com/v1
-OPENAI_MODEL=gpt-4o-mini
+AI_PROVIDER=openai-compatible
 AI_API_KEY=
 AI_BASE_URL=https://api.openai.com/v1
 AI_MODEL=gpt-4o-mini
+
+# Optional backward-compatible aliases:
+OPENAI_API_KEY=
+OPENAI_BASE_URL=https://api.openai.com/v1
+OPENAI_MODEL=gpt-4o-mini
 ```
 
 Do not commit real `.env` files. Only `.env.example` files should be tracked.
@@ -123,7 +124,7 @@ Recommended settings:
 - Framework preset: Vite
 - Build command: `npm run build`
 - Output directory: `dist`
-- Environment variable: `VITE_API_BASE_URL=https://YOUR_RENDER_BACKEND_URL.onrender.com/api`
+- Environment variable: `VITE_API_BASE_URL=https://YOUR_RENDER_BACKEND_URL.onrender.com`
 - Environment variable after domain setup: `VITE_SITE_URL=https://YOUR_DOMAIN`
 - Environment variable after resume upload: `VITE_RESUME_URL=/resume/Shubhaang_Kataruka_Resume.pdf`
 
@@ -233,7 +234,7 @@ Use the final custom domain in:
 
 ## Troubleshooting
 
-- Frontend cannot reach backend: confirm `VITE_API_BASE_URL` ends with `/api` and points to Render.
+- Frontend cannot reach backend: confirm `VITE_API_BASE_URL` points to the Render backend root, for example `https://YOUR_RENDER_BACKEND_URL.onrender.com`.
 - CORS error in browser: confirm Render has `FRONTEND_URL` and `CORS_ORIGIN` set to the Vercel/custom domain.
 - Render TypeScript build cannot find Express/CORS/Node types: confirm the Render build command uses `npm install --include=dev`.
 - Render build fails on Prisma: confirm `DATABASE_URL` and `DIRECT_URL` are valid Neon PostgreSQL URLs with `sslmode=require`.

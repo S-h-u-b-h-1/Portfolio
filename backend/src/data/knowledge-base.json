@@ -8,9 +8,11 @@
   ],
   "profile": {
     "name": "Shubhaang Kataruka",
-    "headline": "CS & AI Student | AI/ML Engineer | Data Analytics Enthusiast | Full Stack Developer | Business & Finance Enthusiast",
+    "headline": "AI Engineer | Data Analytics | Software Development",
+    "positioning": "AI Engineer + Data Systems Builder",
+    "tagline": "Building AI-powered systems, data products, and scalable software.",
     "currentEducation": "3rd-year B.Tech Computer Science & Artificial Intelligence student at Rishihood University x Newton School of Technology",
-    "tone": "Ambitious, technical, business-aware, curious, disciplined, and execution-oriented",
+    "tone": "Ambitious, technical, focused, disciplined, and execution-oriented",
     "interests": [
       "AI/ML",
       "RAG",
@@ -19,7 +21,7 @@
       "Databases",
       "Dashboards",
       "Full-stack development",
-      "Business",
+      "Public policy technology",
       "Stock market analysis",
       "Investment planning"
     ]
@@ -28,61 +30,56 @@
     "What is Rashtram AI?",
     "Why should I hire Shubhaang?",
     "What are his strongest technical skills?",
-    "What internships has he completed?",
-    "What makes him different from other CS students?",
-    "What projects show his AI/ML skills?",
-    "What is his business and finance background?"
+    "Which projects show his AI/ML ability?",
+    "What is his data analytics experience?",
+    "What is his full-stack experience?",
+    "Tell me about his leadership and business background."
   ],
   "answers": [
     {
       "question": "What is Rashtram AI?",
       "keywords": ["rashtram", "rag", "public policy", "policy", "bills", "parliament"],
-      "answer": "Rashtram AI is Shubhaang's RAG-based public policy assistant built during his AI/ML internship at Rashtram School of Public Leadership. It is designed to help users understand public policies, parliamentary bills, discussions, and real-world citizen impact."
+      "answer": "Rashtram AI is Shubhaang's flagship RAG-based public policy intelligence system. It helps users understand parliamentary bills, policies, discussions, and citizen impact through retrieval-augmented AI."
     },
     {
-      "question": "What internships has Shubhaang done?",
-      "keywords": ["internship", "internships", "intern", "experience", "completed"],
-      "answer": "Shubhaang has worked as an AI/ML Engineer Intern at Rashtram School of Public Leadership, where he built Rashtram AI. He also worked in his first semester as a Hiring Research and Strategy Intern with the Rishihood placement and career advancement team. He also does freelance full-stack website development."
+      "question": "Why should I hire Shubhaang?",
+      "keywords": ["hire", "recruit", "why", "different"],
+      "answer": "Shubhaang is positioned as an AI Engineer and Data Systems Builder. He combines CS & AI fundamentals with a production RAG project, data analytics work, SQL/database thinking, full-stack development, and disciplined problem solving."
     },
     {
       "question": "What are his strongest technical skills?",
       "keywords": ["skills", "technical", "strongest", "stack"],
-      "answer": "His strongest technical areas are AI/ML, RAG applications, NLP, data analytics, SQL, databases, full-stack development with React and Node.js, and dashboard-driven business analysis."
+      "answer": "His strongest technical areas are RAG, NLP, LLM applications, embeddings, vector databases, SQL, PostgreSQL, data analytics, React, TypeScript, Node.js, Express, Prisma, REST APIs, and DSA."
     },
     {
-      "question": "Why should I hire Shubhaang?",
-      "keywords": ["hire", "recruit", "why"],
-      "answer": "Shubhaang combines CS & AI training with real project execution, data/business thinking, leadership experience, and early exposure to finance and public policy technology. He is especially aligned with roles involving AI/ML, analytics, SQL, full-stack development, and applied product problem-solving."
+      "question": "Which projects show his AI/ML ability?",
+      "keywords": ["ai", "ml", "machine learning", "project", "ability"],
+      "answer": "Rashtram AI is the clearest AI/ML proof point. It applies RAG, LLM application design, vector search, and public policy intelligence to a real-world knowledge problem."
     },
     {
-      "question": "What projects show his AI/ML skills?",
-      "keywords": ["ai", "ml", "machine learning", "project"],
-      "answer": "Rashtram AI is the clearest AI/ML project in the portfolio. It uses a RAG-style approach to help users reason over public policy content, bills, and parliamentary information."
+      "question": "What is his data analytics experience?",
+      "keywords": ["data", "analytics", "zomato", "sql", "pandas", "dashboard", "tableau"],
+      "answer": "His data analytics experience includes Zomato Data Analysis, where he focuses on data cleaning, exploratory analysis, SQL/Pandas workflows, dashboards, and business insights from restaurant, customer, pricing, and rating data."
     },
     {
-      "question": "What makes him different from other CS students?",
-      "keywords": ["different", "unique", "stand out"],
-      "answer": "Shubhaang's profile is not limited to coding. He combines AI, analytics, SQL, full-stack development, leadership, sponsorship work, investment planning, and public policy interest. That mix gives him a practical, business-aware lens for technical work."
+      "question": "What is his full-stack experience?",
+      "keywords": ["full-stack", "full stack", "software", "react", "node", "freelance", "website"],
+      "answer": "His full-stack experience includes a freelance hair salon website with a responsive interface, booking/contact/service sections, and modern client-facing delivery. The portfolio itself also uses React, TypeScript, Express, Prisma, and REST APIs."
     },
     {
-      "question": "What is his finance/business background?",
-      "keywords": ["finance", "business", "investment", "stock", "mdrt", "insurance"],
-      "answer": "Shubhaang is interested in business analytics, stock market patterns, sentiment, and investment planning. He was also the youngest MDRT qualifier at Aditya Birla Capital / Aditya Birla Sun Life Insurance in FY25."
+      "question": "Tell me about his leadership and business background.",
+      "keywords": ["leadership", "business", "finance", "investment", "stock", "mdrt", "pan iit", "sponsorship"],
+      "answer": "Shubhaang's secondary leadership and business background includes PAN IIT 2026 representation, Hacktoberfest contributions, Sponsorship Manager work, House Captain experience, National Integration Camp involvement, interest in stock market patterns and investment planning, and youngest MDRT qualifier FY25 at Aditya Birla Capital / ABSLI."
+    },
+    {
+      "question": "What internships has Shubhaang done?",
+      "keywords": ["internship", "internships", "intern", "experience", "completed"],
+      "answer": "Shubhaang has worked as an AI/ML Engineer Intern at Rashtram School of Public Leadership and as a Hiring Research and Strategy Intern with the Rishihood placement and career advancement team. He also does freelance full-stack website development."
     },
     {
       "question": "What roles is he looking for?",
       "keywords": ["roles", "looking", "career", "job"],
-      "answer": "The portfolio positions Shubhaang for internships and early-career opportunities in AI/ML engineering, data analytics, SQL/database-heavy roles, full-stack development, RAG applications, and business analytics."
-    },
-    {
-      "question": "What are Shubhaang's key achievements?",
-      "keywords": ["achievement", "achievements", "awards", "mdrt", "pan iit", "leetcode", "gpa", "hacktoberfest"],
-      "answer": "Key achievements include youngest MDRT qualifier at Aditya Birla Capital / ABSLI in FY25, PAN IIT 2026 representative in Long Beach, Hacktoberfest Super Contributor in 2024 and 2025, LeetCode 1700+ rating, 300+ DSA problems, GPA 8.5, Sponsorship Manager for a college tech fest, House Captain in school, and National Integration Camp participation/management."
-    },
-    {
-      "question": "What dashboard or analytics work does he have?",
-      "keywords": ["dashboard", "tableau", "sheets", "analytics", "zomato", "sql"],
-      "answer": "The portfolio includes Zomato Data Analysis for business insights and a placeholder collection for SQL, Tableau, and Google Sheets dashboard work. These sections are meant to show EDA, business metrics, dashboards, SQL query examples, and data storytelling."
+      "answer": "The portfolio positions Shubhaang for AI/ML internships, data analytics roles, data engineering or database-heavy roles, software engineering internships, and full-stack freelance or client work."
     }
   ]
 }

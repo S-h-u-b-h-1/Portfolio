@@ -5,56 +5,49 @@ export const faqs = [
     id: "what-is-rashtram-ai",
     question: "What is Rashtram AI?",
     answer:
-      "Rashtram AI is Shubhaang's RAG-based public policy assistant built during his AI/ML internship at Rashtram School of Public Leadership. It helps users understand public policies, parliamentary bills, discussions, and real-world citizen impact.",
+      "Rashtram AI is Shubhaang's flagship RAG-based public policy intelligence system. It helps users understand parliamentary bills, policies, discussions, and citizen impact through retrieval-augmented AI.",
     keywords: ["rashtram", "rag", "public policy", "policy", "bills", "parliament"]
-  },
-  {
-    id: "internships",
-    question: "What internships has he completed?",
-    answer:
-      "He has worked as an AI/ML Engineer Intern at Rashtram School of Public Leadership and as a Hiring Research and Strategy Intern with the Rishihood placement and career advancement team.",
-    keywords: ["internship", "internships", "experience", "rashtram", "placement", "completed"]
-  },
-  {
-    id: "strongest-skills",
-    question: "What are his strongest technical skills?",
-    answer:
-      "His strongest areas are AI/ML, RAG applications, SQL, databases, data analytics, dashboards, and full-stack development with React and Node.js.",
-    keywords: ["skills", "technical", "stack", "strongest"]
   },
   {
     id: "why-hire",
     question: "Why should I hire Shubhaang?",
     answer:
-      "Shubhaang combines CS & AI fundamentals with applied AI project work, analytics, SQL, full-stack development, leadership, business awareness, and finance-facing execution experience.",
+      "Shubhaang is positioned as an AI Engineer and Data Systems Builder. He combines CS & AI fundamentals with a production RAG project, data analytics work, SQL/database thinking, full-stack development, and disciplined problem solving.",
     keywords: ["hire", "recruit", "why", "different"]
   },
   {
+    id: "strongest-skills",
+    question: "What are his strongest technical skills?",
+    answer:
+      "His strongest technical areas are RAG, NLP, LLM applications, embeddings, vector databases, SQL, PostgreSQL, data analytics, React, TypeScript, Node.js, Express, Prisma, REST APIs, and DSA.",
+    keywords: ["skills", "technical", "stack", "strongest"]
+  },
+  {
     id: "ai-projects",
-    question: "What projects show his AI/ML skills?",
+    question: "Which projects show his AI/ML ability?",
     answer:
-      "Rashtram AI is the clearest AI/ML project because it applies RAG and NLP concepts to public policy, parliamentary discussions, and citizen-impact explanations.",
-    keywords: ["ai", "ml", "machine learning", "projects"]
+      "Rashtram AI is the clearest AI/ML proof point. It applies RAG, LLM application design, vector search, and public policy intelligence to a real-world knowledge problem.",
+    keywords: ["ai", "ml", "machine learning", "projects", "ability"]
   },
   {
-    id: "what-makes-different",
-    question: "What makes him different from other CS students?",
+    id: "data-analytics",
+    question: "What is his data analytics experience?",
     answer:
-      "He is not only focused on coding. His profile mixes AI, analytics, SQL, full-stack work, business, finance, sponsorship, leadership, and public policy technology.",
-    keywords: ["different", "unique", "stand out"]
+      "His data analytics experience includes Zomato Data Analysis, where he focuses on data cleaning, exploratory analysis, SQL/Pandas workflows, dashboards, and business insights from restaurant, customer, pricing, and rating data.",
+    keywords: ["data", "analytics", "zomato", "sql", "pandas", "dashboard", "tableau"]
   },
   {
-    id: "finance-business",
-    question: "What is his business and finance background?",
+    id: "full-stack",
+    question: "What is his full-stack experience?",
     answer:
-      "He is interested in stock market patterns, sentiment, investment planning, and business analytics. He was also the youngest MDRT qualifier at Aditya Birla Capital / ABSLI in FY25.",
-    keywords: ["finance", "business", "investment", "stock", "mdrt"]
+      "His full-stack experience includes a freelance hair salon website with a responsive interface, booking/contact/service sections, and modern client-facing delivery. The portfolio itself also uses React, TypeScript, Express, Prisma, and REST APIs.",
+    keywords: ["full-stack", "full stack", "software", "react", "node", "freelance", "website"]
   },
   {
-    id: "target-roles",
-    question: "What kind of roles is he looking for?",
+    id: "leadership-business",
+    question: "Tell me about his leadership and business background.",
     answer:
-      "He is positioned for AI/ML engineering, data analytics, SQL/database-heavy roles, full-stack development, RAG applications, and business analytics internships or early-career opportunities.",
-    keywords: ["roles", "career", "job", "looking"]
+      "Shubhaang's secondary leadership and business background includes PAN IIT 2026 representation, Hacktoberfest contributions, Sponsorship Manager work, House Captain experience, National Integration Camp involvement, interest in stock market patterns and investment planning, and youngest MDRT qualifier FY25 at Aditya Birla Capital / ABSLI.",
+    keywords: ["leadership", "business", "finance", "investment", "stock", "mdrt", "pan iit", "sponsorship"]
   }
 ] satisfies FaqItem[];

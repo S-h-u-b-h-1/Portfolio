@@ -7,16 +7,20 @@ import { apiRouter } from "./routes";
 
 export const app = express();
 
-const corsOrigins = [env.CORS_ORIGIN, env.FRONTEND_URL, env.NODE_ENV !== "production" ? "http://localhost:5173" : ""]
+const developmentOrigins =
+  env.NODE_ENV !== "production"
+    ? ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173", "http://127.0.0.1:3000"]
+    : [];
+const corsOrigins = [env.CORS_ORIGIN, env.FRONTEND_URL, ...developmentOrigins]
   .flatMap((origin) => origin?.split(",") ?? [])
   .map((origin) => origin.trim())
   .filter(Boolean);
 
-const corsOrigin = corsOrigins.length > 1 ? Array.from(new Set(corsOrigins)) : corsOrigins[0];
+const uniqueCorsOrigins = Array.from(new Set(corsOrigins));
 
 app.use(
   cors({
-    origin: corsOrigin || false,
+    origin: uniqueCorsOrigins.length > 0 ? uniqueCorsOrigins : env.NODE_ENV === "production" ? false : true,
     credentials: true
   })
 );

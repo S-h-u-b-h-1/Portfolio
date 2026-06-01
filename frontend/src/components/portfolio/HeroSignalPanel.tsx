@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { BrainCircuit, Database, LineChart, ServerCog } from "lucide-react";
+import { BrainCircuit, Code2, Database, ServerCog } from "lucide-react";
 
 const signalRows = [
-  { label: "RAG systems", value: "policy intelligence", icon: BrainCircuit },
-  { label: "Data layer", value: "SQL + dashboards", icon: Database },
-  { label: "Business lens", value: "market + finance", icon: LineChart },
-  { label: "Build stack", value: "React + Node", icon: ServerCog }
+  { label: "AI systems", value: "RAG + LLM apps", icon: BrainCircuit },
+  { label: "Data products", value: "SQL + dashboards", icon: Database },
+  { label: "Software", value: "React + Node APIs", icon: ServerCog },
+  { label: "Problem solving", value: "DSA + algorithms", icon: Code2 }
 ];
 
 export function HeroSignalPanel() {
@@ -18,18 +18,12 @@ export function HeroSignalPanel() {
       aria-label="Portfolio signal summary"
     >
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-cyan to-transparent" />
-      <motion.div
-        className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-accent-cyan/10 to-transparent"
-        animate={{ y: ["-45%", "380%"] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-      />
-
       <div className="relative space-y-5">
         <div className="flex items-center justify-between gap-4">
           <div>
             <p className="font-mono text-xs text-accent-cyan">// live.profile</p>
             <h2 className="mt-2 text-xl font-semibold text-slate-50 light:text-slate-950">
-              AI/data/full-stack signal
+              AI + data builder
             </h2>
           </div>
           <div className="flex gap-1.5" aria-hidden="true">
@@ -65,7 +59,7 @@ export function HeroSignalPanel() {
         </div>
 
         <div className="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 light:border-slate-950/10">
-          {["RAG", "SQL", "Finance"].map((item) => (
+          {["RAG", "SQL", "React"].map((item) => (
             <div key={item} className="rounded-lg bg-white/[0.04] px-3 py-2 text-center light:bg-slate-950/[0.04]">
               <p className="font-mono text-xs text-slate-400 light:text-slate-600">{item}</p>
             </div>
@@ -75,4 +69,3 @@ export function HeroSignalPanel() {
     </motion.aside>
   );
 }
-

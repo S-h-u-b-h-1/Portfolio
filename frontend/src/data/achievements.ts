@@ -10,7 +10,7 @@ export const achievements = [
       "Qualified as the youngest MDRT qualifier, showing early business execution, sales discipline, and finance-facing communication ability.",
     tags: ["Business", "Finance", "Insurance", "MDRT"],
     proofUrl: "TODO_PROOF_URL",
-    priority: 1
+    priority: 8
   },
   {
     id: "pan-iit-2026-long-beach",
@@ -20,7 +20,7 @@ export const achievements = [
     summary: "Represented college at the PAN IIT 2026 event in Long Beach, California.",
     tags: ["Leadership", "Representation", "Networking"],
     proofUrl: "TODO_PROOF_URL",
-    priority: 2
+    priority: 5
   },
   {
     id: "hacktoberfest-super-contributor-2024-2025",
@@ -30,7 +30,7 @@ export const achievements = [
     summary: "Recognized as a Super Contributor across two Hacktoberfest seasons.",
     tags: ["Open Source", "GitHub", "Community"],
     proofUrl: "TODO_PROOF_URL",
-    priority: 3
+    priority: 1
   },
   {
     id: "leetcode-1700-rating",
@@ -40,7 +40,7 @@ export const achievements = [
     summary: "Reached a 1700+ LeetCode contest rating, showing algorithmic problem-solving strength.",
     tags: ["DSA", "Algorithms", "Problem Solving"],
     proofUrl: "TODO_LEETCODE_URL",
-    priority: 4
+    priority: 2
   },
   {
     id: "dsa-300-problems",
@@ -50,7 +50,7 @@ export const achievements = [
     summary: "Solved 300+ DSA problems through consistent practice across interview and contest patterns.",
     tags: ["DSA", "Practice", "Algorithms"],
     proofUrl: "TODO_LEETCODE_URL",
-    priority: 5
+    priority: 3
   },
   {
     id: "gpa-8-5",
@@ -60,7 +60,7 @@ export const achievements = [
     summary: "Maintained an 8.5 GPA through the first and second year of B.Tech CS & AI.",
     tags: ["Academics", "CS & AI"],
     proofUrl: "TODO_PROOF_URL",
-    priority: 6
+    priority: 4
   },
   {
     id: "sponsorship-manager-tech-fest",

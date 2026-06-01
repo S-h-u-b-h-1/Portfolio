@@ -17,14 +17,14 @@ export const projects = [
     slug: "rashtram-ai",
     status: "case-study-needed",
     categories: ["AI/ML", "Public Policy", "Full Stack"],
-    tags: ["RAG", "NLP", "Vector DB", "Public Policy", "Citizen Impact"],
+    tags: ["RAG", "LLM App", "Vector Search", "Public Policy", "AI Engineering"],
     summary:
-      "RAG system for public policies, parliamentary bills, parliament discussions, and citizen impact.",
+      "A RAG-based public policy intelligence system that helps users understand parliamentary bills, policies, and citizen impact.",
     problem:
       "Public policy documents and parliamentary material can be dense, fragmented, and difficult for learners or citizens to interpret quickly.",
     role:
       "AI/ML Engineer Intern responsible for helping build the assistant experience and RAG-oriented product flow.",
-    techStack: ["RAG", "NLP", "Embeddings", "Vector databases", "Full-stack app", "Policy knowledge base"],
+    techStack: ["RAG", "LLM application", "Embeddings", "Vector search", "Full-stack app", "Policy knowledge base"],
     process: [
       "Mapped target users such as policy students, UPSC aspirants, law students, public leadership learners, and citizens",
       "Structured policy content for retrieval and response generation",
@@ -37,8 +37,8 @@ export const projects = [
       "Public policy knowledge retrieval"
     ],
     impact: [
-      "Made complex policy material easier to explore",
-      "Created a concrete AI/ML internship project around RAG and public leadership education"
+      "Made complex policy material easier to explore through an AI-first interface",
+      "Created a concrete production RAG system around public leadership education"
     ],
     futureImprovements: [
       "Add citations and source snippets for every answer",
@@ -59,14 +59,14 @@ export const projects = [
     slug: "zomato-data-analysis",
     status: "case-study-needed",
     categories: ["Data Analytics", "Business"],
-    tags: ["EDA", "Dashboards", "Customer Behavior", "Ratings", "Pricing", "Location Trends"],
+    tags: ["Data Cleaning", "EDA", "SQL/Pandas", "Dashboards", "Business Insights"],
     summary:
-      "Data analytics project focused on restaurant, customer, pricing, rating, and location insights.",
+      "A data analytics project focused on extracting business insights from restaurant, customer, pricing, and rating data.",
     problem:
       "Restaurant marketplace data contains useful business signals, but the value appears only after cleaning, segmenting, visualizing, and interpreting patterns.",
     role:
       "Data analyst responsible for extracting insights and translating them into business-friendly observations.",
-    techStack: ["Python", "SQL", "Tableau", "Google Sheets", "EDA", "Charts"],
+    techStack: ["Python", "Pandas", "SQL", "Tableau", "Google Sheets", "EDA"],
     process: [
       "Cleaned and explored restaurant/customer/business data",
       "Compared ratings, pricing, cuisine, and location patterns",
@@ -103,7 +103,7 @@ export const projects = [
     categories: ["Full Stack", "Freelance"],
     tags: ["Client Website", "Responsive UI", "Booking", "Services", "Contact"],
     summary:
-      "Freelance full-stack website for a hair salon with services, booking/contact sections, and responsive design.",
+      "A client-focused full-stack website built for a hair salon with a modern responsive interface.",
     problem:
       "The business needed a modern web presence that could present services clearly and make customer contact or booking easier.",
     role:

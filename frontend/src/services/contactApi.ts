@@ -1,4 +1,4 @@
-import { getApiBaseUrl } from "../config/env";
+import { getApiUrl } from "../config/env";
 
 export type ContactPayload = {
   name: string;
@@ -18,7 +18,7 @@ export async function sendContactMessage(
   payload: ContactPayload,
   signal?: AbortSignal
 ): Promise<ContactApiResponse> {
-  const response = await fetch(`${getApiBaseUrl()}/contact`, {
+  const response = await fetch(getApiUrl("/api/contact"), {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

@@ -31,7 +31,7 @@ cp .env.example .env
 
 Key variables:
 
-- `VITE_API_BASE_URL`: Backend API base URL ending in `/api`.
+- `VITE_API_BASE_URL`: Backend root URL. Use `http://localhost:5001` locally and the Render backend URL in production.
 - `VITE_SITE_URL`: Public site URL after Vercel/custom-domain setup.
 - `VITE_RESUME_URL`: Public resume path or CDN URL.
 
@@ -42,7 +42,7 @@ Use this folder as the Vercel project root.
 - Framework preset: Vite
 - Build command: `npm run build`
 - Output directory: `dist`
-- Production API URL: `VITE_API_BASE_URL=https://YOUR_RENDER_BACKEND_URL.onrender.com/api`
+- Production API URL: `VITE_API_BASE_URL=https://YOUR_RENDER_BACKEND_URL.onrender.com`
 
 The `vercel.json` file provides SPA routing and cache headers for built assets.
 
