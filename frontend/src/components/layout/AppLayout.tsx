@@ -1,4 +1,4 @@
-import { Keyboard, Menu, Moon, Search, Sun } from "lucide-react";
+import { Keyboard, Menu, Moon, Sun } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -73,18 +73,6 @@ export function AppLayout() {
           <div className="flex items-center gap-3">
             <PrimaryNav />
             <ViewCounter counts={visitCounts} />
-            <button
-              type="button"
-              onClick={() => setIsCommandPaletteOpen(true)}
-              className="hidden min-h-10 items-center gap-2 rounded-lg border border-border bg-white/5 px-3 text-sm text-slate-300 transition hover:border-accent-cyan/50 hover:text-accent-cyan light:bg-slate-950/5 light:text-slate-700 md:inline-flex"
-              aria-label="Open command palette"
-            >
-              <Search aria-hidden="true" size={16} />
-              <span className="hidden xl:inline">Command</span>
-              <kbd className="hidden rounded border border-white/10 bg-white/[0.04] px-1.5 py-0.5 font-mono text-[0.65rem] text-slate-500 light:border-slate-950/10 xl:inline">
-                ⌘K
-              </kbd>
-            </button>
             <button
               type="button"
               onClick={() => setIsShortcutsOpen(true)}
