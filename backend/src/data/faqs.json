@@ -2,7 +2,7 @@
   {
     "id": "what-is-rashtram-ai",
     "question": "What is Rashtram AI?",
-    "answer": "Rashtram AI is Shubhaang's flagship RAG-based public policy intelligence system. It helps users understand parliamentary bills, policies, discussions, and citizen impact through retrieval-augmented AI.",
+    "answer": "Rashtram AI is Shubhaang's flagship RAG-based public policy intelligence system. It helps users understand parliamentary bills, policies, discussions, and citizen impact through retrieval-augmented AI. Live demo: https://rashtramai.vercel.app/.",
     "keywords": ["rashtram", "rag", "public policy", "policy", "bills", "parliament"]
   },
   {
@@ -26,13 +26,13 @@
   {
     "id": "data-analytics",
     "question": "What is his data analytics experience?",
-    "answer": "His data analytics experience includes Zomato Data Analysis, where he focuses on data cleaning, exploratory analysis, SQL/Pandas workflows, dashboards, and business insights from restaurant, customer, pricing, and rating data.",
+    "answer": "His data analytics experience includes Zomato Data Analysis, where he focuses on data cleaning, exploratory analysis, SQL/Pandas workflows, dashboards, and business insights from restaurant, customer, pricing, and rating data. Public Tableau dashboard: https://public.tableau.com/app/profile/kush.puri/viz/Zomato_Delivery_Analysis/Dashboard1.",
     "keywords": ["data", "analytics", "zomato", "sql", "pandas", "dashboard", "tableau"]
   },
   {
     "id": "full-stack",
     "question": "What is his full-stack experience?",
-    "answer": "His full-stack experience includes a freelance hair salon website with a responsive interface, booking/contact/service sections, and modern client-facing delivery. The portfolio itself also uses React, TypeScript, Express, Prisma, and REST APIs.",
+    "answer": "His full-stack experience includes a freelance hair salon website with a responsive interface, booking/contact/service sections, and modern client-facing delivery. Live client site: https://www.themaxxsalon.shop/. The portfolio itself also uses React, TypeScript, Express, Prisma, and REST APIs.",
     "keywords": ["full-stack", "full stack", "software", "react", "node", "freelance", "website"]
   },
   {

@@ -28,18 +28,21 @@ export const shubhaangKnowledge = {
       name: "Rashtram AI",
       summary:
         "A RAG-based public policy intelligence system that helps users understand parliamentary bills, policies, and citizen impact.",
+      url: "https://rashtramai.vercel.app/",
       highlights: ["RAG architecture", "LLM application", "vector search", "public policy intelligence", "AI engineering"]
     },
     {
       name: "Zomato Data Analysis",
       summary:
         "A data analytics project focused on extracting business insights from restaurant, customer, pricing, and rating data.",
+      url: "https://public.tableau.com/app/profile/kush.puri/viz/Zomato_Delivery_Analysis/Dashboard1",
       highlights: ["data cleaning", "exploratory analysis", "SQL/Pandas", "Tableau/Sheets dashboards", "business insights"]
     },
     {
       name: "Hair Salon Website",
       summary:
         "A client-focused full-stack website built for a hair salon with a modern responsive interface.",
+      url: "https://www.themaxxsalon.shop/",
       highlights: ["full-stack development", "client work", "responsive UI", "booking/contact/service sections"]
     }
   ],
@@ -79,7 +82,7 @@ export const shubhaangKnowledge = {
       question: "What is Rashtram AI?",
       keywords: ["rashtram", "rag", "public policy", "policy", "bills", "parliament"],
       answer:
-        "Rashtram AI is Shubhaang's flagship RAG-based public policy intelligence system. It helps users understand parliamentary bills, policies, discussions, and citizen impact through retrieval-augmented AI."
+        "Rashtram AI is Shubhaang's flagship RAG-based public policy intelligence system. It helps users understand parliamentary bills, policies, discussions, and citizen impact through retrieval-augmented AI. Live demo: https://rashtramai.vercel.app/."
     },
     {
       id: "why-hire",
@@ -107,14 +110,14 @@ export const shubhaangKnowledge = {
       question: "What is his data analytics experience?",
       keywords: ["data", "analytics", "zomato", "sql", "pandas", "dashboard", "tableau", "sheets"],
       answer:
-        "His data analytics experience includes Zomato Data Analysis, where he focuses on data cleaning, exploratory analysis, SQL/Pandas workflows, dashboards, and business insights from restaurant, customer, pricing, and rating data."
+        "His data analytics experience includes Zomato Data Analysis, where he focuses on data cleaning, exploratory analysis, SQL/Pandas workflows, dashboards, and business insights from restaurant, customer, pricing, and rating data. Public Tableau dashboard: https://public.tableau.com/app/profile/kush.puri/viz/Zomato_Delivery_Analysis/Dashboard1."
     },
     {
       id: "full-stack",
       question: "What is his full-stack experience?",
       keywords: ["full-stack", "full stack", "software", "react", "node", "freelance", "website", "client"],
       answer:
-        "His full-stack experience includes a freelance hair salon website with a responsive interface, booking/contact/service sections, and modern client-facing delivery. The portfolio itself also uses React, TypeScript, Express, Prisma, and REST APIs."
+        "His full-stack experience includes a freelance hair salon website with a responsive interface, booking/contact/service sections, and modern client-facing delivery. Live client site: https://www.themaxxsalon.shop/. The portfolio itself also uses React, TypeScript, Express, Prisma, and REST APIs."
     },
     {
       id: "education",

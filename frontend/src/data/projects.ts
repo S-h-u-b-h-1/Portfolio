@@ -46,12 +46,12 @@ export const projects = [
       "Add evaluation sets for answer accuracy and groundedness"
     ],
     links: {
-      live: "TODO_LIVE_URL",
+      live: "https://rashtramai.vercel.app/",
       repo: "TODO_REPO_URL",
       caseStudy: "/projects/rashtram-ai"
     },
     image: "/project-images/rashtram-ai-placeholder.png",
-    proofStatus: "Add screenshots, demo link, and verified architecture notes."
+    proofStatus: "Live demo added. Add screenshots and verified architecture notes."
   },
   {
     id: "zomato-data-analysis",
@@ -85,15 +85,15 @@ export const projects = [
     futureImprovements: [
       "Add interactive filters by city, cuisine, price band, and rating",
       "Add SQL query breakdowns",
-      "Add a public dashboard link"
+      "Add notebook and SQL walkthrough links"
     ],
     links: {
-      live: "TODO_DASHBOARD_URL",
+      live: "https://public.tableau.com/app/profile/kush.puri/viz/Zomato_Delivery_Analysis/Dashboard1",
       repo: "TODO_REPO_URL",
       caseStudy: "/projects/zomato-data-analysis"
     },
     image: "/project-images/zomato-analysis-placeholder.png",
-    proofStatus: "Add dataset source, notebook, dashboard screenshots, and final insights."
+    proofStatus: "Public Tableau dashboard added. Add dataset source, notebook, and final insight notes."
   },
   {
     id: "hair-salon-website",
@@ -130,12 +130,12 @@ export const projects = [
       "Add performance and SEO reporting"
     ],
     links: {
-      live: "TODO_LIVE_URL",
+      live: "https://www.themaxxsalon.shop/",
       repo: "TODO_REPO_URL",
       caseStudy: "/projects/hair-salon-website"
     },
     image: "/project-images/hair-salon-placeholder.png",
-    proofStatus: "Add client-approved screenshots and live URL when available."
+    proofStatus: "Live client site added. Add client-approved screenshots when available."
   },
   {
     id: "hacktoberfest-open-source",
