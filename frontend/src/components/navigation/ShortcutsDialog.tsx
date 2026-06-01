@@ -11,8 +11,7 @@ const shortcuts = [
   { keys: "g p", label: "Projects" },
   { keys: "g a", label: "Ask AI" },
   { keys: "g c", label: "Contact" },
-  { keys: "?", label: "Shortcuts" },
-  { keys: "⌘/Ctrl K", label: "Command palette" }
+  { keys: "?", label: "Shortcuts" }
 ] as const;
 
 export function ShortcutsDialog({ isOpen, onClose }: ShortcutsDialogProps) {
@@ -75,4 +74,3 @@ export function ShortcutsDialog({ isOpen, onClose }: ShortcutsDialogProps) {
     </AnimatePresence>
   );
 }
-

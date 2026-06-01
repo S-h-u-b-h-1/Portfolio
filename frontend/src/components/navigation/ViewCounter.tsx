@@ -13,12 +13,14 @@ const compactFormatter = new Intl.NumberFormat("en", {
 export function ViewCounter({ counts }: ViewCounterProps) {
   return (
     <div
-      className="hidden min-h-10 items-center gap-2 rounded-lg border border-border bg-white/5 px-3 text-sm text-slate-300 light:bg-slate-950/5 light:text-slate-700 sm:inline-flex"
+      className="hidden min-h-10 items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-3 text-sm text-slate-300 transition hover:border-accent-cyan/35 light:border-slate-950/10 light:bg-slate-950/[0.035] light:text-slate-700 sm:inline-flex"
       title={counts ? `${counts.totalViews} total views, ${counts.uniqueVisitors} unique visitors` : "Loading views"}
       aria-label={counts ? `${counts.totalViews} total portfolio views` : "Portfolio view count loading"}
     >
-      <Eye aria-hidden="true" size={16} className="text-accent-emerald" />
-      <span className="font-mono text-xs text-slate-500 light:text-slate-600">views</span>
+      <Eye aria-hidden="true" size={15} className="text-accent-cyan" />
+      <span className="hidden text-[11px] uppercase tracking-[0.2em] text-slate-500 light:text-slate-600 lg:inline">
+        views
+      </span>
       <span className="font-semibold text-slate-100 light:text-slate-950">
         {counts ? compactFormatter.format(counts.totalViews) : "--"}
       </span>

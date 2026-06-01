@@ -1,10 +1,9 @@
-import { Keyboard, Menu, Moon, Sun } from "lucide-react";
+import { Menu, Moon, Sun } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useKeyboardShortcuts } from "../../hooks/useKeyboardShortcuts";
 import { usePortfolioVisits } from "../../hooks/usePortfolioVisits";
-import { CommandPalette } from "../navigation/CommandPalette";
 import { FloatingAskAIButton } from "../navigation/FloatingAskAIButton";
 import { MobileMenu } from "../navigation/MobileMenu";
 import { PrimaryNav } from "../navigation/PrimaryNav";
@@ -14,7 +13,6 @@ import { ViewCounter } from "../navigation/ViewCounter";
 
 export function AppLayout() {
   const [isLight, setIsLight] = useState(() => localStorage.getItem("portfolio-theme") === "light");
-  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -30,7 +28,6 @@ export function AppLayout() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    setIsCommandPaletteOpen(false);
   }, [location.pathname]);
 
   const goTo = useCallback(
@@ -45,7 +42,6 @@ export function AppLayout() {
     onProjects: () => goTo("/projects"),
     onAskAI: () => goTo("/ask-ai"),
     onContact: () => goTo("/contact"),
-    onCommandPalette: () => setIsCommandPaletteOpen(true),
     onShortcuts: () => setIsShortcutsOpen(true)
   });
 
@@ -54,37 +50,30 @@ export function AppLayout() {
       <div className="app-background-grid" aria-hidden="true" />
       <SectionProgressIndicator />
 
-      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl light:bg-white/80">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-          <Link to="/" className="group flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-lg border border-accent-cyan/40 bg-accent-cyan/10 font-mono text-sm font-semibold text-accent-cyan shadow-glow">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-background/75 backdrop-blur-2xl light:border-slate-950/10 light:bg-white/75">
+        <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
+          <Link to="/" className="group flex items-center gap-3" aria-label="Go to home">
+            <span className="grid size-10 place-items-center rounded-full border border-white/15 bg-white/[0.04] font-mono text-xs font-semibold tracking-[0.18em] text-slate-100 shadow-[0_0_28px_rgba(34,211,238,0.12)] transition group-hover:border-accent-cyan/50 group-hover:text-accent-cyan light:border-slate-950/15 light:bg-slate-950/[0.04] light:text-slate-950">
               SK
             </span>
-            <span className="hidden sm:block">
-              <span className="block text-sm font-semibold text-slate-100 light:text-slate-950">
-                Shubhaang Kataruka
-              </span>
-              <span className="block font-mono text-xs text-slate-400 light:text-slate-600">
-                // system.identity
+            <span className="hidden min-w-0 sm:block">
+              <span className="block truncate text-sm font-semibold text-slate-100 light:text-slate-950">Shubhaang</span>
+              <span className="block truncate text-[11px] uppercase tracking-[0.24em] text-slate-500 light:text-slate-500">
+                AI + Data
               </span>
             </span>
           </Link>
 
-          <div className="flex items-center gap-3">
+          <div className="flex min-w-0 justify-center">
             <PrimaryNav />
+          </div>
+
+          <div className="flex items-center justify-end gap-2">
             <ViewCounter counts={visitCounts} />
             <button
               type="button"
-              onClick={() => setIsShortcutsOpen(true)}
-              className="grid size-10 place-items-center rounded-lg border border-border bg-white/5 text-slate-200 transition hover:border-accent-cyan/50 hover:text-accent-cyan light:bg-slate-950/5 light:text-slate-800"
-              aria-label="Open keyboard shortcuts"
-            >
-              <Keyboard aria-hidden="true" size={18} />
-            </button>
-            <button
-              type="button"
               onClick={() => setIsLight((value) => !value)}
-              className="grid size-10 place-items-center rounded-lg border border-border bg-white/5 text-slate-200 transition hover:border-accent-cyan/50 hover:text-accent-cyan light:bg-slate-950/5 light:text-slate-800"
+              className="grid size-10 place-items-center rounded-full border border-white/10 bg-white/[0.035] text-slate-300 transition hover:border-accent-cyan/45 hover:text-accent-cyan light:border-slate-950/10 light:bg-slate-950/[0.035] light:text-slate-700"
               aria-label="Toggle theme"
             >
               {isLight ? <Moon size={18} /> : <Sun size={18} />}
@@ -92,7 +81,7 @@ export function AppLayout() {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(true)}
-              className="grid size-10 place-items-center rounded-lg border border-border bg-white/5 text-slate-200 transition hover:border-accent-cyan/50 hover:text-accent-cyan light:bg-slate-950/5 light:text-slate-800 lg:hidden"
+              className="grid size-10 place-items-center rounded-full border border-white/10 bg-white/[0.035] text-slate-300 transition hover:border-accent-cyan/45 hover:text-accent-cyan light:border-slate-950/10 light:bg-slate-950/[0.035] light:text-slate-700 xl:hidden"
               aria-label="Open menu"
             >
               <Menu aria-hidden="true" size={18} />
@@ -106,7 +95,6 @@ export function AppLayout() {
       </main>
 
       <FloatingAskAIButton />
-      <CommandPalette isOpen={isCommandPaletteOpen} onClose={() => setIsCommandPaletteOpen(false)} />
       <ShortcutsDialog isOpen={isShortcutsOpen} onClose={() => setIsShortcutsOpen(false)} />
       <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
     </div>

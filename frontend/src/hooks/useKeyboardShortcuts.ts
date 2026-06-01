@@ -5,7 +5,6 @@ type KeyboardShortcutHandlers = {
   onProjects: () => void;
   onAskAI: () => void;
   onContact: () => void;
-  onCommandPalette: () => void;
   onShortcuts: () => void;
 };
 
@@ -23,7 +22,6 @@ export function useKeyboardShortcuts({
   onProjects,
   onAskAI,
   onContact,
-  onCommandPalette,
   onShortcuts
 }: KeyboardShortcutHandlers) {
   const sequenceRef = useRef("");
@@ -43,13 +41,6 @@ export function useKeyboardShortcuts({
       }
 
       const key = event.key.toLowerCase();
-
-      if ((event.metaKey || event.ctrlKey) && key === "k") {
-        event.preventDefault();
-        resetSequence();
-        onCommandPalette();
-        return;
-      }
 
       if (event.key === "?") {
         event.preventDefault();
@@ -97,6 +88,5 @@ export function useKeyboardShortcuts({
         window.clearTimeout(resetTimerRef.current);
       }
     };
-  }, [onAskAI, onCommandPalette, onContact, onHome, onProjects, onShortcuts]);
+  }, [onAskAI, onContact, onHome, onProjects, onShortcuts]);
 }
-
