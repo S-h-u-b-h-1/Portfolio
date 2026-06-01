@@ -40,3 +40,17 @@ model ChatLog {
   sources   String[] @default([])
   createdAt DateTime @default(now())
 }
+
+model PortfolioVisit {
+  id        String   @id @default(cuid())
+  visitorId String
+  path      String
+  referrer  String?
+  userAgent String?
+  ipHash    String?
+  createdAt DateTime @default(now())
+
+  @@index([visitorId])
+  @@index([path])
+  @@index([createdAt])
+}

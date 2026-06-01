@@ -26,6 +26,7 @@ portfolio/
 - Filterable project case studies with search
 - Ask Shubhaang AI chat with verified portfolio context, Gemini/OpenAI-compatible provider support, and safe local fallback
 - Contact form API with Prisma persistence
+- Anonymous portfolio visit tracking with total view counter
 - Keyboard shortcuts, command palette, mobile menu, animated grid, and section progress
 - SEO metadata, favicon placeholder, Open Graph placeholder, robots file, and resume placeholder
 
@@ -80,6 +81,7 @@ PORT=5001
 FRONTEND_URL=http://localhost:5173
 DATABASE_URL=postgresql://USER:PASSWORD@HOST-pooler.REGION.aws.neon.tech/DATABASE?sslmode=require
 DIRECT_URL=postgresql://USER:PASSWORD@HOST.REGION.aws.neon.tech/DATABASE?sslmode=require
+VISITOR_HASH_SALT=change-me-in-production
 AI_PROVIDER=openai-compatible
 AI_API_KEY=
 AI_BASE_URL=https://api.openai.com/v1
@@ -109,6 +111,8 @@ Do not commit real `.env` files. Only `.env.example` files should be tracked.
 - `GET /api/portfolio`
 - `POST /api/contact`
 - `POST /api/chat`
+- `GET /api/visits/count`
+- `POST /api/visits`
 
 `POST /api/contact` expects:
 
@@ -158,6 +162,7 @@ Production environment variables:
 - `DIRECT_URL`: Neon direct PostgreSQL connection string
 - `FRONTEND_URL`: Vercel production URL or custom domain
 - `CORS_ORIGIN`: Vercel preview/production domains and custom domain, comma-separated
+- `VISITOR_HASH_SALT`: random string used to hash visitor IP addresses before storage
 - `AI_PROVIDER`: `local`, `openai-compatible`, or `gemini`
 - `AI_API_KEY`: optional provider key. If missing, chat uses verified local fallback.
 - `AI_BASE_URL`: provider base URL
@@ -206,6 +211,8 @@ npx prisma migrate dev
 ```
 
 No seed script is required right now because portfolio content is static JSON/TS data and the database stores contact/chat records created by users.
+
+Visit analytics are stored in the `PortfolioVisit` table. The app records an anonymous browser visitor ID, route path, referrer, user agent, hashed IP address, and timestamp. Raw IP addresses are not stored.
 
 ## GitHub Setup
 
@@ -265,6 +272,7 @@ Use the final custom domain in:
 - Render TypeScript build cannot find Express/CORS/Node types: confirm the Render build command uses `npm install --include=dev`.
 - Render build fails on Prisma: confirm `DATABASE_URL` and `DIRECT_URL` are valid Neon PostgreSQL URLs with `sslmode=require`.
 - Contact form fails: check Render logs, Neon connection strings, and the `/api/health` endpoint.
+- View counter stays blank: confirm the Render backend is reachable and `npx prisma migrate deploy` has created the `PortfolioVisit` table.
 - AI returns local fallback only: confirm Render has `AI_PROVIDER`, `AI_API_KEY`, `AI_BASE_URL`, and `AI_MODEL` set for the provider you actually use. For Gemini native mode, `AI_BASE_URL` should be `https://generativelanguage.googleapis.com/v1beta`.
 - Vercel routes show 404 on refresh: confirm `frontend/vercel.json` is included and the Vercel root directory is `frontend`.
 - Resume button opens placeholder: replace the placeholder file and set `VITE_RESUME_URL=/resume/Shubhaang_Kataruka_Resume.pdf`.

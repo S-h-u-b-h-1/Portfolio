@@ -22,6 +22,8 @@ services:
         sync: false
       - key: FRONTEND_URL
         sync: false
+      - key: VISITOR_HASH_SALT
+        sync: false
       - key: AI_PROVIDER
         value: openai-compatible
       - key: AI_API_KEY

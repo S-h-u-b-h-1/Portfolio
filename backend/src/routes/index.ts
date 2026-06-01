@@ -5,6 +5,7 @@ import { healthRouter } from "./health.routes";
 import { portfolioRouter } from "./portfolio.routes";
 import { profileRouter } from "./profile.routes";
 import { projectsRouter } from "./projects.routes";
+import { visitsRouter } from "./visits.routes";
 
 export const apiRouter = Router();
 
@@ -14,3 +15,4 @@ apiRouter.use("/projects", projectsRouter);
 apiRouter.use("/portfolio", portfolioRouter);
 apiRouter.use("/chat", chatRouter);
 apiRouter.use("/contact", contactRouter);
+apiRouter.use("/visits", visitsRouter);

@@ -31,6 +31,8 @@ npm run prisma:studio
 - `GET /api/portfolio`
 - `POST /api/chat`
 - `POST /api/contact`
+- `GET /api/visits/count`
+- `POST /api/visits`
 
 ## Environment
 
@@ -61,6 +63,7 @@ Required production variables:
 - `DIRECT_URL`: Neon direct connection string for Prisma migrations
 - `FRONTEND_URL`: Vercel frontend URL
 - `CORS_ORIGIN`: Vercel frontend domains, comma-separated
+- `VISITOR_HASH_SALT`: random string for hashing visitor IP addresses before analytics storage
 
 Optional AI variables:
 
@@ -88,6 +91,19 @@ AI_MODEL=gemini-3.5-flash
 ```
 
 With no `AI_API_KEY`, the assistant still answers from the local knowledge base and refuses unverified topics.
+
+## Visit Analytics
+
+`POST /api/visits` records an anonymous visit in the `PortfolioVisit` table. It stores the frontend-generated visitor ID, route path, referrer, user agent, hashed IP address, and timestamp. Raw IP addresses are not stored.
+
+`GET /api/visits/count` returns:
+
+```json
+{
+  "totalViews": 0,
+  "uniqueVisitors": 0
+}
+```
 
 ## Prisma
 

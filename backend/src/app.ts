@@ -7,6 +7,8 @@ import { apiRouter } from "./routes";
 
 export const app = express();
 
+app.set("trust proxy", 1);
+
 const developmentOrigins =
   env.NODE_ENV !== "production"
     ? ["http://localhost:5173", "http://localhost:3000", "http://127.0.0.1:5173", "http://127.0.0.1:3000"]

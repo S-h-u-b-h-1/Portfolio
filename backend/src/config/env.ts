@@ -36,6 +36,7 @@ export const env = {
   FRONTEND_URL: process.env.FRONTEND_URL,
   CORS_ORIGIN: process.env.CORS_ORIGIN,
   DATABASE_URL: process.env.DATABASE_URL,
+  VISITOR_HASH_SALT: process.env.VISITOR_HASH_SALT ?? "portfolio-visit-salt",
   AI_PROVIDER,
   AI_API_KEY: process.env.AI_API_KEY ?? process.env.OPENAI_API_KEY ?? process.env.GEMINI_API_KEY,
   AI_BASE_URL: normalizeUrl(process.env.AI_BASE_URL ?? process.env.OPENAI_BASE_URL ?? DEFAULT_AI_BASE_URL),

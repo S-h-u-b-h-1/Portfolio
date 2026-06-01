@@ -3,12 +3,14 @@ import { useCallback, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useKeyboardShortcuts } from "../../hooks/useKeyboardShortcuts";
+import { usePortfolioVisits } from "../../hooks/usePortfolioVisits";
 import { CommandPalette } from "../navigation/CommandPalette";
 import { FloatingAskAIButton } from "../navigation/FloatingAskAIButton";
 import { MobileMenu } from "../navigation/MobileMenu";
 import { PrimaryNav } from "../navigation/PrimaryNav";
 import { SectionProgressIndicator } from "../navigation/SectionProgressIndicator";
 import { ShortcutsDialog } from "../navigation/ShortcutsDialog";
+import { ViewCounter } from "../navigation/ViewCounter";
 
 export function AppLayout() {
   const [isLight, setIsLight] = useState(() => localStorage.getItem("portfolio-theme") === "light");
@@ -17,6 +19,8 @@ export function AppLayout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const currentPath = `${location.pathname}${location.search}`;
+  const visitCounts = usePortfolioVisits(currentPath);
 
   useEffect(() => {
     document.documentElement.classList.toggle("light", isLight);
@@ -68,6 +72,7 @@ export function AppLayout() {
 
           <div className="flex items-center gap-3">
             <PrimaryNav />
+            <ViewCounter counts={visitCounts} />
             <button
               type="button"
               onClick={() => setIsCommandPaletteOpen(true)}
