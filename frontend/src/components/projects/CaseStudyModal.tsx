@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ExternalLink, Layers, Target, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import type { ProjectItem } from "../../data";
+import { externalLinkProps } from "../../utils/links";
 
 type CaseStudyModalProps = {
   project: ProjectItem | null;
@@ -173,6 +174,7 @@ export function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
                   {project.links.live.startsWith("TODO") ? null : (
                     <a
                       href={project.links.live}
+                      {...externalLinkProps(project.links.live)}
                       className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-accent-cyan bg-accent-cyan px-4 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
                     >
                       Open project

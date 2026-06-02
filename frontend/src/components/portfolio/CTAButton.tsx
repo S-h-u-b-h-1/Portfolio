@@ -2,6 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "../../utils/cn";
+import { externalLinkProps } from "../../utils/links";
 
 type CTAButtonProps = {
   children: ReactNode;
@@ -43,7 +44,7 @@ export function CTAButton({
   }
 
   return (
-    <a href={href} className={classes}>
+    <a href={href} className={classes} {...externalLinkProps(href)}>
       <span>{children}</span>
       {Icon ? <Icon aria-hidden="true" size={17} strokeWidth={2.2} /> : null}
     </a>

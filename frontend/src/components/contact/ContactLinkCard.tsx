@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import { externalLinkProps } from "../../utils/links";
 
 type ContactLinkCardProps = {
   label: string;
@@ -43,7 +44,13 @@ export function ContactLinkCard({
   }
 
   return (
-    <a href={href} download={download} aria-label={`${label}: ${value}`} className={className}>
+    <a
+      href={href}
+      download={download}
+      aria-label={`${label}: ${value}`}
+      className={className}
+      {...externalLinkProps(href)}
+    >
       {content}
     </a>
   );
