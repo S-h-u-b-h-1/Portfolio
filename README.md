@@ -115,6 +115,7 @@ Do not commit real `.env` files. Only `.env.example` files should be tracked.
 - `POST /api/chat`
 - `GET /api/visits/count`
 - `POST /api/visits`
+- `GET /api/health/db`
 
 `POST /api/contact` expects:
 
@@ -215,7 +216,7 @@ npx prisma migrate dev
 
 No seed script is required right now because portfolio content is static JSON/TS data and the database stores contact/chat records created by users.
 
-Visit analytics are stored in the `PortfolioVisit` table. The app records an anonymous browser visitor ID, route path, referrer, user agent, hashed IP address, and timestamp. Raw IP addresses are not stored.
+Visit analytics are stored in the `PortfolioVisit` table. The app records an anonymous browser visitor ID, route path, referrer, user agent, hashed IP address, and timestamp. Raw IP addresses are not stored. If the counter returns `storageAvailable: false`, call `GET /api/health/db` to see a sanitized issue such as `missing-database-url`, `database-unreachable`, or `missing-table-or-migration`.
 
 ## GitHub Setup
 

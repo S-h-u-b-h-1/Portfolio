@@ -4,6 +4,8 @@ export type VisitCounts = {
   totalViews: number;
   uniqueVisitors: number;
   storageAvailable?: boolean;
+  storageIssue?: string;
+  prismaCode?: string;
 };
 
 export type VisitPayload = {

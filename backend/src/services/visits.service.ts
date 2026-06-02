@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { env } from "../config/env";
+import { classifyDatabaseIssue, type DatabaseIssue } from "./database-health.service";
 import { prisma } from "../utils/prisma";
 
 export type CreatePortfolioVisitInput = {
@@ -14,6 +15,8 @@ export type PortfolioVisitCounts = {
   totalViews: number;
   uniqueVisitors: number;
   storageAvailable: boolean;
+  storageIssue?: DatabaseIssue;
+  prismaCode?: string;
 };
 
 const MAX_PATH_LENGTH = 2048;
@@ -66,11 +69,15 @@ export async function getPortfolioVisitCounts(): Promise<PortfolioVisitCounts> {
       uniqueVisitors: visitorGroups.length,
       storageAvailable: true
     };
-  } catch {
+  } catch (error) {
+    const diagnosis = classifyDatabaseIssue(error);
+
     return {
       totalViews: 0,
       uniqueVisitors: 0,
-      storageAvailable: false
+      storageAvailable: false,
+      storageIssue: diagnosis.issue,
+      prismaCode: diagnosis.prismaCode
     };
   }
 }
