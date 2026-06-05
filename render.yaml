@@ -19,9 +19,9 @@ services:
       - key: DIRECT_URL
         sync: false
       - key: CORS_ORIGIN
-        value: https://portfolio-frontend-rose-nine.vercel.app
+        value: https://shubhaangkataruka.vercel.app
       - key: FRONTEND_URL
-        value: https://portfolio-frontend-rose-nine.vercel.app
+        value: https://shubhaangkataruka.vercel.app
       - key: VISITOR_HASH_SALT
         sync: false
       - key: AI_PROVIDER
