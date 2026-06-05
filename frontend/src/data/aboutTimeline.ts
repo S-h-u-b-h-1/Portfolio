@@ -11,7 +11,7 @@ import type { TimelineItem } from "../components/portfolio/Timeline";
 export const aboutTimeline = [
   {
     id: "school-leadership",
-    marker: "0x01",
+    marker: "01",
     title: "School leadership",
     period: "School years",
     description:
@@ -26,7 +26,7 @@ export const aboutTimeline = [
   },
   {
     id: "rishihood-nst",
-    marker: "0x02",
+    marker: "02",
     title: "Rishihood University x Newton School of Technology",
     period: "Current - 3rd year",
     description:
@@ -41,7 +41,7 @@ export const aboutTimeline = [
   },
   {
     id: "hiring-research",
-    marker: "0x03",
+    marker: "03",
     title: "Hiring Research Internship",
     period: "First semester",
     description:
@@ -56,7 +56,7 @@ export const aboutTimeline = [
   },
   {
     id: "rashtram-ai",
-    marker: "0x04",
+    marker: "04",
     title: "Rashtram AI Internship",
     period: "AI/ML intern",
     description:
@@ -71,7 +71,7 @@ export const aboutTimeline = [
   },
   {
     id: "pan-iit-2026",
-    marker: "0x05",
+    marker: "05",
     title: "PAN IIT 2026",
     period: "Long Beach, California",
     description:
@@ -86,7 +86,7 @@ export const aboutTimeline = [
   },
   {
     id: "current-goals",
-    marker: "0x06",
+    marker: "06",
     title: "Current AI/data/full-stack goals",
     period: "Now",
     description:

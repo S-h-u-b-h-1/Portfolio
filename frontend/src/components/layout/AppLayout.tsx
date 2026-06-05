@@ -55,14 +55,8 @@ export function AppLayout() {
       <header className="sticky top-0 z-50 border-b border-white/10 bg-background/75 backdrop-blur-2xl light:border-slate-950/10 light:bg-white/75">
         <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
           <Link to="/" className="group flex items-center gap-3" aria-label="Go to home">
-            <span className="grid size-10 place-items-center rounded-full border border-white/15 bg-white/[0.04] font-mono text-xs font-semibold tracking-[0.18em] text-slate-100 shadow-[0_0_28px_rgba(34,211,238,0.12)] transition group-hover:border-accent-cyan/50 group-hover:text-accent-cyan light:border-slate-950/15 light:bg-slate-950/[0.04] light:text-slate-950">
-              SK
-            </span>
             <span className="hidden min-w-0 sm:block">
-              <span className="block truncate text-sm font-semibold text-slate-100 light:text-slate-950">Shubhaang</span>
-              <span className="block truncate text-[11px] uppercase tracking-[0.24em] text-slate-500 light:text-slate-500">
-                AI + Data
-              </span>
+              <span className="block truncate text-sm font-semibold text-slate-100 light:text-slate-950">Shubhaang Kataruka</span>
             </span>
           </Link>
 

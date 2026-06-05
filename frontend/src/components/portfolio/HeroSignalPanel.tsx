@@ -47,9 +47,6 @@ export function HeroSignalPanel() {
           </figure>
         </div>
         <div className="mt-4 text-center">
-          <p className="font-mono text-xs text-slate-400 light:text-slate-600">
-            {profile.photo.status === "placeholder" ? "// replace.with.real.photo" : "// verified.portrait"}
-          </p>
         </div>
 
         {/* Skill cards removed to emphasize portrait */}
