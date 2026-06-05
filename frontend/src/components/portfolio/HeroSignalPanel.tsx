@@ -15,7 +15,7 @@ export function HeroSignalPanel() {
       initial={{ opacity: 0, y: 22, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.65, delay: 0.2, ease: "easeOut" }}
-      className="relative overflow-hidden rounded-lg border border-accent-cyan/20 bg-slate-950/70 p-4 shadow-glow backdrop-blur light:bg-white/90"
+      className="relative overflow-hidden rounded-lg border border-accent-cyan/12 bg-slate-950/70 p-4 shadow-glow backdrop-blur light:bg-white/90"
       aria-label="Portfolio signal summary"
     >
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-cyan to-transparent" />
@@ -34,20 +34,22 @@ export function HeroSignalPanel() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.045] light:border-slate-950/10 light:bg-slate-950/[0.035]">
-          <div className="aspect-[4/5] max-h-[18rem] w-full overflow-hidden">
-            <img
-              src={profile.photo.src}
-              alt={profile.photo.alt}
-              className="size-full object-cover"
-              loading="eager"
-            />
-          </div>
-          <div className="border-t border-white/10 px-3 py-2 light:border-slate-950/10">
-            <p className="font-mono text-xs text-slate-500 light:text-slate-600">
-              {profile.photo.status === "placeholder" ? "// replace.with.real.photo" : "// verified.portrait"}
-            </p>
-          </div>
+        <div className="flex items-center justify-center">
+          <figure className="portrait-figure">
+            <div className="portrait-inner">
+              <img
+                src={profile.photo.src}
+                alt={profile.photo.alt}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+          </figure>
+        </div>
+        <div className="mt-2 text-center">
+          <p className="font-mono text-xs text-slate-500 light:text-slate-600">
+            {profile.photo.status === "placeholder" ? "// replace.with.real.photo" : "// verified.portrait"}
+          </p>
         </div>
 
         <div className="grid gap-3">

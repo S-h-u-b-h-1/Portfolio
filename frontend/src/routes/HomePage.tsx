@@ -131,7 +131,7 @@ export function HomePage() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="max-w-4xl"
+          className="max-w-4xl lg:order-1 order-2"
         >
           <div className="inline-flex items-center gap-2 rounded-lg border border-accent-cyan/25 bg-accent-cyan/10 px-3 py-2 font-mono text-xs text-accent-cyan">
             <span className="size-2 rounded-full bg-accent-emerald" />
@@ -163,7 +163,9 @@ export function HomePage() {
           </div>
         </motion.div>
 
-        <HeroSignalPanel />
+        <div className="lg:order-2 order-1">
+          <HeroSignalPanel />
+        </div>
       </section>
 
       <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="Portfolio proof summary">

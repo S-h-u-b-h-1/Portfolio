@@ -10,6 +10,7 @@ import { PrimaryNav } from "../navigation/PrimaryNav";
 import { SectionProgressIndicator } from "../navigation/SectionProgressIndicator";
 import { ShortcutsDialog } from "../navigation/ShortcutsDialog";
 import { ViewCounter } from "../navigation/ViewCounter";
+import InteractiveCursor from "./InteractiveCursor";
 
 export function AppLayout() {
   const [isLight, setIsLight] = useState(() => localStorage.getItem("portfolio-theme") === "light");
@@ -47,6 +48,7 @@ export function AppLayout() {
 
   return (
     <div className="relative min-h-screen">
+      <InteractiveCursor />
       <div className="app-background-grid" aria-hidden="true" />
       <SectionProgressIndicator />
 

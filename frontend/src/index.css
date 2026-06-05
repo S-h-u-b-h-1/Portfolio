@@ -36,6 +36,82 @@ body.light {
   color: #0f172a;
 }
 
+/* Typography refinements */
+h1, h2, h3, h4, h5 {
+  letter-spacing: -0.02em;
+  line-height: 1.03;
+}
+
+p, a, li, span, button {
+  transition: color 200ms ease, transform 220ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* Micro-interactions for links and buttons */
+a:hover, button:hover {
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* subtle floating for hero headings */
+@keyframes float-up {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.hero-float {
+  animation: float-up 6s ease-in-out infinite;
+}
+
+/* Cursor styles */
+.custom-cursor-outer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate3d(-100px, -100px, 0);
+  transition: background-color 200ms ease, transform 120ms ease, opacity 220ms ease;
+  z-index: 9999;
+  mix-blend-mode: screen;
+}
+
+.custom-cursor-inner {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  pointer-events: none;
+  transform: translate3d(-100px, -100px, 0);
+  transition: transform 120ms ease, width 160ms ease, height 160ms ease, opacity 160ms ease;
+  z-index: 10000;
+}
+
+.custom-cursor-outer.cursor-hover {
+  background: rgba(34,211,238,0.12);
+  width: 44px;
+  height: 44px;
+}
+
+.custom-cursor-inner.cursor-hover-inner {
+  background: rgba(34,211,238,0.95);
+  width: 18px;
+  height: 18px;
+}
+
+.custom-cursor-outer.cursor-active { opacity: 1; }
+.custom-cursor-inner.cursor-active-inner { opacity: 1; }
+
+/* Interactive focus rings for keyboard users */
+button:focus, a:focus {
+  outline: 3px solid rgba(34,211,238,0.12);
+  outline-offset: 3px;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
@@ -67,6 +143,37 @@ body.light .app-background-grid {
   to {
     background-position: 48px 48px, 48px 48px;
   }
+}
+
+/* Premium portrait styling */
+.portrait-figure {
+  display: inline-block;
+  padding: 8px;
+  border-radius: 9999px;
+  background: conic-gradient(from 180deg at 50% 50%, rgba(34,211,238,0.16), rgba(167,139,250,0.14), rgba(52,211,153,0.12));
+  box-shadow: 0 12px 40px rgba(2,6,23,0.6), 0 6px 18px rgba(34,211,238,0.06) inset;
+}
+
+.portrait-inner {
+  width: clamp(160px, 28vw, 320px);
+  height: clamp(160px, 28vw, 320px);
+  border-radius: 9999px;
+  overflow: hidden;
+  display: block;
+  transform: translateZ(0);
+}
+
+.portrait-inner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms cubic-bezier(.2,.9,.2,1), filter 350ms ease;
+}
+
+.portrait-figure:hover .portrait-inner img {
+  transform: scale(1.04) translateY(-4px);
+  filter: saturate(1.06) contrast(1.02);
 }
 
 @media (prefers-reduced-motion: reduce) {

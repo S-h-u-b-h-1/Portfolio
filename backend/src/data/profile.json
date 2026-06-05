@@ -73,6 +73,6 @@
     "linkedin": "TODO_LINKEDIN_URL",
     "github": "TODO_GITHUB_URL",
     "leetcode": "TODO_LEETCODE_URL",
-    "resume": "TODO_RESUME_URL"
+    "resume": "/api/profile/resume"
   }
 }

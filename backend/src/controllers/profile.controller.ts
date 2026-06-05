@@ -59,3 +59,55 @@ export async function uploadProfilePhoto(req: Request, res: Response) {
   }
 }
 
+export async function getResume(_req: Request, res: Response) {
+  try {
+    const resume = await prisma.resume.findFirst({ orderBy: { createdAt: "desc" } });
+
+    if (!resume) {
+      res.status(404).json({ message: "No resume available in database.", fallback: profile.contact?.resume ?? null });
+      return;
+    }
+
+    res.setHeader("Content-Type", resume.mime);
+    res.setHeader("Content-Disposition", `inline; filename="${resume.filename}"`);
+    res.send(resume.data as Buffer);
+  } catch (error) {
+    console.error("Error fetching resume:", error);
+    res.status(500).json({ message: "Unable to load resume from database." });
+  }
+}
+
+export async function uploadResume(req: Request, res: Response) {
+  try {
+    const key = process.env.PROFILE_UPLOAD_KEY;
+    const provided = req.get("x-profile-upload-key");
+
+    if (!key || key === "" || provided !== key) {
+      res.status(401).json({ message: "Unauthorized to upload resume." });
+      return;
+    }
+
+    const { filename, mime, dataBase64 } = req.body ?? {};
+
+    if (!filename || !mime || !dataBase64) {
+      res.status(400).json({ message: "filename, mime, and dataBase64 are required." });
+      return;
+    }
+
+    const buffer = Buffer.from(dataBase64, "base64");
+
+    const created = await prisma.resume.create({
+      data: {
+        filename,
+        mime,
+        data: buffer
+      }
+    });
+
+    res.status(201).json({ success: true, id: created.id });
+  } catch (error) {
+    console.error("Error uploading resume:", error);
+    res.status(500).json({ message: "Unable to upload resume." });
+  }
+}
+
