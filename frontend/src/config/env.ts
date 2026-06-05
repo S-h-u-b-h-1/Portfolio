@@ -1,4 +1,5 @@
 const DEFAULT_RESUME_URL = "/resume/Shubhaang_Kataruka_Resume_PLACEHOLDER.html";
+import { profile } from "../data";
 const DEFAULT_API_BASE_URL = "http://localhost:5001";
 
 const API_BASE_URL =
@@ -27,7 +28,7 @@ export function isPlaceholderValue(value: string | undefined) {
 
 export const frontendEnv = {
   apiBaseUrl: normalizeUrl(API_BASE_URL) || DEFAULT_API_BASE_URL,
-  resumeUrl: resolvePath(import.meta.env.VITE_RESUME_URL, DEFAULT_RESUME_URL),
+  resumeUrl: resolvePath(import.meta.env.VITE_RESUME_URL, profile?.contact?.resume || DEFAULT_RESUME_URL),
   siteUrl: normalizeUrl(import.meta.env.VITE_SITE_URL)
 };
 

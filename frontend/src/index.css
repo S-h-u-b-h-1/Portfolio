@@ -155,8 +155,8 @@ body.light .app-background-grid {
 }
 
 .portrait-inner {
-  width: clamp(160px, 28vw, 320px);
-  height: clamp(160px, 28vw, 320px);
+  width: clamp(220px, 36vw, 420px);
+  height: clamp(220px, 36vw, 420px);
   border-radius: 9999px;
   overflow: hidden;
   display: block;

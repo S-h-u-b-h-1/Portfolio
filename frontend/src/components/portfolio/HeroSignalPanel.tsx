@@ -52,32 +52,7 @@ export function HeroSignalPanel() {
           </p>
         </div>
 
-        <div className="grid gap-3">
-          {signalRows.map((row, index) => {
-            const Icon = row.icon;
-
-            return (
-              <motion.div
-                key={row.label}
-                initial={{ opacity: 0, x: 16 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.45, delay: 0.38 + index * 0.08 }}
-                className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/[0.045] px-3 py-3 light:border-slate-950/10 light:bg-slate-950/[0.035]"
-              >
-                <span className="grid size-9 place-items-center rounded-lg bg-accent-cyan/10 text-accent-cyan">
-                  <Icon aria-hidden="true" size={17} />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-slate-100 light:text-slate-950">{row.label}</p>
-                  <p className="truncate font-mono text-xs text-slate-500 light:text-slate-600">{row.value}</p>
-                </div>
-                <span className="font-mono text-xs text-accent-emerald">0{index + 1}</span>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Removed small text boxes to emphasize portrait */}
+        {/* Skill cards removed to emphasize portrait */}
       </div>
     </motion.aside>
   );

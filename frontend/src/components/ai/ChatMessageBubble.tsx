@@ -24,22 +24,22 @@ export function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
   const Icon = isAssistant ? Bot : UserRound;
 
   return (
-    <article className={cn("flex gap-3", isAssistant ? "justify-start" : "justify-end")}>
+    <article className={cn("flex gap-4", isAssistant ? "justify-start" : "justify-end")}>
       {isAssistant ? (
-        <span className="mt-1 grid size-9 shrink-0 place-items-center rounded-lg border border-accent-cyan/25 bg-accent-cyan/10 text-accent-cyan">
+        <span className="mt-1 grid size-11 shrink-0 place-items-center rounded-full border border-accent-cyan/25 bg-accent-cyan/12 text-accent-cyan">
           <Icon aria-hidden="true" size={18} />
         </span>
       ) : null}
 
       <div
         className={cn(
-          "max-w-[min(42rem,100%)] rounded-2xl px-5 py-4 transition-shadow duration-300",
+          "max-w-[min(48rem,100%)] rounded-3xl px-6 py-5 transition-shadow duration-300",
           isAssistant
-            ? "shadow-xl bg-gradient-to-br from-slate-900/80 to-slate-800/70 text-slate-100"
+            ? "shadow-2xl bg-gradient-to-br from-slate-900/85 to-slate-800/75 text-slate-100"
             : "border border-accent-cyan bg-accent-cyan text-slate-950"
         )}
       >
-        <p className="whitespace-pre-wrap text-sm leading-7">{message.content}</p>
+        <p className="whitespace-pre-wrap text-base leading-7">{message.content}</p>
         {message.meta ? (
           <div className="mt-3 flex flex-wrap items-center gap-2 pt-3 text-xs text-slate-300">
             <ShieldCheck aria-hidden="true" size={14} className="text-accent-emerald" />
