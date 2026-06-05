@@ -19,9 +19,9 @@ services:
       - key: DIRECT_URL
         sync: false
       - key: CORS_ORIGIN
-        sync: false
+        value: https://portfolio-frontend-rose-nine.vercel.app
       - key: FRONTEND_URL
-        sync: false
+        value: https://portfolio-frontend-rose-nine.vercel.app
       - key: VISITOR_HASH_SALT
         sync: false
       - key: AI_PROVIDER

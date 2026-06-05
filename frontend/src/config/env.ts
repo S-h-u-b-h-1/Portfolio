@@ -1,7 +1,12 @@
 const DEFAULT_RESUME_URL = "/resume/Shubhaang_Kataruka_Resume_PLACEHOLDER.html";
 const DEFAULT_API_BASE_URL = "http://localhost:5001";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? (typeof window !== "undefined" ? window.location.origin : "");
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL?.trim().length
+    ? import.meta.env.VITE_API_BASE_URL
+    : typeof window !== "undefined"
+    ? window.location.origin
+    : "";
 
 function normalizeUrl(value: string | undefined) {
   return value?.trim().replace(/\/+$/, "") ?? "";

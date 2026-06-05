@@ -10,17 +10,20 @@ export type KnowledgeResponse = {
 export const shubhaangKnowledge = {
   profile: {
     name: "Shubhaang Kataruka",
-    current:
-      "3rd-year B.Tech Computer Science & Artificial Intelligence student at Rishihood University x Newton School of Technology",
-    positioning: "AI Engineer + Data Systems Builder",
-    tagline: "Building AI-powered systems, data products, and scalable software.",
+    headline: "AI Engineer + Data Systems Builder",
+    currentStudy:
+      "B.Tech (Computer Science & Artificial Intelligence), Newton School of Technology — Rishihood University (expected 2028)",
+    summary:
+      "Technology-driven student and builder focused on AI, ML, RAG systems, full-stack development, FinTech, and data analytics. Ambitious product-minded engineer aiming to build AI-powered solutions that solve real-world problems.",
     interests: [
-      "AI/ML",
-      "RAG",
-      "data analytics",
-      "SQL",
-      "databases",
-      "full-stack development"
+      "Artificial Intelligence",
+      "Generative AI",
+      "RAG (Retrieval Augmented Generation)",
+      "Full-stack development",
+      "FinTech",
+      "Data analytics",
+      "Public policy technology",
+      "Entrepreneurship"
     ]
   },
   projects: [
@@ -46,16 +49,36 @@ export const shubhaangKnowledge = {
       highlights: ["full-stack development", "client work", "responsive UI", "booking/contact/service sections"]
     }
   ],
+  moreProjects: [
+    {
+      name: "FinNews",
+      summary: "Full-stack financial news platform with authentication, search, filtering, and article management.",
+      tech: ["React", "Node.js", "Express", "PostgreSQL", "Prisma"],
+      features: ["Authentication", "Search & Filtering", "Pagination", "Article management"]
+    },
+    {
+      name: "BeWise",
+      summary: "Travel budget and expense planner with multi-trip management and analytics.",
+      features: ["Expense categorization", "Budget tracking", "Financial analytics"]
+    },
+    {
+      name: "FinScope",
+      summary: "Finance and investment calculation platform (SIP, lumpsum, ROI analysis).",
+      features: ["SIP calculators", "ROI analysis", "Financial planning tools"]
+    }
+  ],
   experience: [
     {
       role: "AI/ML Engineer Intern",
       organization: "Rashtram School of Public Leadership",
-      summary: "Worked on Rashtram AI, a RAG-based assistant for public policy, bills, discussions, and citizen impact."
+      summary:
+        "Worked on Rashtram AI — an AI-powered research assistant for government policy, bills, and public-policy research. Responsibilities included building RAG systems, data collection and processing, vector database implementation, prompt engineering, and product-focused AI development."
     },
     {
       role: "Hiring Research & Strategy Intern",
       organization: "Rishihood / Placement & Career Advancement Team",
-      summary: "Supported hiring research, role research, and placement strategy during first semester."
+      summary:
+        "Worked on student analytics, hiring intelligence, and academic profile systems. Built data-driven evaluation frameworks to support placement strategy and recruiter outreach."
     },
     {
       role: "Freelance Full-Stack Developer",
@@ -63,6 +86,14 @@ export const shubhaangKnowledge = {
       summary: "Built a responsive client-facing website with service, booking/contact, and business presentation sections."
     }
   ],
+  technicalSkills: {
+    programmingLanguages: ["Python", "JavaScript", "SQL"],
+    web: ["React", "Node.js", "Express", "REST APIs", "TypeScript"],
+    databases: ["PostgreSQL", "Neon", "Prisma ORM"],
+    ml: ["Generative AI", "RAG", "LangChain", "Prompt engineering", "Vector DBs (Pinecone compatible)"],
+    data: ["Pandas", "Tableau", "Exploratory Data Analysis", "Statistics"],
+    tools: ["Git", "GitHub", "Vercel", "Render", "Postman"]
+  },
   technicalHighlights: [
     "LeetCode 1700+ rating",
     "300+ DSA problems solved",
@@ -70,13 +101,30 @@ export const shubhaangKnowledge = {
     "Hacktoberfest Super Contributor 2024 & 2025",
     "PAN IIT 2026 delegate"
   ],
-  additionalBackground: [
+  financeAndLeadership: [
     "Youngest MDRT qualifier FY25 at Aditya Birla Capital / ABSLI",
     "Sponsorship Manager for college tech fest",
-    "School leadership and National Integration Camp involvement",
-    "Interest in stock market patterns and investment planning"
+    "Prefect and House Captain at school",
+    "National Integration Camp volunteer",
+    "Interest and experience in mutual funds and stock market investing"
   ],
+  additionalBackground: [
+    "School leadership and National Integration Camp involvement"
+  ],
+  preferences: {
+    responseStyle:
+      "Assume engineering and AI background; prefer practical, implementation-focused answers with code examples and trade-offs when relevant. Concise for simple questions, and detailed for architecture/career guidance.",
+    careerGoals:
+      "Become a technology leader and entrepreneur building AI-powered products; pursue internships at leading companies; publish research and build startups in AI/FinTech/Public Policy Technology."
+  },
   responses: [
+    {
+      id: "detailed-overview",
+      question: "Who is Shubhaang Kataruka?",
+      keywords: ["who is", "about", "shubhaang", "profile", "introduction"],
+      answer:
+        "Shubhaang Kataruka is a third-year B.Tech student (CS&AI) at Newton School of Technology, Rishihood University, expected to graduate in 2028. He is an ambitious engineer focused on AI/ML, RAG systems, full-stack development, FinTech, and data analytics, with hands-on projects and internships in RAG and product-focused AI engineering."
+    },
     {
       id: "overview",
       question: "Who is Shubhaang Kataruka?",
