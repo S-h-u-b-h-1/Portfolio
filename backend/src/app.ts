@@ -16,7 +16,7 @@ const developmentOrigins =
     : [];
 const corsOrigins = [env.CORS_ORIGIN, env.FRONTEND_URL, ...developmentOrigins]
   .flatMap((origin) => origin?.split(",") ?? [])
-  .map((origin) => origin.trim())
+  .map((origin) => origin.trim().replace(/\/$/, ""))
   .filter(Boolean);
 
 const uniqueCorsOrigins = Array.from(new Set(corsOrigins));
