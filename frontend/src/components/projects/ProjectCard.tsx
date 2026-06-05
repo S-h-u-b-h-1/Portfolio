@@ -19,19 +19,8 @@ export function ProjectCard({ project, index, onViewCaseStudy }: ProjectCardProp
       transition={{ duration: 0.35, delay: index * 0.03, ease: "easeOut" }}
       className="flex h-full min-h-[27rem] flex-col rounded-2xl border border-border bg-gradient-to-br from-slate-950/70 to-slate-900/60 p-0 backdrop-blur transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-accent-cyan/45 light:bg-gradient-to-br light:from-slate-50 light:to-slate-100 light:border-slate-200"
     >
-      {project.image ? (
-        <div className="relative h-44 w-full overflow-hidden rounded-t-2xl">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-        </div>
-      ) : null}
-
-      <div className="p-5 flex-1 flex flex-col">
-      <div className="flex items-start justify-between gap-4">
+      <div className="p-6 flex-1 flex flex-col">
+        <div className="flex items-start justify-between gap-4">
         <div>
           <p className="font-mono text-xs text-accent-cyan">
             0x{String(index + 1).padStart(2, "0")}
