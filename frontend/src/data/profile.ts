@@ -11,7 +11,7 @@ export const profile = {
     "I am a CS & AI student at Rishihood University x Newton School of Technology, focused on building AI systems, data products, and software that solve real-world problems. My work combines machine learning, analytics, databases, and full-stack development. My flagship project is Rashtram AI, a RAG-based assistant for understanding public policies and their impact.",
   location: "India",
   photo: {
-    src: "https://drive.google.com/file/d/1JTuk7equ_IMe4V5EORM3HP5bihgfSm4s/view?usp=sharing",
+    src: "https://i.postimg.cc/VNPxJMVJ/profile.jpg",
     alt: "Portrait placeholder for Shubhaang Kataruka",
     status: "placeholder"
   },
