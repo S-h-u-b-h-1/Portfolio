@@ -54,3 +54,11 @@ model PortfolioVisit {
   @@index([path])
   @@index([createdAt])
 }
+
+model ProfilePhoto {
+  id        String   @id @default(cuid())
+  filename  String
+  mime      String
+  data      Bytes
+  createdAt DateTime @default(now())
+}
