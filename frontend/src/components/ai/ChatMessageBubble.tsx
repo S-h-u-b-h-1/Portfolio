@@ -33,19 +33,19 @@ export function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
 
       <div
         className={cn(
-          "max-w-[min(42rem,100%)] rounded-lg border px-4 py-3",
+          "max-w-[min(42rem,100%)] rounded-2xl px-5 py-4 transition-shadow duration-300",
           isAssistant
-            ? "border-border bg-white/[0.045] text-slate-200 light:bg-white light:text-slate-800"
-            : "border-accent-cyan bg-accent-cyan text-slate-950"
+            ? "shadow-xl bg-gradient-to-br from-slate-900/80 to-slate-800/70 text-slate-100"
+            : "border border-accent-cyan bg-accent-cyan text-slate-950"
         )}
       >
         <p className="whitespace-pre-wrap text-sm leading-7">{message.content}</p>
         {message.meta ? (
-          <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-white/10 pt-3 text-xs text-slate-400 light:border-slate-950/10 light:text-slate-600">
+          <div className="mt-3 flex flex-wrap items-center gap-2 pt-3 text-xs text-slate-300">
             <ShieldCheck aria-hidden="true" size={14} className="text-accent-emerald" />
-            <span>{providerLabels[message.meta.provider]}</span>
-            <span className="text-slate-600 light:text-slate-400">/</span>
-            <span>{message.meta.sources.join(", ")}</span>
+            <span className="font-medium">{providerLabels[message.meta.provider]}</span>
+            <span className="text-slate-500">/</span>
+            <span className="opacity-80">{message.meta.sources.join(", ")}</span>
           </div>
         ) : null}
       </div>

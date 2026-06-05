@@ -70,10 +70,10 @@ export const profile = {
     }
   ],
   contact: {
-    email: "TODO_EMAIL",
-    linkedin: "TODO_LINKEDIN_URL",
-    github: "TODO_GITHUB_URL",
-    leetcode: "TODO_LEETCODE_URL",
-    resume: "TODO_RESUME_URL"
+    email: "shubhaangkataruka221@gmail.com",
+    linkedin: "https://www.linkedin.com/in/shubhaangkataruka/",
+    github: "https://github.com/S-h-u-b-h-1",
+    leetcode: "https://leetcode.com/u/Shubh_2201/",
+    resume: "https://drive.google.com/file/d/1TiUlCxBPT8fbTvBZwaf1pAMHKKVZPGmG/view?usp=sharing"
   }
 } satisfies Profile;

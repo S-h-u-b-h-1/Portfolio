@@ -20,11 +20,11 @@ body {
   margin: 0;
   overflow-x: hidden;
   background:
-    linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px),
-    #070a12;
-  background-size: 42px 42px;
-  color: #f8fafc;
+    radial-gradient(ellipse at top left, rgba(34,211,238,0.06), transparent 20%),
+    radial-gradient(ellipse at bottom right, rgba(167,139,250,0.04), transparent 25%),
+    #05060a;
+  background-size: cover;
+  color: #eef2ff;
 }
 
 body.light {
@@ -123,10 +123,10 @@ a {
   z-index: 0;
   pointer-events: none;
   background:
-    linear-gradient(rgba(34, 211, 238, 0.075) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(167, 139, 250, 0.055) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.72), transparent);
+    linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(167, 139, 250, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.6));
   animation: grid-drift 22s linear infinite;
 }
 

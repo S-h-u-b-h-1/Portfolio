@@ -46,8 +46,8 @@ export function HeroSignalPanel() {
             </div>
           </figure>
         </div>
-        <div className="mt-2 text-center">
-          <p className="font-mono text-xs text-slate-500 light:text-slate-600">
+        <div className="mt-4 text-center">
+          <p className="font-mono text-xs text-slate-400 light:text-slate-600">
             {profile.photo.status === "placeholder" ? "// replace.with.real.photo" : "// verified.portrait"}
           </p>
         </div>
@@ -77,13 +77,7 @@ export function HeroSignalPanel() {
           })}
         </div>
 
-        <div className="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 light:border-slate-950/10">
-          {["RAG", "SQL", "React"].map((item) => (
-            <div key={item} className="rounded-lg bg-white/[0.04] px-3 py-2 text-center light:bg-slate-950/[0.04]">
-              <p className="font-mono text-xs text-slate-400 light:text-slate-600">{item}</p>
-            </div>
-          ))}
-        </div>
+        {/* Removed small text boxes to emphasize portrait */}
       </div>
     </motion.aside>
   );
