@@ -20,8 +20,7 @@ const suggestedQuestions = [
 const initialMessage: ChatMessage = {
   id: "assistant-intro",
   role: "assistant",
-  content:
-    "Hi, I’m Ask Shubhaang AI. If an AI provider is configured, I answer with Shubhaang’s verified portfolio knowledge as context. If not, I safely fall back to local verified answers.",
+  content: "Hey, I am Shubhaang's Assistant. How can I help you?",
   meta: {
     provider: "local",
     sources: ["verified-portfolio-knowledge"]
