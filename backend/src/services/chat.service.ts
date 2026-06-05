@@ -54,12 +54,17 @@ let cachedAssistantGraph: AssistantGraph | undefined;
 
 export async function createChatResponse(message: string): Promise<ChatResponse> {
   const trimmedMessage = message.trim();
-  const localResponse = createLocalResponse(trimmedMessage);
   const shouldUseRemoteProvider = env.AI_PROVIDER !== "local" && Boolean(env.AI_API_KEY);
 
-  const response = shouldUseRemoteProvider
-    ? await createProviderResponse(trimmedMessage).catch(() => toChatResponse(localResponse))
-    : toChatResponse(localResponse);
+  let response: ChatResponse;
+
+  if (shouldUseRemoteProvider) {
+    response = await createProviderResponse(trimmedMessage).catch(async () => {
+      return toChatResponse(createLocalResponse(trimmedMessage));
+    });
+  } else {
+    response = toChatResponse(createLocalResponse(trimmedMessage));
+  }
 
   prisma.chatLog
     .create({
@@ -168,14 +173,19 @@ function shouldUseGeminiNativeApi() {
 
 function createSystemPrompt() {
   return [
-    "You are Ask Shubhaang AI, a portfolio assistant for Shubhaang Kataruka.",
-    "Answer only using the verified profile knowledge provided below.",
-    "Do not invent facts, links, employers, dates, metrics, credentials, or contact details.",
-    "Keep answers concise, professional, and recruiter-friendly.",
-    `If the answer is not in the knowledge base, say exactly: ${UNVERIFIED_FALLBACK}`,
-    "Focus on Shubhaang's AI, data analytics, software engineering, projects, internships, education, and technical achievements.",
-    "Do not over-emphasize non-tech achievements unless directly asked.",
-    "Verified profile knowledge:",
+    "You are Ask Shubhaang AI, a friendly and professional portfolio assistant for Shubhaang Kataruka.",
+    "Your primary purpose is to answer questions about Shubhaang's profile, experience, projects, and achievements.",
+    "",
+    "CONVERSATION GUIDELINES:",
+    "- Respond naturally to greetings (hello, hi, hey, etc.) with a friendly introduction and offer to help.",
+    "- For small talk or casual questions, respond briefly and professionally, then pivot to Shubhaang-related topics.",
+    "- For questions about Shubhaang's profile: Use the verified knowledge provided below. Be accurate and professional.",
+    "- Do not invent facts, links, employers, dates, metrics, credentials, or contact details not in the knowledge base.",
+    "- Keep answers concise, engaging, and recruiter-friendly.",
+    "- If a specific profile question is not in the knowledge base, say: 'I do not have verified information about that yet.'",
+    "- Focus on AI/ML, data analytics, software engineering, projects, internships, education, and technical achievements.",
+    "",
+    "VERIFIED PROFILE KNOWLEDGE:",
     JSON.stringify(shubhaangKnowledge, null, 2)
   ].join("\n\n");
 }
