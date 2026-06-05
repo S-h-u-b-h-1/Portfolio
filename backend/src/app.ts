@@ -1,6 +1,7 @@
 import cors from "cors";
 import express from "express";
 import { env } from "./config/env";
+import { apiRateLimiter } from "./middleware/rate-limit.middleware";
 import { errorHandler } from "./middleware/error.middleware";
 import { notFoundHandler } from "./middleware/not-found.middleware";
 import { apiRouter } from "./routes";
@@ -19,13 +20,15 @@ const corsOrigins = [env.CORS_ORIGIN, env.FRONTEND_URL, ...developmentOrigins]
   .filter(Boolean);
 
 const uniqueCorsOrigins = Array.from(new Set(corsOrigins));
+const allowAnyOrigin = uniqueCorsOrigins.length === 0;
 
 app.use(
   cors({
-    origin: uniqueCorsOrigins.length > 0 ? uniqueCorsOrigins : env.NODE_ENV === "production" ? false : true,
+    origin: allowAnyOrigin ? true : uniqueCorsOrigins,
     credentials: true
   })
 );
+app.use(apiRateLimiter);
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/", (_req, res) => {
