@@ -184,7 +184,7 @@ export const shubhaangKnowledge = {
     {
       id: "education",
       question: "What is his education?",
-      keywords: ["education", "college", "university", "rishihood", "newton", "gpa", "student"],
+      keywords: ["education", "college", "university", "rishihood", "newton", "gpa", "student", "year", "studying", "study", "3rd", "third", "grad", "graduation", "btech", "csai"],
       answer:
         "Shubhaang is a 3rd-year B.Tech Computer Science & Artificial Intelligence student at Rishihood University x Newton School of Technology with an 8.5 GPA through first and second year."
     },
