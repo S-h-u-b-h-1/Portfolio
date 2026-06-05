@@ -164,12 +164,6 @@ export function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
                     </div>
                   </section>
 
-                  <section className="rounded-lg border border-border bg-white/[0.045] p-4 light:bg-slate-950/[0.035]">
-                    <h3 className="text-sm font-semibold text-slate-50 light:text-slate-950">Proof status</h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-400 light:text-slate-600">
-                      {project.proofStatus}
-                    </p>
-                  </section>
 
                   {project.links.live.startsWith("TODO") ? null : (
                     <a
