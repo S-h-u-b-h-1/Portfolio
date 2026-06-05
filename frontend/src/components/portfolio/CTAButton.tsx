@@ -13,7 +13,7 @@ type CTAButtonProps = {
 
 const variantClasses = {
   primary:
-    "border-transparent bg-gradient-to-r from-accent-cyan to-accent.blue text-slate-950 shadow-[0_8px_30px_rgba(34,211,238,0.18)] hover:brightness-105",
+    "border-transparent bg-gradient-to-r from-accent-cyan to-accent-blue text-slate-900 shadow-[0_8px_30px_rgba(34,211,238,0.18)] hover:brightness-105",
   secondary:
     "border-white/12 bg-white/[0.04] text-slate-50 hover:border-accent-cyan/60 hover:bg-accent-cyan/8 hover:text-accent-cyan light:border-slate-950/10 light:bg-white/80 light:text-slate-950",
   quiet:

@@ -38,7 +38,7 @@ export function ChatComposer({ value, isLoading, onChange, onSubmit }: ChatCompo
         <button
           type="submit"
           disabled={!canSubmit}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-accent-cyan to-accent.blue px-6 py-3 text-base font-semibold text-slate-950 transition-transform duration-200 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-cyan disabled:cursor-not-allowed disabled:opacity-55 sm:self-stretch"
+          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-accent-cyan to-accent-blue px-6 py-3 text-base font-semibold text-slate-900 transition-transform duration-200 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-cyan disabled:cursor-not-allowed disabled:opacity-55 sm:self-stretch"
         >
           {isLoading ? (
             <LoaderCircle aria-hidden="true" className="animate-spin" size={17} />

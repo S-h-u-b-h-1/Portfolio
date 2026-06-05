@@ -83,7 +83,7 @@ export function ProjectCard({ project, index, onViewCaseStudy }: ProjectCardProp
       <button
         type="button"
         onClick={() => onViewCaseStudy(project)}
-        className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-accent-cyan to-accent.blue px-5 py-3 text-sm font-semibold text-slate-950 transition-transform duration-200 hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-cyan"
+        className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-accent-cyan to-accent-blue px-5 py-3 text-sm font-semibold text-slate-900 transition-transform duration-200 hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-cyan"
       >
         View Case Study
         <ArrowRight aria-hidden="true" size={17} strokeWidth={2.2} />

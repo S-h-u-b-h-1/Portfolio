@@ -185,3 +185,29 @@ body.light .app-background-grid {
     animation: none;
   }
 }
+
+/* Light theme fixes: ensure cards and buttons adapt cleanly when `body.light` is present */
+body.light {
+  --card-bg: rgba(255,255,255,0.94);
+  --card-bg-weak: rgba(255,255,255,0.88);
+  --card-border: rgba(2,6,23,0.06);
+  --text-default: #0f172a;
+  --btn-from: #06b6d4; /* cyan */
+  --btn-to: #38bdf8; /* blue */
+}
+
+body.light .rounded-lg.border,
+body.light .rounded-2xl.border,
+body.light .rounded-full.border,
+body.light .rounded-lg[class*="bg-"],
+body.light .rounded-2xl[class*="bg-"] {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+  color: var(--text-default) !important;
+}
+
+/* Light-mode gradient buttons: override darker gradients */
+body.light .bg-gradient-to-r.from-accent-cyan.to-accent-blue {
+  background-image: linear-gradient(90deg, var(--btn-from), var(--btn-to)) !important;
+}
+
