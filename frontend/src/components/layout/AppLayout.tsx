@@ -60,7 +60,7 @@ export function AppLayout() {
           className="pointer-events-auto text-xl font-black tracking-tight text-slate-900 transition hover:opacity-80 dark:text-slate-50"
           aria-label="Go to home"
         >
-          Shubhaang Kataruka.
+          Shubhaang Kataruka
         </Link>
       </div>
 

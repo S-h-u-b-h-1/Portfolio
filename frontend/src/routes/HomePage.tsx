@@ -46,7 +46,7 @@ export function HomePage() {
   const [isChatExpanded, setIsChatExpanded] = useState(false);
   
   const typedName = useTypewriter([
-    "Shubhaang Kataruka.",
+    "Shubhaang Kataruka",
     "an AI Engineer.",
     "a Builder."
   ], 100, 2500);
