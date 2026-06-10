@@ -43,6 +43,7 @@ export function HomePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [isChatExpanded, setIsChatExpanded] = useState(false);
+  const [typedName, setTypedName] = useState("");
   
   const abortControllerRef = useRef<AbortController | null>(null);
   const transcriptEndRef = useRef<HTMLDivElement>(null);
@@ -52,6 +53,19 @@ export function HomePage() {
       transcriptEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
     }
   }, [messages, isLoading, isChatExpanded]);
+
+  useEffect(() => {
+    const nameStr = "Shubhaang";
+    let i = 0;
+    const interval = setInterval(() => {
+      setTypedName(nameStr.slice(0, i + 1));
+      i++;
+      if (i >= nameStr.length) {
+        clearInterval(interval);
+      }
+    }, 150);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(
     () => () => {
@@ -150,8 +164,9 @@ export function HomePage() {
 
           <h1 className="text-5xl font-black tracking-tighter text-slate-900 sm:text-7xl md:text-8xl dark:text-slate-50">
             Hi, I'm <br className="sm:hidden" />
-            <span className="bg-gradient-to-r from-accent-cyan via-accent-violet to-accent-fuchsia bg-clip-text text-transparent">
-              Shubhaang
+            <span className="text-black dark:text-white">
+              {typedName}
+              <span className="animate-pulse font-light">|</span>
             </span>
           </h1>
 
