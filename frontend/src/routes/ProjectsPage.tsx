@@ -62,7 +62,7 @@ export function ProjectsPage() {
         <h1 className="text-4xl font-black tracking-tight text-slate-900 md:text-5xl dark:text-slate-50">
           Selected Works & Case Studies
         </h1>
-        <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+        <p className="mt-4 text-xl leading-relaxed text-slate-600 dark:text-slate-400">
           Focused project case studies demonstrating AI, data, and software engineering capabilities. Rashtram AI is the flagship project, supported by analytics and full-stack work.
         </p>
       </div>
@@ -95,10 +95,10 @@ export function ProjectsPage() {
             <section className="rounded-3xl border border-black/5 bg-white/60 p-6 backdrop-blur-md light:border-slate-900/10 dark:border-white/10 dark:bg-white/5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Archive</span>
+                  <span className="text-sm font-bold uppercase tracking-widest text-slate-500">Archive</span>
                   <h2 className="mt-2 text-2xl font-bold text-slate-900 dark:text-slate-50">Other Work</h2>
                 </div>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+                <p className="text-base text-slate-500 dark:text-slate-400">
                   Smaller proof areas available for discussion.
                 </p>
               </div>
@@ -112,7 +112,7 @@ export function ProjectsPage() {
                   >
                     <span>
                       <span className="block font-bold text-slate-900 dark:text-slate-100">{project.title}</span>
-                      <span className="mt-1 block text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                      <span className="mt-1 block text-base leading-relaxed text-slate-600 dark:text-slate-400">
                         {project.summary}
                       </span>
                     </span>
@@ -150,7 +150,7 @@ export function ProjectsPage() {
           <h2 className="mt-4 text-xl font-bold text-slate-900 dark:text-slate-50">
             No projects found
           </h2>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+          <p className="mt-2 text-base text-slate-500 dark:text-slate-400">
             No project matches the current filter or search query.
           </p>
         </motion.section>

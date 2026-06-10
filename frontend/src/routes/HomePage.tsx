@@ -157,7 +157,7 @@ export function HomePage() {
             </div>
           </div>
 
-          <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-white/50 px-4 py-1.5 text-xs font-semibold text-slate-600 backdrop-blur-md light:bg-white/80 dark:border-white/10 dark:bg-white/5 dark:text-slate-400">
+          <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-white/50 px-5 py-2 text-sm font-semibold text-slate-600 backdrop-blur-md light:bg-white/80 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
             <span className="size-2 rounded-full bg-accent-emerald shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
             AI Engineer + Data Systems Builder
           </div>
@@ -178,9 +178,9 @@ export function HomePage() {
                 <span className="flex size-6 items-center justify-center rounded-full bg-accent-cyan/10 text-accent-cyan">
                   <Bot size={14} aria-hidden="true" />
                 </span>
-                <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">Ask Shubhaang AI</p>
+                <p className="text-base font-semibold text-slate-800 dark:text-slate-200">Ask Shubhaang AI</p>
               </div>
-              <p className="text-xs text-slate-500">Online</p>
+              <p className="text-sm text-slate-500">Online</p>
             </div>
 
             {/* Transcript (collapsible) */}
@@ -245,14 +245,14 @@ export function HomePage() {
           >
             <div className="flex h-full flex-col justify-between">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Academics</span>
-                <span className="flex size-8 items-center justify-center rounded-full bg-accent-cyan/10 text-accent-cyan">
+                <span className="text-sm font-bold uppercase tracking-widest text-slate-500">Academics</span>
+                <span className="flex size-10 items-center justify-center rounded-full bg-accent-cyan/10 text-accent-cyan">
                   <BrainCircuit size={16} />
                 </span>
               </div>
               <div>
-                <p className="text-4xl font-black text-slate-900 dark:text-slate-50">8.5 GPA</p>
-                <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                <p className="text-5xl font-black text-slate-900 dark:text-slate-50">8.5 GPA</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                   B.Tech CS & AI at Newton School of Technology. Strong foundation in data structures and algorithms.
                 </p>
               </div>
@@ -269,19 +269,19 @@ export function HomePage() {
           >
             <div className="flex h-full flex-col justify-between">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Problem Solving</span>
-                <span className="flex size-8 items-center justify-center rounded-full bg-accent-violet/10 text-accent-violet">
+                <span className="text-sm font-bold uppercase tracking-widest text-slate-500">Problem Solving</span>
+                <span className="flex size-10 items-center justify-center rounded-full bg-accent-violet/10 text-accent-violet">
                   <Code2 size={16} />
                 </span>
               </div>
               <div className="mt-4 flex items-end justify-between">
                 <div>
-                  <p className="text-5xl font-black text-slate-900 dark:text-slate-50">1700+</p>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">LeetCode Rating</p>
+                  <p className="text-6xl font-black text-slate-900 dark:text-slate-50">1700+</p>
+                  <p className="mt-2 text-base font-medium leading-relaxed text-slate-600 dark:text-slate-300">LeetCode Rating</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-2xl font-bold text-slate-800 dark:text-slate-200">300+</p>
-                  <p className="text-xs text-slate-500">DSA Problems Solved</p>
+                  <p className="text-3xl font-bold text-slate-800 dark:text-slate-200">300+</p>
+                  <p className="text-sm font-medium text-slate-500">DSA Problems Solved</p>
                 </div>
               </div>
             </div>
@@ -297,14 +297,14 @@ export function HomePage() {
           >
             <div className="flex h-full flex-col justify-between">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Experience</span>
-                <span className="flex size-8 items-center justify-center rounded-full bg-accent-emerald/10 text-accent-emerald">
+                <span className="text-sm font-bold uppercase tracking-widest text-slate-500">Experience</span>
+                <span className="flex size-10 items-center justify-center rounded-full bg-accent-emerald/10 text-accent-emerald">
                   <BriefcaseBusiness size={16} />
                 </span>
               </div>
               <div>
-                <p className="text-3xl font-black text-slate-900 dark:text-slate-50">2 Internships</p>
-                <p className="mt-2 max-w-md text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                <p className="text-4xl font-black text-slate-900 dark:text-slate-50">2 Internships</p>
+                <p className="mt-2 max-w-md text-base leading-relaxed text-slate-600 dark:text-slate-300">
                   Real-world experience in AI/ML engineering and strategic hiring analysis. Combining technical depth with business understanding.
                 </p>
               </div>
@@ -320,14 +320,14 @@ export function HomePage() {
             className="group relative col-span-1 flex flex-col justify-between overflow-hidden rounded-3xl border border-black/5 bg-white/60 p-6 backdrop-blur-md transition hover:border-accent-fuchsia/40 hover:shadow-lg light:border-slate-900/10 dark:border-white/10 dark:bg-white/5 dark:hover:shadow-[0_0_30px_rgba(217,70,239,0.1)] md:row-span-1"
           >
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Community</span>
-              <span className="flex size-8 items-center justify-center rounded-full bg-accent-fuchsia/10 text-accent-fuchsia">
+              <span className="text-sm font-bold uppercase tracking-widest text-slate-500">Community</span>
+              <span className="flex size-10 items-center justify-center rounded-full bg-accent-fuchsia/10 text-accent-fuchsia">
                 <Sparkles size={16} />
               </span>
             </div>
             <div>
-              <p className="text-4xl font-black text-slate-900 dark:text-slate-50">15+ PRs</p>
-              <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+              <p className="text-5xl font-black text-slate-900 dark:text-slate-50">15+ PRs</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 Active open-source contributor. Hacktoberfest participant with strong GitHub activity.
               </p>
             </div>
@@ -338,10 +338,10 @@ export function HomePage() {
       {/* FEATURED PROJECTS BENTO */}
       <section className="mx-auto max-w-5xl" id="projects">
         <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-black text-slate-900 dark:text-slate-50">Featured Work</h2>
+          <h2 className="text-3xl font-black text-slate-900 dark:text-slate-50">Featured Work</h2>
           <button
             onClick={() => navigate("/projects")}
-            className="group flex items-center gap-2 text-sm font-semibold text-accent-cyan transition hover:text-accent-cyan/80"
+            className="group flex items-center gap-2 text-base font-semibold text-accent-cyan transition hover:text-accent-cyan/80"
           >
             View all projects
             <ArrowRight size={16} className="transition group-hover:translate-x-1" />
@@ -369,11 +369,11 @@ export function HomePage() {
               <p className="mt-3 text-sm leading-relaxed text-slate-600 line-clamp-3 dark:text-slate-400">{project.summary}</p>
               
               <div className="mt-auto pt-6">
-                <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-accent-emerald">Impact</p>
-                <p className="text-xs leading-relaxed text-slate-700 line-clamp-2 dark:text-slate-300">{project.impact[0]}</p>
+                <p className="mb-3 text-xs font-bold uppercase tracking-widest text-accent-emerald">Impact</p>
+                <p className="text-sm leading-relaxed text-slate-700 line-clamp-2 dark:text-slate-300">{project.impact[0]}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.tags.slice(0, 3).map((tag) => (
-                    <span key={tag} className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-medium text-slate-600 dark:bg-white/5 dark:text-slate-300">
+                    <span key={tag} className="rounded-full bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-600 dark:bg-white/5 dark:text-slate-200">
                       {tag}
                     </span>
                   ))}

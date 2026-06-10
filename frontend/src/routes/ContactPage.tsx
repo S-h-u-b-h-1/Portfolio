@@ -113,7 +113,7 @@ export function ContactPage() {
         <h1 className="text-4xl font-black tracking-tight text-slate-900 md:text-5xl dark:text-slate-50">
           Start a focused conversation.
         </h1>
-        <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+        <p className="mt-4 text-xl leading-relaxed text-slate-600 dark:text-slate-400">
           For recruiters, founders, mentors, collaborators, and teams looking for a CS & AI student with AI, analytics, full-stack, and business instincts.
         </p>
       </div>
@@ -131,11 +131,11 @@ export function ContactPage() {
 
         <aside className="space-y-6">
           <section className="rounded-3xl border border-black/5 bg-white/60 p-6 backdrop-blur-md light:border-slate-900/10 dark:border-white/10 dark:bg-white/5">
-            <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Availability</span>
+            <span className="text-sm font-bold uppercase tracking-widest text-slate-500">Availability</span>
             <h2 className="mt-4 text-2xl font-bold text-slate-900 dark:text-slate-50">
               Open to high-context technical work.
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+            <p className="mt-3 text-base leading-relaxed text-slate-600 dark:text-slate-400">
               {profile.currentStatus}
             </p>
             <div className="mt-6 grid gap-4">
@@ -154,8 +154,8 @@ export function ContactPage() {
                       <Icon aria-hidden="true" size={18} />
                     </span>
                     <div>
-                      <p className="text-sm font-bold text-slate-900 dark:text-slate-100">{item.label}</p>
-                      <p className="mt-1 text-xs leading-relaxed text-slate-600 dark:text-slate-400">{item.value}</p>
+                      <p className="text-base font-bold text-slate-900 dark:text-slate-100">{item.label}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{item.value}</p>
                     </div>
                   </div>
                 );
