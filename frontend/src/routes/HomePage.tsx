@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Bot, BrainCircuit, BriefcaseBusiness, Code2, ServerCog, Sparkles } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTypewriter } from "../hooks/useTypewriter";
 import { ChatComposer } from "../components/ai/ChatComposer";
 import { ChatMessageBubble, type ChatMessage } from "../components/ai/ChatMessageBubble";
 import { SuggestedQuestionGrid } from "../components/ai/SuggestedQuestionGrid";
@@ -43,8 +44,13 @@ export function HomePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [isChatExpanded, setIsChatExpanded] = useState(false);
-  const [typedName, setTypedName] = useState("");
   
+  const typedName = useTypewriter([
+    "Shubhaang.",
+    "an AI Engineer.",
+    "a Builder."
+  ], 100, 2500);
+
   const abortControllerRef = useRef<AbortController | null>(null);
   const transcriptEndRef = useRef<HTMLDivElement>(null);
 
@@ -53,19 +59,6 @@ export function HomePage() {
       transcriptEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
     }
   }, [messages, isLoading, isChatExpanded]);
-
-  useEffect(() => {
-    const nameStr = "Shubhaang";
-    let i = 0;
-    const interval = setInterval(() => {
-      setTypedName(nameStr.slice(0, i + 1));
-      i++;
-      if (i >= nameStr.length) {
-        clearInterval(interval);
-      }
-    }, 150);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(
     () => () => {
@@ -137,41 +130,23 @@ export function HomePage() {
 
   return (
     <div className="space-y-32 pb-16">
-      {/* HERO SECTION */}
-      <section className="flex min-h-[70vh] flex-col items-center justify-center pt-16 text-center">
+      {/* HERO SECTION (Chat only) */}
+      <section className="flex min-h-[85vh] flex-col items-center justify-center pt-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex w-full flex-col items-center gap-6"
+          className="flex w-full flex-col items-center gap-6 px-4"
         >
-          {/* Profile Picture */}
-          <div className="mb-2">
-            <div className="relative inline-flex size-24 overflow-hidden rounded-full border-2 border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.1)] light:border-black/5">
-              {/* Replace with actual image source or avatar component */}
-              <img 
-                src="https://avatars.githubusercontent.com/u/84254265?v=4" 
-                alt="Shubhaang Kataruka"
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
-
-          <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-white/50 px-5 py-2 text-sm font-semibold text-slate-600 backdrop-blur-md light:bg-white/80 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
-            <span className="size-2 rounded-full bg-accent-emerald shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
-            AI Engineer + Data Systems Builder
-          </div>
-
-          <h1 className="text-5xl font-black tracking-tighter text-slate-900 sm:text-7xl md:text-8xl dark:text-slate-50">
-            Hi, I'm <br className="sm:hidden" />
-            <span className="text-black dark:text-white">
-              {typedName}
-              <span className="animate-pulse font-light">|</span>
-            </span>
+          <h1 className="text-4xl font-black tracking-tighter text-slate-900 sm:text-6xl dark:text-slate-50">
+            Let's talk.
           </h1>
+          <p className="max-w-md text-base text-slate-500 dark:text-slate-400">
+            Ask my AI assistant anything about my experience, skills, or projects.
+          </p>
 
           {/* Integrated Chat Widget */}
-          <div className="mt-8 w-full max-w-2xl overflow-hidden rounded-3xl border border-black/5 bg-white/80 shadow-xl backdrop-blur-xl transition-all duration-500 light:border-slate-900/10 dark:border-white/10 dark:bg-[#0f1115]/80">
+          <div className="mt-4 w-full max-w-2xl overflow-hidden rounded-3xl border border-black/5 bg-white/80 shadow-2xl backdrop-blur-xl transition-all duration-500 light:border-slate-900/10 dark:border-white/10 dark:bg-[#0f1115]/80">
             {/* Header */}
             <div className="flex items-center justify-between border-b border-black/5 px-6 py-3 dark:border-white/5">
               <div className="flex items-center gap-3">
@@ -232,8 +207,46 @@ export function HomePage() {
         </motion.div>
       </section>
 
+      {/* ABOUT ME SECTION (Scroll Down) */}
+      <section className="mx-auto flex max-w-5xl flex-col items-center px-4 pt-16 pb-12 text-center" id="about">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col items-center gap-6"
+        >
+          {/* Profile Picture */}
+          <div className="mb-2">
+            <div className="relative inline-flex size-32 overflow-hidden rounded-full border-2 border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.15)] light:border-black/5">
+              <img 
+                src="https://avatars.githubusercontent.com/u/84254265?v=4" 
+                alt="Shubhaang Kataruka"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-white/50 px-5 py-2 text-sm font-semibold text-slate-600 backdrop-blur-md light:bg-white/80 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
+            <span className="size-2 rounded-full bg-accent-emerald shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+            AI Engineer + Data Systems Builder
+          </div>
+
+          <h2 className="mt-4 text-5xl font-black tracking-tighter text-slate-900 sm:text-7xl md:text-8xl dark:text-slate-50">
+            Hi, I'm <br className="sm:hidden" />
+            <span className="text-black dark:text-white">
+              {typedName}
+              <span className="animate-pulse font-light text-slate-400">|</span>
+            </span>
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+            I specialize in building scalable AI systems, data products, and full-stack applications. With a strong foundation in CS & AI, I transform complex data into actionable software solutions.
+          </p>
+        </motion.div>
+      </section>
+
       {/* BENTO BOX GRID (ABOUT & STATS) */}
-      <section className="mx-auto max-w-5xl" id="about">
+      <section className="mx-auto max-w-5xl px-4">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-[12rem_12rem]">
           {/* Bento Item 1: GPA/Academics */}
           <motion.article
