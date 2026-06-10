@@ -74,21 +74,31 @@ a:hover, button:hover {
   position: fixed;
   left: 0;
   top: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
   pointer-events: none;
-  transform: translate3d(-100px, -100px, 0) translate(-50%, -50%);
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s, border-color 0.3s, opacity 0.3s, scale 0.3s;
   z-index: 9999;
-  border: 1px solid rgba(34, 211, 238, 0.3);
-  background: rgba(34, 211, 238, 0.03);
-  backdrop-filter: blur(1px);
-  mix-blend-mode: screen;
 }
 
-body.light .custom-cursor-outer {
-  border-color: rgba(6, 182, 212, 0.4);
+.custom-cursor-outer-shape {
+  width: 36px;
+  height: 36px;
+  border: 1px dashed rgba(34, 211, 238, 0.7);
+  border-radius: 8px; /* Soft diamond/square */
+  background: rgba(34, 211, 238, 0.02);
+  backdrop-filter: blur(1px);
+  mix-blend-mode: screen;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s, border-color 0.3s, border-radius 0.3s, opacity 0.3s, scale 0.3s;
+  animation: cursor-spin 6s linear infinite;
+  /* Centering */
+  transform: translate(-50%, -50%);
+}
+
+@keyframes cursor-spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+body.light .custom-cursor-outer-shape {
+  border-color: rgba(6, 182, 212, 0.8);
   background: rgba(6, 182, 212, 0.05);
   mix-blend-mode: multiply;
 }
@@ -102,8 +112,8 @@ body.light .custom-cursor-outer {
   border-radius: 50%;
   background: #22d3ee;
   pointer-events: none;
-  transform: translate3d(-100px, -100px, 0) translate(-50%, -50%);
-  transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), height 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s, scale 0.2s;
+  /* inner tracks immediately, so it gets full translate logic directly on style */
+  transition: opacity 0.2s, scale 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 0 10px rgba(34, 211, 238, 0.8), 0 0 20px rgba(34, 211, 238, 0.4);
   z-index: 10000;
 }
@@ -113,18 +123,22 @@ body.light .custom-cursor-inner {
   box-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
 }
 
-.custom-cursor-outer.cursor-hover {
-  width: 64px;
-  height: 64px;
+.custom-cursor-outer.cursor-hover .custom-cursor-outer-shape {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%; /* Morphs into a circle */
+  border-style: solid;
+  border-width: 2px;
   background: rgba(34, 211, 238, 0.1);
-  border-color: rgba(34, 211, 238, 0.8);
+  border-color: rgba(34, 211, 238, 0.9);
   backdrop-filter: blur(3px);
   box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
+  animation-duration: 2s; /* Spins faster */
 }
 
-body.light .custom-cursor-outer.cursor-hover {
+body.light .custom-cursor-outer.cursor-hover .custom-cursor-outer-shape {
   background: rgba(6, 182, 212, 0.1);
-  border-color: rgba(6, 182, 212, 0.8);
+  border-color: rgba(6, 182, 212, 0.9);
   box-shadow: 0 0 30px rgba(6, 182, 212, 0.15);
 }
 
@@ -133,7 +147,7 @@ body.light .custom-cursor-outer.cursor-hover {
   opacity: 0;
 }
 
-.custom-cursor-outer.cursor-active { scale: 0.9; opacity: 0.8; }
+.custom-cursor-outer.cursor-active .custom-cursor-outer-shape { scale: 0.8; opacity: 0.8; }
 .custom-cursor-inner.cursor-active-inner { scale: 0.5; opacity: 0.8; }
 
 /* Interactive focus rings for keyboard users */

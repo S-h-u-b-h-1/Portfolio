@@ -9,18 +9,36 @@ export function InteractiveCursor() {
     const inner = innerRef.current;
     if (!outer || !inner) return;
 
-    let mouseX = 0;
-    let mouseY = 0;
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let outerX = mouseX;
+    let outerY = mouseY;
+    let animationFrameId: number;
 
     const o = outer as HTMLDivElement;
     const i = inner as HTMLDivElement;
 
+    // Set initial position immediately
+    o.style.transform = `translate3d(${outerX}px, ${outerY}px, 0)`;
+    i.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+
     function onMove(e: MouseEvent) {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      o.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
       i.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
     }
+
+    function render() {
+      // Lerp logic for smooth lag effect
+      outerX += (mouseX - outerX) * 0.15;
+      outerY += (mouseY - outerY) * 0.15;
+      
+      // We don't need translate(-50%, -50%) here because the inner shape will handle centering
+      o.style.transform = `translate3d(${outerX}px, ${outerY}px, 0)`;
+      
+      animationFrameId = requestAnimationFrame(render);
+    }
+    render();
 
     function onPointerEnter() {
       o.classList.add("cursor-active");
@@ -58,6 +76,7 @@ export function InteractiveCursor() {
     document.addEventListener("mouseout", onOut);
 
     return () => {
+      cancelAnimationFrame(animationFrameId);
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("pointerenter", onPointerEnter);
       window.removeEventListener("pointerleave", onPointerLeave);
@@ -68,7 +87,9 @@ export function InteractiveCursor() {
 
   return (
     <>
-      <div ref={outerRef} className="custom-cursor-outer" aria-hidden />
+      <div ref={outerRef} className="custom-cursor-outer" aria-hidden>
+        <div className="custom-cursor-outer-shape" />
+      </div>
       <div ref={innerRef} className="custom-cursor-inner" aria-hidden />
     </>
   );
