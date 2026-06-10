@@ -90,6 +90,12 @@ export const shubhaangKnowledge = {
   },
   responses: [
     {
+      id: "greeting",
+      question: "Hello",
+      keywords: ["hi", "hello", "hey", "greetings", "sup", "what's up", "good morning", "good evening", "good afternoon"],
+      answer: "Hello! I am **Ask Shubhaang AI**, the visionary portfolio assistant for Shubhaang Kataruka. I can answer questions about his AI engineering projects, data analytics experience, full-stack work, or business background. What would you like to know?"
+    },
+    {
       id: "who-is-shubhaang",
       question: "Who is Shubhaang Kataruka?",
       keywords: ["who is", "about", "shubhaang", "profile", "introduction", "background", "summary", "intro", "tell me about"],
