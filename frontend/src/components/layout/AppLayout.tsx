@@ -9,6 +9,7 @@ import { PrimaryNav } from "../navigation/PrimaryNav";
 import { SectionProgressIndicator } from "../navigation/SectionProgressIndicator";
 import { ShortcutsDialog } from "../navigation/ShortcutsDialog";
 import { ViewCounter } from "../navigation/ViewCounter";
+import { FloatingSocialLinks } from "../navigation/FloatingSocialLinks";
 import InteractiveCursor from "./InteractiveCursor";
 
 export function AppLayout() {
@@ -93,7 +94,7 @@ export function AppLayout() {
         <Outlet />
       </main>
 
-
+      <FloatingSocialLinks />
       <ShortcutsDialog isOpen={isShortcutsOpen} onClose={() => setIsShortcutsOpen(false)} />
       <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
     </div>
