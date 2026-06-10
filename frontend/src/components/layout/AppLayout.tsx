@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useKeyboardShortcuts } from "../../hooks/useKeyboardShortcuts";
 import { usePortfolioVisits } from "../../hooks/usePortfolioVisits";
-import { FloatingAskAIButton } from "../navigation/FloatingAskAIButton";
+
 import { MobileMenu } from "../navigation/MobileMenu";
 import { PrimaryNav } from "../navigation/PrimaryNav";
 import { SectionProgressIndicator } from "../navigation/SectionProgressIndicator";
@@ -93,7 +93,7 @@ export function AppLayout() {
         <Outlet />
       </main>
 
-      <FloatingAskAIButton />
+
       <ShortcutsDialog isOpen={isShortcutsOpen} onClose={() => setIsShortcutsOpen(false)} />
       <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
     </div>

@@ -216,16 +216,6 @@ export function HomePage() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col items-center gap-6"
         >
-          {/* Profile Picture */}
-          <div className="mb-2">
-            <div className="relative inline-flex size-32 overflow-hidden rounded-full border-2 border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.15)] light:border-black/5">
-              <img 
-                src="https://avatars.githubusercontent.com/u/84254265?v=4" 
-                alt="Shubhaang Kataruka"
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
 
           <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-white/50 px-5 py-2 text-sm font-semibold text-slate-600 backdrop-blur-md light:bg-white/80 dark:border-white/10 dark:bg-white/5 dark:text-slate-300">
             <span className="size-2 rounded-full bg-accent-emerald shadow-[0_0_8px_rgba(16,185,129,0.5)]" />

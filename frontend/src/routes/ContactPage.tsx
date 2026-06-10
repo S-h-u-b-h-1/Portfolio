@@ -26,12 +26,11 @@ export function ContactPage() {
 
   const contactLinks = [
     {
-      label: "Resume",
-      value: resumeUrl.includes("PLACEHOLDER") ? "Placeholder file" : "Download PDF",
-      href: resumeUrl,
-      icon: Download,
-      isPlaceholder: false,
-      download: true
+      label: "Email",
+      value: profile.contact.email,
+      href: emailHref,
+      icon: Mail,
+      isPlaceholder: !hasEmail
     },
     {
       label: "LinkedIn",
@@ -48,18 +47,12 @@ export function ContactPage() {
       isPlaceholder: isPlaceholderValue(profile.contact.github)
     },
     {
-      label: "LeetCode",
-      value: profile.contact.leetcode,
-      href: isPlaceholderValue(profile.contact.leetcode) ? undefined : profile.contact.leetcode,
-      icon: Trophy,
-      isPlaceholder: isPlaceholderValue(profile.contact.leetcode)
-    },
-    {
-      label: "Email",
-      value: profile.contact.email,
-      href: emailHref,
-      icon: Mail,
-      isPlaceholder: !hasEmail
+      label: "Resume",
+      value: resumeUrl.includes("PLACEHOLDER") ? "Placeholder" : "Download",
+      href: resumeUrl,
+      icon: Download,
+      isPlaceholder: false,
+      download: true
     }
   ];
 
@@ -91,7 +84,7 @@ export function ContactPage() {
       setFormData(initialFormData);
       setStatus({
         type: "success",
-        message: "Message sent. Shubhaang will have the context needed to respond thoughtfully."
+        message: "Message sent. Shubhaang will review and respond shortly."
       });
     } catch (error) {
       if (!abortController.signal.aborted) {
@@ -108,37 +101,28 @@ export function ContactPage() {
   }, [formData]);
 
   return (
-    <div className="space-y-12 pb-16">
-      <div className="max-w-2xl">
-        <h1 className="text-4xl font-black tracking-tight text-slate-900 md:text-5xl dark:text-slate-50">
-          Start a focused conversation.
-        </h1>
-        <p className="mt-4 text-xl leading-relaxed text-slate-600 dark:text-slate-400">
-          For recruiters, founders, mentors, collaborators, and teams looking for a CS & AI student with AI, analytics, full-stack, and business instincts.
-        </p>
-      </div>
+    <div className="pb-16">
+      <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+        {/* Left Side: Content & Links */}
+        <div className="flex flex-col gap-8 lg:sticky lg:top-32">
+          <div>
+            <h1 className="text-5xl font-black tracking-tight text-slate-900 md:text-6xl dark:text-slate-50">
+              Let's talk.
+            </h1>
+            <p className="mt-6 text-xl leading-relaxed text-slate-600 dark:text-slate-400">
+              For recruiters, founders, mentors, and collaborators looking for an AI engineer with strong analytics and full-stack capabilities.
+            </p>
+          </div>
 
-      <section className="grid gap-8 lg:grid-cols-[0.6fr_0.4fr]">
-        <div className="space-y-6">
-          <ContactForm
-            formData={formData}
-            status={status}
-            isSubmitting={isSubmitting}
-            onChange={handleChange}
-            onSubmit={handleSubmit}
-          />
-        </div>
-
-        <aside className="space-y-6">
-          <section className="rounded-3xl border border-black/5 bg-white/60 p-6 backdrop-blur-md dark:border-white/10 dark:bg-white/5 sm:p-8">
-            <span className="text-sm font-bold uppercase tracking-widest text-slate-500">Availability</span>
-            <h2 className="mt-4 text-2xl font-bold text-slate-900 dark:text-slate-50">
+          <section className="rounded-[2rem] border border-black/5 bg-white/60 p-8 backdrop-blur-md dark:border-white/10 dark:bg-white/5 sm:p-10">
+            <span className="text-sm font-bold uppercase tracking-widest text-accent-cyan">// Availability</span>
+            <h2 className="mt-4 text-3xl font-black text-slate-900 dark:text-slate-50">
               Open to high-context technical work.
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-slate-600 dark:text-slate-400">
+            <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
               {profile.currentStatus}
             </p>
-            <div className="mt-6 grid gap-4">
+            <div className="mt-8 grid gap-4">
               {[
                 { label: "Best fit", value: "AI/ML, RAG, analytics, SQL, full stack", icon: Target },
                 { label: "Response context", value: "Role, project, timeline, and expectations", icon: Send }
@@ -148,14 +132,14 @@ export function ContactPage() {
                 return (
                   <div
                     key={item.label}
-                    className="flex items-center gap-4 rounded-2xl border border-black/5 bg-white/80 p-4 dark:border-white/5 dark:bg-black/20"
+                    className="flex items-center gap-5 rounded-2xl border border-black/5 bg-white/80 p-5 dark:border-white/5 dark:bg-black/20"
                   >
-                    <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-slate-100 text-slate-600 dark:bg-white/5 dark:text-slate-400">
-                      <Icon aria-hidden="true" size={18} />
+                    <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-accent-cyan/10 text-accent-cyan">
+                      <Icon aria-hidden="true" size={20} />
                     </span>
                     <div>
-                      <p className="text-base font-bold text-slate-900 dark:text-slate-100">{item.label}</p>
-                      <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{item.value}</p>
+                      <p className="text-lg font-bold text-slate-900 dark:text-slate-100">{item.label}</p>
+                      <p className="mt-1 text-base text-slate-600 dark:text-slate-400">{item.value}</p>
                     </div>
                   </div>
                 );
@@ -163,13 +147,24 @@ export function ContactPage() {
             </div>
           </section>
 
-          <section className="grid gap-4">
+          <section className="grid grid-cols-2 gap-4">
             {contactLinks.map((link) => (
               <ContactLinkCard key={link.label} {...link} />
             ))}
           </section>
-        </aside>
-      </section>
+        </div>
+
+        {/* Right Side: Form */}
+        <div className="w-full">
+          <ContactForm
+            formData={formData}
+            status={status}
+            isSubmitting={isSubmitting}
+            onChange={handleChange}
+            onSubmit={handleSubmit}
+          />
+        </div>
+      </div>
     </div>
   );
 }
