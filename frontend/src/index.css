@@ -74,44 +74,71 @@ a:hover, button:hover {
   position: fixed;
   left: 0;
   top: 0;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   pointer-events: none;
   transform: translate3d(-100px, -100px, 0);
-  transition: background-color 200ms ease, transform 120ms ease, opacity 220ms ease;
+  transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, opacity 0.2s;
   z-index: 9999;
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  background: rgba(34, 211, 238, 0.05);
+  backdrop-filter: blur(2px);
   mix-blend-mode: screen;
+}
+
+body.light .custom-cursor-outer {
+  border-color: rgba(34, 211, 238, 0.6);
+  background: rgba(34, 211, 238, 0.1);
+  mix-blend-mode: normal;
 }
 
 .custom-cursor-inner {
   position: fixed;
   left: 0;
   top: 0;
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.85);
+  background: #22d3ee;
   pointer-events: none;
   transform: translate3d(-100px, -100px, 0);
-  transition: transform 120ms ease, width 160ms ease, height 160ms ease, opacity 160ms ease;
+  transition: width 0.15s, height 0.15s, background-color 0.15s, opacity 0.15s;
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.8);
   z-index: 10000;
 }
 
+body.light .custom-cursor-inner {
+  background: #0ea5e9;
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.6);
+}
+
 .custom-cursor-outer.cursor-hover {
-  background: rgba(34,211,238,0.12);
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
+  background: rgba(34, 211, 238, 0.15);
+  border-color: rgba(34, 211, 238, 0.6);
+}
+
+body.light .custom-cursor-outer.cursor-hover {
+  background: rgba(14, 165, 233, 0.15);
+  border-color: rgba(14, 165, 233, 0.8);
 }
 
 .custom-cursor-inner.cursor-hover-inner {
-  background: rgba(34,211,238,0.95);
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
-.custom-cursor-outer.cursor-active { opacity: 1; }
-.custom-cursor-inner.cursor-active-inner { opacity: 1; }
+body.light .custom-cursor-inner.cursor-hover-inner {
+  background: #0ea5e9;
+  box-shadow: 0 0 12px rgba(14, 165, 233, 0.8);
+}
+
+.custom-cursor-outer.cursor-active { opacity: 0.8; }
+.custom-cursor-inner.cursor-active-inner { transform: scale(0.8); opacity: 0.8; }
 
 /* Interactive focus rings for keyboard users */
 button:focus, a:focus {

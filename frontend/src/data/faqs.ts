@@ -5,14 +5,14 @@ export const faqs = [
     id: "what-is-rashtram-ai",
     question: "What is Rashtram AI?",
     answer:
-      "Rashtram AI is Shubhaang's flagship RAG-based public policy intelligence system. It helps users understand parliamentary bills, policies, discussions, and citizen impact through retrieval-augmented AI. Live demo: https://rashtramai.vercel.app/.",
+      "Rashtram AI is Shubhaang Kataruka's flagship RAG-based public policy intelligence system. It helps users understand parliamentary bills, policies, discussions, and citizen impact through retrieval-augmented AI. Live demo: https://rashtramai.vercel.app/.",
     keywords: ["rashtram", "rag", "public policy", "policy", "bills", "parliament"]
   },
   {
     id: "why-hire",
-    question: "Why should I hire Shubhaang?",
+    question: "Why should I hire Shubhaang Kataruka?",
     answer:
-      "Shubhaang is positioned as an AI Engineer and Data Systems Builder. He combines CS & AI fundamentals with a production RAG project, data analytics work, SQL/database thinking, full-stack development, and disciplined problem solving.",
+      "Shubhaang Kataruka is positioned as an AI Engineer and Data Systems Builder. He combines CS & AI fundamentals with a production RAG project, data analytics work, SQL/database thinking, full-stack development, and disciplined problem solving.",
     keywords: ["hire", "recruit", "why", "different"]
   },
   {
@@ -47,7 +47,7 @@ export const faqs = [
     id: "leadership-business",
     question: "Tell me about his leadership and business background.",
     answer:
-      "Shubhaang's secondary leadership and business background includes PAN IIT 2026 representation, Hacktoberfest contributions, Sponsorship Manager work, House Captain experience, National Integration Camp involvement, interest in stock market patterns and investment planning, and youngest MDRT qualifier FY25 at Aditya Birla Capital / ABSLI.",
+      "Shubhaang Kataruka's secondary leadership and business background includes PAN IIT 2026 representation, Hacktoberfest contributions, Sponsorship Manager work, House Captain experience, National Integration Camp involvement, interest in stock market patterns and investment planning, and youngest MDRT qualifier FY25 at Aditya Birla Capital / ABSLI.",
     keywords: ["leadership", "business", "finance", "investment", "stock", "mdrt", "pan iit", "sponsorship"]
   }
 ] satisfies FaqItem[];

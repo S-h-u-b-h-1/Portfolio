@@ -37,7 +37,7 @@ export function AboutPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8">
-            <h1 className="text-4xl font-black text-white sm:text-5xl">Shubhaang.</h1>
+            <h1 className="text-3xl font-black text-white sm:text-4xl">Shubhaang Kataruka.</h1>
             <p className="mt-2 text-lg font-bold text-accent-cyan">AI Engineer & Builder</p>
           </div>
         </motion.div>

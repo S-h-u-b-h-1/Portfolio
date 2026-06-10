@@ -30,7 +30,7 @@ export function ChatComposer({ value, isLoading, onChange, onSubmit }: ChatCompo
   return (
     <form onSubmit={handleSubmit} className="relative">
       <label className="sr-only" htmlFor="ask-ai-input">
-        Ask Shubhaang AI a question
+        Ask Shubhaang Kataruka AI a question
       </label>
       <div className="flex items-end gap-2 rounded-[2rem] border border-black/10 bg-white pl-5 pr-2 py-2 shadow-inner transition focus-within:border-accent-cyan/50 focus-within:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:focus-within:bg-white/10">
         <textarea
@@ -44,7 +44,7 @@ export function ChatComposer({ value, isLoading, onChange, onSubmit }: ChatCompo
               if (canSubmit) onSubmit();
             }
           }}
-          placeholder="Ask anything about Shubhaang..."
+          placeholder="Ask anything about Shubhaang Kataruka..."
           rows={1}
           className="max-h-[120px] min-h-[1.5rem] flex-1 resize-none bg-transparent py-2.5 text-sm leading-relaxed text-slate-900 outline-none placeholder:text-slate-400 dark:text-slate-100 dark:placeholder:text-slate-500"
         />

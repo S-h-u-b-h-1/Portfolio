@@ -14,7 +14,7 @@ const featuredProjects = projects.filter((project) => featuredProjectIds.include
 
 const suggestedQuestions = [
   "What is Rashtram AI?",
-  "Why should I hire Shubhaang?",
+  "Why should I hire Shubhaang Kataruka?",
   "What are his strongest technical skills?",
   "Tell me about his full-stack experience."
 ] as const;
@@ -22,7 +22,7 @@ const suggestedQuestions = [
 const initialMessage: ChatMessage = {
   id: "assistant-intro",
   role: "assistant",
-  content: "Hey, I am Shubhaang's Assistant. How can I help you?",
+  content: "Hey, I am Shubhaang Kataruka's Assistant. How can I help you?",
   meta: {
     provider: "local",
     sources: ["verified-portfolio-knowledge"]
@@ -46,7 +46,7 @@ export function HomePage() {
   const [isChatExpanded, setIsChatExpanded] = useState(false);
   
   const typedName = useTypewriter([
-    "Shubhaang.",
+    "Shubhaang Kataruka.",
     "an AI Engineer.",
     "a Builder."
   ], 100, 2500);
@@ -153,7 +153,7 @@ export function HomePage() {
                 <span className="flex size-6 items-center justify-center rounded-full bg-accent-cyan/10 text-accent-cyan">
                   <Bot size={14} aria-hidden="true" />
                 </span>
-                <p className="text-base font-semibold text-slate-800 dark:text-slate-200">Ask Shubhaang AI</p>
+                <p className="text-base font-semibold text-slate-800 dark:text-slate-200">Ask Shubhaang Kataruka AI</p>
               </div>
               <p className="text-sm text-slate-500">Online</p>
             </div>
@@ -222,7 +222,7 @@ export function HomePage() {
             AI Engineer + Data Systems Builder
           </div>
 
-          <h2 className="mt-4 text-5xl font-black tracking-tighter text-slate-900 sm:text-7xl md:text-8xl dark:text-slate-50">
+          <h2 className="mt-4 text-4xl font-black tracking-tighter text-slate-900 sm:text-5xl md:text-6xl dark:text-slate-50">
             Hi, I'm <br className="sm:hidden" />
             <span className="text-black dark:text-white">
               {typedName}

@@ -53,6 +53,17 @@ export function AppLayout() {
       <div className="app-background-grid" aria-hidden="true" />
       <SectionProgressIndicator />
 
+      {/* Top Left Name Logo */}
+      <div className="fixed top-6 left-6 z-50 pointer-events-none hidden md:block">
+        <Link 
+          to="/" 
+          className="pointer-events-auto text-xl font-black tracking-tight text-slate-900 transition hover:opacity-80 dark:text-slate-50"
+          aria-label="Go to home"
+        >
+          Shubhaang Kataruka.
+        </Link>
+      </div>
+
       {/* Top Right Actions (Views & Theme) */}
       <div className="fixed top-6 right-6 z-50 hidden md:flex items-center gap-2 rounded-full border border-black/5 bg-white/40 p-1.5 shadow-sm backdrop-blur-xl light:border-slate-900/10 light:bg-white/80 dark:border-white/10 dark:bg-black/40">
         <div className="px-2">
@@ -71,9 +82,6 @@ export function AppLayout() {
       {/* Main Floating Pill Navigation */}
       <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
         <div className="pointer-events-auto flex items-center gap-1 rounded-full border border-black/5 bg-white/70 p-1.5 shadow-md backdrop-blur-2xl light:border-slate-900/10 light:bg-white/80 dark:border-white/10 dark:bg-black/40">
-          <Link to="/" className="ml-4 mr-2 text-sm font-bold tracking-tight text-slate-900 dark:text-slate-100" aria-label="Go to home">
-            Shubhaang
-          </Link>
 
           <PrimaryNav />
 

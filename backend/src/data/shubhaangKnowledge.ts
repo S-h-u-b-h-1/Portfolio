@@ -1,4 +1,4 @@
-export const UNVERIFIED_FALLBACK = "I'm still learning the specifics of that! However, I can tell you all about Shubhaang's background in AI engineering, data systems, and his major projects like Rashtram AI. What would you like to know?";
+export const UNVERIFIED_FALLBACK = "I don't have verified information about that specific detail, but I can tell you all about Shubhaang Kataruka's extensive background in AI engineering, data systems, full-stack development, and his major projects like Rashtram AI. What would you like to explore?";
 
 export type KnowledgeResponse = {
   id: string;
@@ -10,11 +10,10 @@ export type KnowledgeResponse = {
 export const shubhaangKnowledge = {
   profile: {
     name: "Shubhaang Kataruka",
-    headline: "AI Engineer + Data Systems Builder",
-    currentStudy:
-      "B.Tech (Computer Science & Artificial Intelligence), Newton School of Technology — Rishihood University (expected 2028)",
-    summary:
-      "Technology-driven student and builder focused on AI, ML, RAG systems, full-stack development, FinTech, and data analytics. Ambitious product-minded engineer aiming to build AI-powered solutions that solve real-world problems.",
+    headline: "AI Engineer | Data Analytics | Software Development",
+    currentStudy: "3rd-year B.Tech (Computer Science & Artificial Intelligence), Newton School of Technology — Rishihood University (expected 2028). Holds an 8.5 GPA.",
+    summary: "Technology-driven student and builder focused on AI, ML, RAG systems, full-stack development, FinTech, and data analytics. Ambitious product-minded engineer aiming to build AI-powered solutions that solve real-world problems.",
+    location: "India / Kolkata",
     interests: [
       "Artificial Intelligence",
       "Generative AI",
@@ -23,212 +22,162 @@ export const shubhaangKnowledge = {
       "FinTech",
       "Data analytics",
       "Public policy technology",
-      "Entrepreneurship"
+      "Entrepreneurship",
+      "Stock market analysis",
+      "Investment planning"
     ]
   },
   projects: [
     {
+      name: "Employee Task Management & Billing",
+      summary: "A comprehensive employee task management and automated billing solution built for A K Kataruka and Company.",
+      url: "https://akkc-eight.vercel.app",
+      highlights: ["Task management", "Automated billing", "Client portal", "Full-stack SaaS", "Business solution", "React", "TypeScript", "Node.js"]
+    },
+    {
       name: "Rashtram AI",
-      summary:
-        "A RAG-based public policy intelligence system that helps users understand parliamentary bills, policies, and citizen impact.",
+      summary: "A flagship RAG-based public policy intelligence system that helps users understand parliamentary bills, policies, discussions, and citizen impact through retrieval-augmented AI.",
       url: "https://rashtramai.vercel.app/",
-      highlights: ["RAG architecture", "LLM application", "vector search", "public policy intelligence", "AI engineering"]
+      highlights: ["RAG architecture", "LLM application", "Vector search", "Public policy intelligence", "AI engineering"]
     },
     {
       name: "Zomato Data Analysis",
-      summary:
-        "A data analytics project focused on extracting business insights from restaurant, customer, pricing, and rating data.",
+      summary: "A data analytics project focused on extracting business insights from restaurant, customer, pricing, and rating data using Python, Pandas, and SQL.",
       url: "https://public.tableau.com/app/profile/kush.puri/viz/Zomato_Delivery_Analysis/Dashboard1",
-      highlights: ["data cleaning", "exploratory analysis", "SQL/Pandas", "Tableau/Sheets dashboards", "business insights"]
+      highlights: ["Data cleaning", "Exploratory analysis", "SQL/Pandas", "Tableau/Sheets dashboards", "Business insights"]
     },
     {
       name: "Hair Salon Website",
-      summary:
-        "A client-focused full-stack website built for a hair salon with a modern responsive interface.",
+      summary: "A client-focused full-stack website built for a hair salon with a modern responsive interface, booking systems, and service lists.",
       url: "https://www.themaxxsalon.shop/",
-      highlights: ["full-stack development", "client work", "responsive UI", "booking/contact/service sections"]
-    }
-  ],
-  moreProjects: [
-    {
-      name: "FinNews",
-      summary: "Full-stack financial news platform with authentication, search, filtering, and article management.",
-      tech: ["React", "Node.js", "Express", "PostgreSQL", "Prisma"],
-      features: ["Authentication", "Search & Filtering", "Pagination", "Article management"]
-    },
-    {
-      name: "BeWise",
-      summary: "Travel budget and expense planner with multi-trip management and analytics.",
-      features: ["Expense categorization", "Budget tracking", "Financial analytics"]
-    },
-    {
-      name: "FinScope",
-      summary: "Finance and investment calculation platform (SIP, lumpsum, ROI analysis).",
-      features: ["SIP calculators", "ROI analysis", "Financial planning tools"]
+      highlights: ["Full-stack development", "Client work", "Responsive UI", "React", "Tailwind CSS"]
     }
   ],
   experience: [
     {
       role: "AI/ML Engineer Intern",
       organization: "Rashtram School of Public Leadership",
-      summary:
-        "Worked on Rashtram AI — an AI-powered research assistant for government policy, bills, and public-policy research. Responsibilities included building RAG systems, data collection and processing, vector database implementation, prompt engineering, and product-focused AI development."
+      summary: "Worked on Rashtram AI — an AI-powered research assistant for government policy, bills, and public-policy research. Responsibilities included building RAG systems, data collection and processing, vector database implementation, prompt engineering, and product-focused AI development."
     },
     {
       role: "Hiring Research & Strategy Intern",
       organization: "Rishihood / Placement & Career Advancement Team",
-      summary:
-        "Worked on student analytics, hiring intelligence, and academic profile systems. Built data-driven evaluation frameworks to support placement strategy and recruiter outreach."
+      summary: "Worked on student analytics, hiring intelligence, and academic profile systems. Built data-driven evaluation frameworks to support placement strategy and recruiter outreach."
     },
     {
       role: "Freelance Full-Stack Developer",
-      organization: "Hair Salon Website",
-      summary: "Built a responsive client-facing website with service, booking/contact, and business presentation sections."
+      organization: "A K Kataruka and Company & Various Clients",
+      summary: "Built comprehensive full-stack business solutions including the Employee Task Management & Billing portal and responsive client-facing websites like a Hair Salon booking platform."
     }
   ],
   technicalSkills: {
-    programmingLanguages: ["Python", "JavaScript", "SQL"],
-    web: ["React", "Node.js", "Express", "REST APIs", "TypeScript"],
-    databases: ["PostgreSQL", "Neon", "Prisma ORM"],
-    ml: ["Generative AI", "RAG", "LangChain", "Prompt engineering", "Vector DBs (Pinecone compatible)"],
-    data: ["Pandas", "Tableau", "Exploratory Data Analysis", "Statistics"],
-    tools: ["Git", "GitHub", "Vercel", "Render", "Postman"]
+    ai_ml: ["Generative AI", "RAG", "LangChain", "Prompt engineering", "NLP", "Embeddings", "Vector Databases"],
+    data: ["SQL", "PostgreSQL", "Pandas", "Tableau", "Google Sheets", "Exploratory Data Analysis", "Data Visualization"],
+    software_engineering: ["React", "TypeScript", "Node.js", "Express", "REST APIs", "Prisma ORM", "Tailwind CSS"],
+    problem_solving: ["LeetCode (1700+ rating)", "DSA (300+ problems solved)", "Algorithms", "Competitive Programming"]
   },
-  technicalHighlights: [
-    "LeetCode 1700+ rating",
-    "300+ DSA problems solved",
-    "GPA 8.5",
-    "Hacktoberfest Super Contributor 2024 & 2025",
-    "PAN IIT 2026 delegate"
-  ],
-  financeAndLeadership: [
-    "Youngest MDRT qualifier FY25 at Aditya Birla Capital / ABSLI",
-    "Sponsorship Manager for college tech fest",
-    "Prefect and House Captain at school",
-    "National Integration Camp volunteer",
-    "Interest and experience in mutual funds and stock market investing"
-  ],
-  additionalBackground: [
-    "School leadership and National Integration Camp involvement"
+  achievements_and_leadership: [
+    "Youngest MDRT qualifier FY25 at Aditya Birla Capital / ABSLI (proving strong business acumen).",
+    "PAN IIT 2026 Delegate in Los Angeles, California — Represented the college and successfully managed the college booth at the conference.",
+    "Hacktoberfest Super Contributor in 2024 and 2025.",
+    "Sponsorship Manager for college tech fest.",
+    "Prefect and House Captain at school.",
+    "National Integration Camp volunteer."
   ],
   preferences: {
-    responseStyle:
-      "Assume engineering and AI background; prefer practical, implementation-focused answers with code examples and trade-offs when relevant. Concise for simple questions, and detailed for architecture/career guidance.",
-    careerGoals:
-      "Become a technology leader and entrepreneur building AI-powered products; pursue internships at leading companies; publish research and build startups in AI/FinTech/Public Policy Technology."
+    responseStyle: "Assume an engineering and AI background; prefer practical, implementation-focused answers with real-world business impact. Be highly confident and visionary.",
+    careerGoals: "Aiming to build AI-powered products, secure AI/ML or data engineering internships, and ultimately become a technology leader combining software engineering with sharp business logic."
   },
   responses: [
     {
-      id: "detailed-overview",
+      id: "who-is-shubhaang",
       question: "Who is Shubhaang Kataruka?",
-      keywords: ["who is", "about", "shubhaang", "profile", "introduction"],
-      answer:
-        "Shubhaang Kataruka is a visionary AI Engineer and Data Systems Builder currently completing his B.Tech at Newton School of Technology. He stands out through his dual focus on cutting-edge AI (like production RAG systems) and robust data pipelines. His ambition is to lead technology teams and build impactful AI products."
+      keywords: ["who is", "about", "shubhaang", "profile", "introduction", "background", "summary", "intro", "tell me about"],
+      answer: "Shubhaang Kataruka is an ambitious AI Engineer and Data Systems Builder currently completing his B.Tech at Newton School of Technology (Rishihood University). He stands out through his dual focus on cutting-edge AI (like production RAG systems) and robust data pipelines. He is passionate about building products that solve real business problems."
     },
     {
-      id: "overview",
-      question: "Who is Shubhaang Kataruka?",
-      keywords: ["shubhaang", "who is", "about", "profile", "portfolio", "background", "summary", "intro", "introduction"],
-      answer:
-        "Shubhaang Kataruka is a 3rd-year B.Tech CS & AI student at Rishihood University x Newton School of Technology, positioned as an AI Engineer + Data Systems Builder. He focuses on AI/ML, RAG, data analytics, SQL, databases, and full-stack development."
+      id: "why-hire",
+      question: "Why should I hire Shubhaang Kataruka?",
+      keywords: ["hire", "recruit", "why", "different", "fit", "stand out", "unique", "reason", "value", "hire him"],
+      answer: "Shubhaang Kataruka is a uniquely ambitious AI Engineer and Data Systems Builder. Unlike typical candidates, he blends deep technical skills—proven by his production-grade RAG system (Rashtram AI) and full-stack SaaS apps (AKKC Task Management)—with sharp business acumen, proven by his MDRT qualification. He doesn't just write code; he builds scalable systems tied to real business impact."
     },
     {
-      id: "featured-projects",
-      question: "What projects has Shubhaang built?",
-      keywords: ["projects", "project", "work", "built", "demo", "live", "links", "dashboard", "website"],
-      answer:
-        "Shubhaang's featured work includes Rashtram AI, a public policy RAG system (https://rashtramai.vercel.app/); Zomato Data Analysis, a Tableau-backed analytics project (https://public.tableau.com/app/profile/kush.puri/viz/Zomato_Delivery_Analysis/Dashboard1); and a freelance Hair Salon Website (https://www.themaxxsalon.shop/)."
+      id: "all-projects",
+      question: "What projects has Shubhaang Kataruka built?",
+      keywords: ["projects", "project", "work", "built", "demo", "live", "links", "portfolio", "what has he built"],
+      answer: "Shubhaang Kataruka's featured work includes: \n1) Employee Task Management & Billing platform for A K Kataruka and Company (https://akkc-eight.vercel.app)\n2) Rashtram AI, a public policy RAG system (https://rashtramai.vercel.app/)\n3) Zomato Data Analysis, a Tableau-backed analytics project (https://public.tableau.com/app/profile/kush.puri/viz/Zomato_Delivery_Analysis/Dashboard1)\n4) A freelance Hair Salon Website (https://www.themaxxsalon.shop/)."
+    },
+    {
+      id: "akkc-project",
+      question: "Tell me about the Employee Task Management project.",
+      keywords: ["employee", "task management", "billing", "kataruka", "akkc", "client portal", "internal platform"],
+      answer: "The Employee Task Management & Billing solution is a comprehensive full-stack platform Shubhaang Kataruka built for A K Kataruka and Company. It centralizes employee task assignments, tracks billable hours, and automates secure client billing, replacing manual spreadsheet workflows with a robust dashboard. Live demo: https://akkc-eight.vercel.app."
     },
     {
       id: "rashtram-ai",
       question: "What is Rashtram AI?",
-      keywords: ["rashtram", "rag", "public policy", "policy", "bills", "parliament"],
-      answer:
-        "Rashtram AI is Shubhaang's flagship RAG-based public policy intelligence system. It helps users understand parliamentary bills, policies, discussions, and citizen impact through retrieval-augmented AI. Live demo: https://rashtramai.vercel.app/."
+      keywords: ["rashtram", "rag", "public policy", "policy", "bills", "parliament", "government", "ai assistant"],
+      answer: "Rashtram AI is Shubhaang Kataruka's flagship project—a RAG-based public policy intelligence system. It leverages Vector search, Embeddings, and LLMs to help users quickly understand dense parliamentary bills, policies, discussions, and citizen impact. Live demo: https://rashtramai.vercel.app/."
     },
     {
-      id: "why-hire",
-      question: "Why should I hire Shubhaang?",
-      keywords: ["hire", "recruit", "why", "different", "fit", "stand out", "unique"],
-      answer:
-        "Shubhaang is a uniquely ambitious AI Engineer and Data Systems Builder. Unlike typical candidates, he blends deep AI technical skills (like his production RAG system, Rashtram AI) with a sharp business acumen proven by his MDRT qualification. He doesn't just write code; he builds scalable systems that solve real business problems."
+      id: "zomato-analytics",
+      question: "What is his Zomato Data Analysis project?",
+      keywords: ["zomato", "data analysis", "tableau", "dashboard", "analytics", "business insights", "pandas"],
+      answer: "His Zomato Data Analysis project focuses on extracting actionable business insights from restaurant, customer, pricing, and rating data. Using Python, Pandas, SQL, and Tableau, he cleaned and segmented the data to build an interactive public dashboard showcasing strong exploratory data analysis skills."
     },
     {
-      id: "skills",
+      id: "skills-overview",
       question: "What are his strongest technical skills?",
-      keywords: ["skills", "technical", "strongest", "stack", "tools"],
-      answer:
-        "His strongest technical areas are RAG, NLP, LLM applications, embeddings, vector databases, SQL, PostgreSQL, data analytics, React, TypeScript, Node.js, Express, Prisma, REST APIs, and DSA."
-    },
-    {
-      id: "ai-ml",
-      question: "Which projects show his AI/ML ability?",
-      keywords: ["ai", "ml", "machine learning", "llm", "ai/ml", "ability"],
-      answer:
-        "Rashtram AI is the clearest AI/ML proof point. It applies RAG, LLM application design, vector search, and public policy intelligence to a real-world knowledge problem."
-    },
-    {
-      id: "data-analytics",
-      question: "What is his data analytics experience?",
-      keywords: ["data", "analytics", "zomato", "sql", "pandas", "dashboard", "tableau", "sheets"],
-      answer:
-        "His data analytics experience includes Zomato Data Analysis, where he focuses on data cleaning, exploratory analysis, SQL/Pandas workflows, dashboards, and business insights from restaurant, customer, pricing, and rating data. Public Tableau dashboard: https://public.tableau.com/app/profile/kush.puri/viz/Zomato_Delivery_Analysis/Dashboard1."
-    },
-    {
-      id: "full-stack",
-      question: "What is his full-stack experience?",
-      keywords: ["full-stack", "full stack", "software", "react", "node", "freelance", "website", "client"],
-      answer:
-        "His full-stack experience includes a freelance hair salon website with a responsive interface, booking/contact/service sections, and modern client-facing delivery. Live client site: https://www.themaxxsalon.shop/. The portfolio itself also uses React, TypeScript, Express, Prisma, and REST APIs."
-    },
-    {
-      id: "education",
-      question: "What is his education?",
-      keywords: ["education", "college", "university", "rishihood", "newton", "gpa", "student", "year", "studying", "study", "3rd", "third", "grad", "graduation", "btech", "csai"],
-      answer:
-        "Shubhaang is a 3rd-year B.Tech Computer Science & Artificial Intelligence student at Rishihood University x Newton School of Technology with an 8.5 GPA through first and second year."
+      keywords: ["skills", "technical", "strongest", "stack", "tools", "technologies", "languages", "proficient"],
+      answer: "His strongest technical areas are divided into four core pillars: \n1) AI & ML: RAG, NLP, LLM applications, Embeddings, Vector Databases.\n2) Data & Analytics: SQL, PostgreSQL, Pandas, Tableau, EDA.\n3) Software Engineering: React, TypeScript, Node.js, Express, Prisma, REST APIs, Tailwind CSS.\n4) Problem Solving: DSA, Algorithms (LeetCode 1700+ rating)."
     },
     {
       id: "internships",
-      question: "What internships has Shubhaang done?",
-      keywords: ["internship", "internships", "intern", "experience", "rashtram", "placement"],
-      answer:
-        "Shubhaang has worked as an AI/ML Engineer Intern at Rashtram School of Public Leadership and as a Hiring Research & Strategy Intern with the Rishihood placement and career advancement team."
+      question: "What internships has Shubhaang Kataruka done?",
+      keywords: ["internship", "internships", "intern", "experience", "work experience", "rashtram", "placement"],
+      answer: "Shubhaang Kataruka has completed two key internships: \n1) AI/ML Engineer Intern at Rashtram School of Public Leadership, where he built the core RAG architecture for Rashtram AI.\n2) Hiring Research & Strategy Intern with the Rishihood Placement and Career Advancement Team, building data-driven evaluation frameworks for student analytics."
     },
     {
-      id: "dsa",
+      id: "education",
+      question: "What is his education background?",
+      keywords: ["education", "college", "university", "rishihood", "newton", "gpa", "student", "year", "degree", "btech", "csai", "academic"],
+      answer: "Shubhaang Kataruka is currently a 3rd-year B.Tech student majoring in Computer Science & Artificial Intelligence at Newton School of Technology (Rishihood University), expected to graduate in 2028. He maintains an excellent academic record with an 8.5 GPA."
+    },
+    {
+      id: "dsa-leetcode",
       question: "What are his DSA and LeetCode achievements?",
-      keywords: ["leetcode", "dsa", "algorithm", "algorithms", "rating", "problems", "competitive"],
-      answer:
-        "Shubhaang has a 1700+ LeetCode contest rating and has solved 300+ DSA problems, showing consistent problem-solving practice."
+      keywords: ["leetcode", "dsa", "algorithm", "algorithms", "rating", "problems", "competitive", "programming", "coding"],
+      answer: "Shubhaang Kataruka is highly proficient in problem solving. He holds a 1700+ LeetCode contest rating and has successfully solved over 300+ Data Structures and Algorithms (DSA) problems, demonstrating a consistent and disciplined approach to competitive programming."
     },
     {
       id: "open-source",
-      question: "What is his open-source experience?",
-      keywords: ["hacktoberfest", "open source", "opensource", "github", "pull request", "pr"],
-      answer:
-        "Shubhaang was a Hacktoberfest Super Contributor in 2024 and 2025, showing open-source participation and GitHub collaboration."
+      question: "Does he have open-source experience?",
+      keywords: ["hacktoberfest", "open source", "opensource", "github", "pull request", "pr", "contributions"],
+      answer: "Yes, Shubhaang Kataruka is very active in open source. He earned the prestigious Hacktoberfest Super Contributor recognition in both 2024 and 2025, demonstrating his ability to collaborate on large codebases via GitHub pull requests."
     },
     {
-      id: "pan-iit",
-      question: "What is his PAN IIT background?",
-      keywords: ["pan iit", "delegate", "long beach", "representative"],
-      answer:
-        "Shubhaang represented his college as a PAN IIT 2026 delegate in Long Beach, California."
+      id: "pan-iit-la",
+      question: "Tell me about his involvement in the PanIIT Conference in Los Angeles.",
+      keywords: ["pan iit", "delegate", "long beach", "representative", "los angeles", "la", "conference", "booth", "manage"],
+      answer: "Shubhaang Kataruka was selected as a delegate to represent his college at the highly prestigious PAN IIT 2026 Conference in Los Angeles, California. During the conference, he successfully managed the college booth, networking with global tech leaders and showcasing strong leadership and communication skills on an international platform."
     },
     {
       id: "leadership-business",
-      question: "Tell me about his leadership and business background.",
-      keywords: ["leadership", "business", "finance", "investment", "stock", "mdrt", "sponsorship", "house captain"],
-      answer:
-        "Shubhaang's secondary leadership and business background includes PAN IIT 2026 representation, Sponsorship Manager work, school leadership, National Integration Camp involvement, interest in stock market patterns and investment planning, and youngest MDRT qualifier FY25 at Aditya Birla Capital / ABSLI."
+      question: "What is his leadership and business background?",
+      keywords: ["leadership", "business", "finance", "investment", "stock", "mdrt", "sponsorship", "house captain", "acumen"],
+      answer: "Beyond pure engineering, Shubhaang Kataruka has an exceptional business and leadership background. He is the youngest MDRT qualifier FY25 at Aditya Birla Capital (ABSLI). He also represented his college at the PAN IIT Conference in Los Angeles (managing their booth), served as Sponsorship Manager for his college tech fest, and has a keen interest in stock market analysis and investment planning."
     },
     {
-      id: "roles",
+      id: "roles-looking-for",
       question: "What roles is he looking for?",
-      keywords: ["roles", "looking", "career", "job", "opportunity", "opportunities"],
-      answer:
-        "The portfolio positions Shubhaang for AI/ML internships, data analytics roles, data engineering or database-heavy roles, software engineering internships, and full-stack freelance or client work."
+      keywords: ["roles", "looking", "career", "job", "opportunity", "opportunities", "hiring", "open to", "hire"],
+      answer: "Shubhaang Kataruka is actively looking for high-context technical roles. He is a perfect fit for AI/ML engineering internships, data analytics roles, data engineering positions, full-stack software engineering internships, or complex full-stack freelance projects where business logic meets technology."
+    },
+    {
+      id: "contact",
+      question: "How can I contact him?",
+      keywords: ["contact", "email", "reach out", "message", "linkedin", "github", "connect"],
+      answer: "You can reach Shubhaang Kataruka via email at shubhaangkataruka221@gmail.com, connect with him on LinkedIn (https://www.linkedin.com/in/shubhaangkataruka/), or use the contact form on this portfolio website to send him a direct message."
     }
   ] satisfies KnowledgeResponse[]
 };

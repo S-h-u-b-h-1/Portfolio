@@ -37,7 +37,7 @@ export function AchievementsPage() {
       <SectionHeader
         eyebrow="// technical.highlights"
         title="Technical Highlights"
-        description="A quieter, recruiter-friendly view of Shubhaang’s strongest technical signals: open source, DSA, academics, and representation."
+        description="A quieter, recruiter-friendly view of Shubhaang Kataruka’s strongest technical signals: open source, DSA, academics, and representation."
         headingLevel="h1"
       />
 
