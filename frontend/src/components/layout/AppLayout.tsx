@@ -1,7 +1,6 @@
 import { Menu, Moon, Sun } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useKeyboardShortcuts } from "../../hooks/useKeyboardShortcuts";
 import { usePortfolioVisits } from "../../hooks/usePortfolioVisits";
 import { FloatingAskAIButton } from "../navigation/FloatingAskAIButton";
@@ -52,41 +51,37 @@ export function AppLayout() {
       <div className="app-background-grid" aria-hidden="true" />
       <SectionProgressIndicator />
 
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-background/75 backdrop-blur-2xl light:border-slate-950/10 light:bg-white/75">
-        <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
-          <Link to="/" className="group flex items-center gap-3" aria-label="Go to home">
-            <span className="hidden min-w-0 sm:block">
-              <span className="block truncate text-sm font-semibold text-slate-100 light:text-slate-950">Shubhaang Kataruka</span>
-            </span>
+      <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+        <div className="pointer-events-auto flex items-center gap-1 rounded-full border border-[var(--card-border)] bg-[var(--card)] p-1.5 shadow-2xl backdrop-blur-xl">
+          <Link to="/" className="ml-4 mr-2 text-sm font-bold tracking-tight text-slate-100 light:text-slate-900" aria-label="Go to home">
+            Shubhaang
           </Link>
 
-          <div className="flex min-w-0 justify-center">
-            <PrimaryNav />
-          </div>
+          <PrimaryNav />
 
-          <div className="flex items-center justify-end gap-2">
+          <div className="ml-2 flex items-center gap-2 pr-1">
             <ViewCounter counts={visitCounts} />
             <button
               type="button"
               onClick={() => setIsLight((value) => !value)}
-              className="grid size-10 place-items-center rounded-full border border-white/10 bg-white/[0.035] text-slate-300 transition hover:border-accent-cyan/45 hover:text-accent-cyan light:border-slate-950/10 light:bg-slate-950/[0.035] light:text-slate-700"
+              className="grid size-8 place-items-center rounded-full transition hover:bg-white/10 text-slate-400 hover:text-slate-100"
               aria-label="Toggle theme"
             >
-              {isLight ? <Moon size={18} /> : <Sun size={18} />}
+              {isLight ? <Moon size={15} /> : <Sun size={15} />}
             </button>
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(true)}
-              className="grid size-10 place-items-center rounded-full border border-white/10 bg-white/[0.035] text-slate-300 transition hover:border-accent-cyan/45 hover:text-accent-cyan light:border-slate-950/10 light:bg-slate-950/[0.035] light:text-slate-700 xl:hidden"
+              className="grid size-8 place-items-center rounded-full transition hover:bg-white/10 text-slate-400 hover:text-slate-100 xl:hidden"
               aria-label="Open menu"
             >
-              <Menu aria-hidden="true" size={18} />
+              <Menu aria-hidden="true" size={15} />
             </button>
           </div>
         </div>
       </header>
 
-      <main className="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <main className="relative z-10 mx-auto max-w-5xl px-4 pt-32 pb-10 sm:px-6 lg:px-8">
         <Outlet />
       </main>
 

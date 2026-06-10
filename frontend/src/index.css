@@ -8,6 +8,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --card: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --muted: #94a3b8;
+  --accent: #22d3ee;
 }
 
 html {
@@ -201,6 +206,9 @@ body.light {
   --text-default: #0f172a;
   --btn-from: #06b6d4; /* cyan */
   --btn-to: #38bdf8; /* blue */
+  --card: rgba(255, 255, 255, 0.8);
+  --muted: #64748b;
+  --accent: #06b6d4;
 }
 
 body.light .rounded-lg.border,
