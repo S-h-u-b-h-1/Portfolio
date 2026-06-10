@@ -23,6 +23,8 @@ export function AppLayout() {
   useEffect(() => {
     document.documentElement.classList.toggle("light", isLight);
     document.body.classList.toggle("light", isLight);
+    document.documentElement.classList.toggle("dark", !isLight);
+    document.body.classList.toggle("dark", !isLight);
     localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
   }, [isLight]);
 
