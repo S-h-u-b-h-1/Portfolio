@@ -130,7 +130,7 @@ export function ContactPage() {
         </div>
 
         <aside className="space-y-6">
-          <section className="rounded-3xl border border-black/5 bg-white/60 p-6 backdrop-blur-md light:border-slate-900/10 dark:border-white/10 dark:bg-white/5">
+          <section className="rounded-3xl border border-black/5 bg-white/60 p-6 backdrop-blur-md dark:border-white/10 dark:bg-white/5 sm:p-8">
             <span className="text-sm font-bold uppercase tracking-widest text-slate-500">Availability</span>
             <h2 className="mt-4 text-2xl font-bold text-slate-900 dark:text-slate-50">
               Open to high-context technical work.
@@ -148,14 +148,14 @@ export function ContactPage() {
                 return (
                   <div
                     key={item.label}
-                    className="flex gap-4 rounded-2xl border border-black/5 bg-white/80 p-4 light:border-slate-900/10 dark:border-white/5 dark:bg-black/20"
+                    className="flex items-center gap-4 rounded-2xl border border-black/5 bg-white/80 p-4 dark:border-white/5 dark:bg-black/20"
                   >
-                    <span className="grid size-10 shrink-0 place-items-center rounded-full bg-slate-100 text-slate-600 dark:bg-white/5 dark:text-slate-400">
+                    <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-slate-100 text-slate-600 dark:bg-white/5 dark:text-slate-400">
                       <Icon aria-hidden="true" size={18} />
                     </span>
                     <div>
                       <p className="text-base font-bold text-slate-900 dark:text-slate-100">{item.label}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{item.value}</p>
+                      <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{item.value}</p>
                     </div>
                   </div>
                 );
