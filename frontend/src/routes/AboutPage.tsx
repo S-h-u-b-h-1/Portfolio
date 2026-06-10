@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Bot, Code2, Database } from "lucide-react";
-import { SectionHeader } from "../components/portfolio/SectionHeader";
 import { profile } from "../data";
 
 const focusCards = [
@@ -23,15 +22,43 @@ const focusCards = [
 
 export function AboutPage() {
   return (
-    <div className="space-y-12 pb-8">
-      <SectionHeader
-        eyebrow="// about"
-        title="Focused on AI systems, data products, and scalable software."
-        description={profile.longBio}
-        headingLevel="h1"
-      />
+    <div className="space-y-12 pb-16">
+      <div className="grid gap-8 md:grid-cols-2 items-stretch">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="relative aspect-[4/5] md:aspect-auto w-full overflow-hidden rounded-[2rem] border border-black/5 dark:border-white/10 shadow-xl"
+        >
+          <img 
+            src="https://6a23120466b5d7d9ebc84556.imgix.net/IMG_7243.jpeg" 
+            alt="Shubhaang Kataruka" 
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          <div className="absolute bottom-8 left-8 right-8">
+            <h1 className="text-4xl font-black text-white sm:text-5xl">Shubhaang.</h1>
+            <p className="mt-2 text-lg font-bold text-accent-cyan">AI Engineer & Builder</p>
+          </div>
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex flex-col justify-center rounded-[2rem] border border-black/5 bg-white/60 p-8 backdrop-blur-md dark:border-white/10 dark:bg-white/5 sm:p-10"
+        >
+          <p className="font-mono text-sm font-bold text-accent-cyan uppercase tracking-widest">// about</p>
+          <h2 className="mt-6 text-4xl font-black leading-tight text-slate-900 dark:text-slate-50 sm:text-5xl">
+            Focused on AI systems, data products, and scalable software.
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
+            {profile.longBio}
+          </p>
+        </motion.div>
+      </div>
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="grid gap-6 md:grid-cols-3">
         {focusCards.map((card, index) => {
           const Icon = card.icon;
 
@@ -42,15 +69,15 @@ export function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
-              className="rounded-lg border border-border bg-white/[0.04] p-5 backdrop-blur transition hover:border-accent-cyan/35 light:bg-white/85"
+              className="group rounded-3xl border border-black/5 bg-white/60 p-8 backdrop-blur-md transition hover:-translate-y-1 hover:border-accent-cyan/40 hover:shadow-xl dark:border-white/10 dark:bg-white/5 dark:hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]"
             >
-              <span className="grid size-10 place-items-center rounded-lg border border-accent-cyan/25 bg-accent-cyan/10 text-accent-cyan">
-                <Icon aria-hidden="true" size={18} />
+              <span className="grid size-14 place-items-center rounded-2xl bg-accent-cyan/10 text-accent-cyan transition group-hover:bg-accent-cyan group-hover:text-white">
+                <Icon aria-hidden="true" size={24} />
               </span>
-              <h2 className="mt-5 text-lg font-semibold text-slate-50 light:text-slate-950">
+              <h2 className="mt-6 text-2xl font-bold text-slate-900 dark:text-slate-50">
                 {card.title}
               </h2>
-              <p className="mt-3 text-sm leading-7 text-slate-400 light:text-slate-600">
+              <p className="mt-3 text-base leading-relaxed text-slate-600 dark:text-slate-400">
                 {card.description}
               </p>
             </motion.article>
@@ -58,17 +85,22 @@ export function AboutPage() {
         })}
       </section>
 
-      <section className="rounded-lg border border-border bg-white/[0.035] p-5 backdrop-blur light:bg-white/85 md:p-7">
-        <p className="font-mono text-xs text-accent-cyan">// operating.principles</p>
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
+      <motion.section 
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.35 }}
+        className="rounded-3xl border border-black/5 bg-white/60 p-8 backdrop-blur-md dark:border-white/10 dark:bg-white/5 sm:p-10"
+      >
+        <p className="font-mono text-sm font-bold text-accent-cyan uppercase tracking-widest">// operating.principles</p>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
           {profile.differentiators.map((item) => (
-            <div key={item} className="flex gap-3 text-sm leading-7 text-slate-300 light:text-slate-700">
-              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-accent-cyan" />
+            <div key={item} className="flex gap-4 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
+              <span className="mt-2.5 size-2 shrink-0 rounded-full bg-accent-cyan shadow-[0_0_10px_rgba(34,211,238,0.6)]" />
               <span>{item}</span>
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

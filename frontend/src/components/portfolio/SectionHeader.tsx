@@ -37,11 +37,11 @@ export function SectionHeader({
     >
       <div className="max-w-3xl space-y-4">
         <p className="font-mono text-sm text-accent-cyan">{eyebrow}</p>
-        <Heading className="text-3xl font-semibold tracking-normal text-slate-50 light:text-slate-950 sm:text-4xl">
+        <Heading className="text-3xl font-semibold tracking-normal text-slate-900 dark:text-slate-50 sm:text-4xl">
           {title}
         </Heading>
         {description ? (
-          <p className="text-base leading-7 text-slate-300 light:text-slate-700 sm:text-lg">
+          <p className="text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             {description}
           </p>
         ) : null}
