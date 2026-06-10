@@ -18,12 +18,23 @@ export function ViewCounter({ counts }: ViewCounterProps) {
       aria-label={counts ? `${counts.totalViews} total portfolio views` : "Portfolio view count loading"}
     >
       <Eye aria-hidden="true" size={15} className="text-accent-cyan" />
-      <span className="hidden text-[11px] uppercase tracking-[0.2em] text-slate-500 light:text-slate-600 lg:inline">
-        views
-      </span>
-      <span className="font-semibold text-slate-100 light:text-slate-950">
-        {counts ? compactFormatter.format(counts.totalViews) : "--"}
-      </span>
+      <div className="flex items-center gap-1.5">
+        <span className="hidden text-[11px] uppercase tracking-[0.2em] text-slate-500 light:text-slate-600 lg:inline">
+          Unique
+        </span>
+        <span className="font-semibold text-slate-100 light:text-slate-950">
+          {counts ? compactFormatter.format(counts.uniqueVisitors) : "--"}
+        </span>
+      </div>
+      <div className="h-3 w-px bg-white/10 mx-1 light:bg-black/10" />
+      <div className="flex items-center gap-1.5">
+        <span className="hidden text-[11px] uppercase tracking-[0.2em] text-slate-500 light:text-slate-600 lg:inline">
+          Total
+        </span>
+        <span className="font-semibold text-slate-100 light:text-slate-950">
+          {counts ? compactFormatter.format(counts.totalViews) : "--"}
+        </span>
+      </div>
     </div>
   );
 }
