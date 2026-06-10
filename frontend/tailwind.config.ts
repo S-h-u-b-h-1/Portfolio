@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
+import typography from "@tailwindcss/typography";
 
 export default {
   darkMode: "class",
@@ -47,6 +48,7 @@ export default {
   plugins: [
     plugin(({ addVariant }) => {
       addVariant("light", [".light &", "&.light"]);
-    })
+    }),
+    typography
   ]
 } satisfies Config;
