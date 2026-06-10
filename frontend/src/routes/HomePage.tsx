@@ -28,7 +28,7 @@ const homeStats = [
     value: "1700+",
     description: "Contest rating showing algorithmic strength.",
     icon: Trophy,
-    accent: "purple"
+    accent: "violet"
   },
   {
     label: "DSA problems",
@@ -138,11 +138,11 @@ export function HomePage() {
             // AI Engineer + Data Systems Builder
           </div>
 
-          <h1 className="mt-6 max-w-4xl text-5xl font-semibold tracking-normal text-slate-50 light:text-slate-950 sm:text-6xl lg:text-7xl">
-            Shubhaang Kataruka
+          <h1 className="mt-6 max-w-4xl text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan via-accent-violet to-accent-fuchsia animate-text-gradient sm:text-7xl lg:text-[5.5rem] leading-none hero-float">
+            SHUBHAANG KATARUKA
           </h1>
 
-          <p className="mt-4 text-xl font-medium text-slate-200 light:text-slate-800 sm:text-2xl">
+          <p className="mt-6 text-xl font-semibold text-slate-200 light:text-slate-800 sm:text-2xl drop-shadow-md">
             {profile.headline}
           </p>
 

@@ -7,15 +7,16 @@ type StatCardProps = {
   value: string;
   description: string;
   icon?: LucideIcon;
-  accent?: "cyan" | "purple" | "emerald" | "blue";
+  accent?: "cyan" | "violet" | "emerald" | "blue" | "fuchsia";
   index?: number;
 };
 
 const accentClasses = {
   cyan: "text-accent-cyan bg-accent-cyan/10 border-accent-cyan/30",
-  purple: "text-accent-purple bg-accent-purple/10 border-accent-purple/30",
+  violet: "text-accent-violet bg-accent-violet/10 border-accent-violet/30",
   emerald: "text-accent-emerald bg-accent-emerald/10 border-accent-emerald/30",
-  blue: "text-accent-blue bg-accent-blue/10 border-accent-blue/30"
+  blue: "text-accent-blue bg-accent-blue/10 border-accent-blue/30",
+  fuchsia: "text-accent-fuchsia bg-accent-fuchsia/10 border-accent-fuchsia/30"
 };
 
 export function StatCard({

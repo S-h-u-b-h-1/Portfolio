@@ -1,5 +1,5 @@
 import { LoaderCircle, Send } from "lucide-react";
-import type { FormEvent } from "react";
+import { type FormEvent, useRef, useEffect } from "react";
 
 type ChatComposerProps = {
   value: string;
@@ -10,6 +10,7 @@ type ChatComposerProps = {
 
 export function ChatComposer({ value, isLoading, onChange, onSubmit }: ChatComposerProps) {
   const canSubmit = value.trim().length > 0 && !isLoading;
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -18,37 +19,47 @@ export function ChatComposer({ value, isLoading, onChange, onSubmit }: ChatCompo
     }
   };
 
+  // Auto-resize textarea
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 120)}px`;
+    }
+  }, [value]);
+
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="rounded-3xl border border-border bg-gradient-to-br from-slate-900/75 to-slate-800/65 p-4 shadow-glow light:bg-white"
-    >
+    <form onSubmit={handleSubmit} className="relative">
       <label className="sr-only" htmlFor="ask-ai-input">
         Ask Shubhaang AI a question
       </label>
-      <div className="flex flex-col gap-3 sm:flex-row">
+      <div className="flex items-end gap-2 rounded-[2rem] border border-white/10 bg-white/5 pl-5 pr-2 py-2 shadow-inner transition focus-within:border-accent-cyan/50 focus-within:bg-white/10">
         <textarea
+          ref={textareaRef}
           id="ask-ai-input"
           value={value}
           onChange={(event) => onChange(event.target.value)}
-          placeholder="Ask about projects, skills, internships, achievements, or career fit..."
-          rows={2}
-          className="min-h-[4.5rem] flex-1 resize-none rounded-2xl border border-white/10 bg-transparent px-5 py-3 text-base leading-7 text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-accent-cyan/70 focus:ring-2 focus:ring-accent-cyan/20 light:border-slate-950/10 light:bg-transparent light:text-slate-950"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault();
+              if (canSubmit) onSubmit();
+            }
+          }}
+          placeholder="Ask anything about Shubhaang..."
+          rows={1}
+          className="max-h-[120px] min-h-[1.5rem] flex-1 resize-none bg-transparent py-2.5 text-sm leading-relaxed text-slate-100 outline-none placeholder:text-slate-500"
         />
         <button
           type="submit"
           disabled={!canSubmit}
-          className="inline-flex min-h-[3rem] items-center justify-center gap-2 rounded-2xl border border-white/10 bg-transparent px-6 py-3 text-base font-semibold text-accent-cyan transition hover:bg-white/10 light:hover:bg-slate-950/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-cyan disabled:cursor-not-allowed disabled:opacity-55 sm:self-stretch"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-cyan text-slate-950 transition hover:scale-105 hover:bg-accent-cyan/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-cyan disabled:scale-100 disabled:opacity-50"
         >
           {isLoading ? (
-            <LoaderCircle aria-hidden="true" className="animate-spin" size={17} />
+            <LoaderCircle aria-hidden="true" className="animate-spin" size={18} />
           ) : (
-            <Send aria-hidden="true" size={17} />
+            <Send aria-hidden="true" size={16} className="ml-0.5" />
           )}
-          {isLoading ? "Thinking" : "Send"}
         </button>
       </div>
     </form>
   );
 }
-

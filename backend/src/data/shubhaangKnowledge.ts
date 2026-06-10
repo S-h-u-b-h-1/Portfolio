@@ -123,7 +123,7 @@ export const shubhaangKnowledge = {
       question: "Who is Shubhaang Kataruka?",
       keywords: ["who is", "about", "shubhaang", "profile", "introduction"],
       answer:
-        "Shubhaang Kataruka is a third-year B.Tech student (CS&AI) at Newton School of Technology, Rishihood University, expected to graduate in 2028. He is an ambitious engineer focused on AI/ML, RAG systems, full-stack development, FinTech, and data analytics, with hands-on projects and internships in RAG and product-focused AI engineering."
+        "Shubhaang Kataruka is a visionary AI Engineer and Data Systems Builder currently completing his B.Tech at Newton School of Technology. He stands out through his dual focus on cutting-edge AI (like production RAG systems) and robust data pipelines. His ambition is to lead technology teams and build impactful AI products."
     },
     {
       id: "overview",
@@ -149,9 +149,9 @@ export const shubhaangKnowledge = {
     {
       id: "why-hire",
       question: "Why should I hire Shubhaang?",
-      keywords: ["hire", "recruit", "why", "different", "fit"],
+      keywords: ["hire", "recruit", "why", "different", "fit", "stand out", "unique"],
       answer:
-        "Shubhaang is positioned as an AI Engineer and Data Systems Builder. He combines CS & AI fundamentals with a production RAG project, data analytics work, SQL/database thinking, full-stack development, and disciplined problem solving."
+        "Shubhaang is a uniquely ambitious AI Engineer and Data Systems Builder. Unlike typical candidates, he blends deep AI technical skills (like his production RAG system, Rashtram AI) with a sharp business acumen proven by his MDRT qualification. He doesn't just write code; he builds scalable systems that solve real business problems."
     },
     {
       id: "skills",

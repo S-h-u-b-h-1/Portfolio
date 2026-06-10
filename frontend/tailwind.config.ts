@@ -7,14 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#070A12",
-        panel: "#0D1322",
-        border: "rgba(148, 163, 184, 0.2)",
+        background: "#02040A",
+        panel: "rgba(10, 15, 28, 0.65)",
+        border: "rgba(255, 255, 255, 0.08)",
         accent: {
-          blue: "#38BDF8",
-          purple: "#A78BFA",
+          blue: "#3B82F6",
           cyan: "#22D3EE",
-          emerald: "#34D399"
+          violet: "#8B5CF6",
+          fuchsia: "#D946EF",
+          emerald: "#10B981"
         }
       },
       fontFamily: {
@@ -22,7 +23,24 @@ export default {
         mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"]
       },
       boxShadow: {
-        glow: "0 0 40px rgba(56, 189, 248, 0.18)"
+        glow: "0 0 45px rgba(139, 92, 246, 0.15), 0 0 20px rgba(34, 211, 238, 0.1)",
+        "glow-hover": "0 0 60px rgba(139, 92, 246, 0.25), 0 0 30px rgba(34, 211, 238, 0.2)"
+      },
+      animation: {
+        "text-gradient": "text-gradient 8s linear infinite",
+        "slow-spin": "spin 12s linear infinite",
+      },
+      keyframes: {
+        "text-gradient": {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center"
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center"
+          }
+        }
       }
     }
   },
