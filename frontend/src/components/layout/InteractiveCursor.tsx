@@ -18,8 +18,8 @@ export function InteractiveCursor() {
     function onMove(e: MouseEvent) {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      o.style.transform = `translate3d(${mouseX - 16}px, ${mouseY - 16}px, 0)`;
-      i.style.transform = `translate3d(${mouseX - 6}px, ${mouseY - 6}px, 0)`;
+      o.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      i.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
     }
 
     function onPointerEnter() {

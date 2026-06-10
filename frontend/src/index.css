@@ -74,71 +74,67 @@ a:hover, button:hover {
   position: fixed;
   left: 0;
   top: 0;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   pointer-events: none;
-  transform: translate3d(-100px, -100px, 0);
-  transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, opacity 0.2s;
+  transform: translate3d(-100px, -100px, 0) translate(-50%, -50%);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s, border-color 0.3s, opacity 0.3s, scale 0.3s;
   z-index: 9999;
-  border: 1px solid rgba(34, 211, 238, 0.4);
-  background: rgba(34, 211, 238, 0.05);
-  backdrop-filter: blur(2px);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  background: rgba(34, 211, 238, 0.03);
+  backdrop-filter: blur(1px);
   mix-blend-mode: screen;
 }
 
 body.light .custom-cursor-outer {
-  border-color: rgba(34, 211, 238, 0.6);
-  background: rgba(34, 211, 238, 0.1);
-  mix-blend-mode: normal;
+  border-color: rgba(6, 182, 212, 0.4);
+  background: rgba(6, 182, 212, 0.05);
+  mix-blend-mode: multiply;
 }
 
 .custom-cursor-inner {
   position: fixed;
   left: 0;
   top: 0;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #22d3ee;
   pointer-events: none;
-  transform: translate3d(-100px, -100px, 0);
-  transition: width 0.15s, height 0.15s, background-color 0.15s, opacity 0.15s;
-  box-shadow: 0 0 12px rgba(34, 211, 238, 0.8);
+  transform: translate3d(-100px, -100px, 0) translate(-50%, -50%);
+  transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), height 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s, scale 0.2s;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.8), 0 0 20px rgba(34, 211, 238, 0.4);
   z-index: 10000;
 }
 
 body.light .custom-cursor-inner {
-  background: #0ea5e9;
-  box-shadow: 0 0 8px rgba(14, 165, 233, 0.6);
+  background: #06b6d4;
+  box-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
 }
 
 .custom-cursor-outer.cursor-hover {
-  width: 50px;
-  height: 50px;
-  background: rgba(34, 211, 238, 0.15);
-  border-color: rgba(34, 211, 238, 0.6);
+  width: 64px;
+  height: 64px;
+  background: rgba(34, 211, 238, 0.1);
+  border-color: rgba(34, 211, 238, 0.8);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.2);
 }
 
 body.light .custom-cursor-outer.cursor-hover {
-  background: rgba(14, 165, 233, 0.15);
-  border-color: rgba(14, 165, 233, 0.8);
+  background: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.8);
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.15);
 }
 
 .custom-cursor-inner.cursor-hover-inner {
-  width: 12px;
-  height: 12px;
-  background: #fff;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  scale: 0;
+  opacity: 0;
 }
 
-body.light .custom-cursor-inner.cursor-hover-inner {
-  background: #0ea5e9;
-  box-shadow: 0 0 12px rgba(14, 165, 233, 0.8);
-}
-
-.custom-cursor-outer.cursor-active { opacity: 0.8; }
-.custom-cursor-inner.cursor-active-inner { transform: scale(0.8); opacity: 0.8; }
+.custom-cursor-outer.cursor-active { scale: 0.9; opacity: 0.8; }
+.custom-cursor-inner.cursor-active-inner { scale: 0.5; opacity: 0.8; }
 
 /* Interactive focus rings for keyboard users */
 button:focus, a:focus {
