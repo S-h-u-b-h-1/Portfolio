@@ -184,6 +184,12 @@ export const shubhaangKnowledge = {
       question: "How can I contact him?",
       keywords: ["contact", "email", "reach out", "message", "linkedin", "github", "connect"],
       answer: "Email him at shubhaangkataruka221@gmail.com or connect on LinkedIn. You can also use the contact form on this site."
+    },
+    {
+      id: "family",
+      question: "Who are his parents?",
+      keywords: ["parents", "father", "mother", "family", "son of", "dad", "mom", "ashok", "sumaan", "chartered accountant"],
+      answer: "He is the son of CA Ashok Kataruka, a highly experienced and professional Chartered Accountant based in Kolkata, and Mrs. Sumaan Shree Kataruka."
     }
   ] satisfies KnowledgeResponse[]
 };
