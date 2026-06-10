@@ -1,4 +1,4 @@
-export const UNVERIFIED_FALLBACK = "I do not have verified information about that yet.";
+export const UNVERIFIED_FALLBACK = "I'm still learning the specifics of that! However, I can tell you all about Shubhaang's background in AI engineering, data systems, and his major projects like Rashtram AI. What would you like to know?";
 
 export type KnowledgeResponse = {
   id: string;
