@@ -24,30 +24,30 @@ export function ProjectFilterBar({
   const filterOptions: readonly ProjectFilter[] = ["All", ...categories];
 
   return (
-    <section className="rounded-lg border border-border bg-white/[0.045] p-4 backdrop-blur light:bg-white/85">
+    <section className="flex flex-col gap-4">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <label className="relative block min-w-0 flex-1">
+        <label className="relative block min-w-0 flex-1 max-w-md">
           <span className="sr-only">Search projects</span>
           <Search
             aria-hidden="true"
-            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"
+            className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
             size={18}
           />
           <input
             value={searchQuery}
             onChange={(event) => onSearchChange(event.target.value)}
-            placeholder="Search projects, tags, tech stack..."
-            className="h-12 w-full rounded-lg border border-white/10 bg-slate-950/70 pl-10 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-accent-cyan/70 focus:ring-2 focus:ring-accent-cyan/20 light:border-slate-950/10 light:bg-white light:text-slate-950"
+            placeholder="Search projects, tags..."
+            className="h-12 w-full rounded-full border border-black/5 bg-white/60 pl-12 pr-4 text-sm text-slate-900 outline-none backdrop-blur-md transition placeholder:text-slate-500 focus:border-accent-cyan/50 focus:bg-white/90 focus:ring-4 focus:ring-accent-cyan/10 light:border-slate-900/10 dark:border-white/10 dark:bg-white/5 dark:text-slate-100 dark:focus:bg-white/10"
           />
         </label>
 
-        <div className="flex items-center gap-2 text-sm text-slate-400 light:text-slate-600">
-          <SlidersHorizontal aria-hidden="true" size={17} />
-          <span>{resultCount} project{resultCount === 1 ? "" : "s"}</span>
+        <div className="flex items-center gap-2 px-2 text-sm font-medium text-slate-500">
+          <SlidersHorizontal aria-hidden="true" size={16} />
+          <span>{resultCount} {resultCount === 1 ? "project" : "projects"}</span>
         </div>
       </div>
 
-      <div className="mt-4 flex gap-2 overflow-x-auto pb-1" aria-label="Project categories">
+      <div className="flex gap-2 overflow-x-auto pb-2" aria-label="Project categories">
         {filterOptions.map((category) => {
           const isSelected = selectedCategory === category;
 
@@ -58,10 +58,10 @@ export function ProjectFilterBar({
               aria-pressed={isSelected}
               onClick={() => onCategoryChange(category)}
               className={cn(
-                "shrink-0 rounded-lg border px-3 py-2 text-sm font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-cyan",
+                "shrink-0 rounded-full px-5 py-2 text-sm font-semibold transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-cyan",
                 isSelected
-                  ? "border-accent-cyan bg-accent-cyan text-slate-950"
-                  : "border-white/10 bg-white/[0.035] text-slate-300 hover:border-accent-cyan/50 hover:text-accent-cyan light:border-slate-950/10 light:bg-slate-950/[0.035] light:text-slate-700"
+                  ? "bg-slate-900 text-white shadow-md dark:bg-white dark:text-slate-900"
+                  : "border border-black/5 bg-white/60 text-slate-600 hover:bg-white/90 hover:text-slate-900 light:border-slate-900/10 dark:border-white/10 dark:bg-white/5 dark:text-slate-400 dark:hover:bg-white/10 dark:hover:text-slate-100"
               )}
             >
               {category}

@@ -17,66 +17,66 @@ export function ProjectCard({ project, index, onViewCaseStudy }: ProjectCardProp
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 12 }}
       transition={{ duration: 0.35, delay: index * 0.03, ease: "easeOut" }}
-      className="flex h-full min-h-[27rem] flex-col rounded-2xl border border-border bg-gradient-to-br from-slate-950/70 to-slate-900/60 p-0 backdrop-blur transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-accent-cyan/45 light:bg-gradient-to-br light:from-slate-50 light:to-slate-100 light:border-slate-200"
+      className="group flex min-h-[28rem] flex-col overflow-hidden rounded-[2rem] border border-black/5 bg-white/60 p-6 backdrop-blur-md transition-all hover:-translate-y-1 hover:shadow-xl light:border-slate-900/10 dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20"
     >
-      <div className="p-6 flex-1 flex flex-col">
-        <div className="flex items-start justify-between gap-4">
-        <div>
-          <p className="font-mono text-xs text-accent-cyan">
-            0x{String(index + 1).padStart(2, "0")}
-          </p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-normal text-slate-50 light:text-slate-950">
-            {project.title}
-          </h2>
-        </div>
-        <span className="rounded-md border border-accent-emerald/30 bg-accent-emerald/10 px-2 py-1 font-mono text-xs text-accent-emerald">
+      <div className="flex items-start justify-between">
+        <span className="font-mono text-xs font-bold text-slate-400">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <span className="rounded-full bg-accent-cyan/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-accent-cyan">
           {project.status === "placeholder" ? "planned" : "case study"}
         </span>
       </div>
 
-      <p className="mt-4 text-sm leading-7 text-slate-300 light:text-slate-700">{project.summary}</p>
+      <h2 className="mt-5 text-2xl font-bold text-slate-900 dark:text-slate-50">
+        {project.title}
+      </h2>
+
+      <p className="mt-3 text-sm leading-relaxed text-slate-600 line-clamp-3 dark:text-slate-400">
+        {project.summary}
+      </p>
 
       <div className="mt-5 flex flex-wrap gap-2">
-        {project.tags.slice(0, 5).map((tag) => (
+        {project.tags.slice(0, 4).map((tag) => (
           <span
             key={tag}
-            className="rounded-md border border-white/10 bg-white/[0.035] px-2.5 py-1 font-mono text-xs text-slate-300 light:border-slate-950/10 light:bg-slate-950/[0.04] light:text-slate-700"
+            className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-semibold text-slate-600 dark:bg-white/5 dark:text-slate-300"
           >
             {tag}
           </span>
         ))}
       </div>
 
-      <div className="mt-6 grid gap-4">
-        <div>
-          <div className="flex items-center gap-2 text-sm font-semibold text-slate-100 light:text-slate-950">
-            <Target aria-hidden="true" size={16} className="text-accent-emerald" />
-            Impact
+      <div className="mt-auto pt-6">
+        <div className="mb-4 grid gap-3 border-t border-black/5 pt-4 dark:border-white/5">
+          <div>
+            <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+              <Target aria-hidden="true" size={12} />
+              Impact
+            </div>
+            <p className="mt-1 text-xs leading-relaxed text-slate-700 line-clamp-2 dark:text-slate-300">
+              {project.impact[0]}
+            </p>
           </div>
-          <p className="mt-2 text-sm leading-6 text-slate-400 light:text-slate-600">
-            {project.impact[0]}
-          </p>
+          <div>
+            <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+              <Layers aria-hidden="true" size={12} />
+              Stack
+            </div>
+            <p className="mt-1 text-xs leading-relaxed text-slate-700 dark:text-slate-300">
+              {project.techStack.slice(0, 3).join(" • ")}
+            </p>
+          </div>
         </div>
 
-        <div>
-          <div className="flex items-center gap-2 text-sm font-semibold text-slate-100 light:text-slate-950">
-            <Layers aria-hidden="true" size={16} className="text-accent-purple" />
-            Tech stack
-          </div>
-          <p className="mt-2 text-sm leading-6 text-slate-400 light:text-slate-600">
-            {project.techStack.slice(0, 4).join(" / ")}
-          </p>
-        </div>
-      </div>
-
-      <button
-        type="button"
-        onClick={() => onViewCaseStudy(project)}
-        className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-full border-0 bg-gradient-to-r from-accent-cyan to-accent-blue px-5 py-3 text-sm font-semibold text-slate-900 transition-transform duration-200 hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-cyan"
-      >
-        View Case Study
-        <ArrowRight aria-hidden="true" size={17} strokeWidth={2.2} />
-      </button>
+        <button
+          type="button"
+          onClick={() => onViewCaseStudy(project)}
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-transparent bg-slate-900 px-5 py-3.5 text-sm font-bold text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+        >
+          View Case Study
+          <ArrowRight aria-hidden="true" size={16} strokeWidth={2.5} />
+        </button>
       </div>
     </motion.article>
   );

@@ -2,7 +2,6 @@ import { Download, Github, Linkedin, Mail, Send, Target, Trophy } from "lucide-r
 import { useCallback, useRef, useState } from "react";
 import { ContactForm, type ContactFormStatus } from "../components/contact/ContactForm";
 import { ContactLinkCard } from "../components/contact/ContactLinkCard";
-import { SectionHeader } from "../components/portfolio/SectionHeader";
 import { frontendEnv, isPlaceholderValue } from "../config/env";
 import { profile } from "../data";
 import { sendContactMessage, type ContactPayload } from "../services/contactApi";
@@ -109,15 +108,17 @@ export function ContactPage() {
   }, [formData]);
 
   return (
-    <div className="space-y-10 pb-8">
-      <SectionHeader
-        eyebrow="// contact.channel"
-        title="Start a focused conversation."
-        description="For recruiters, founders, mentors, collaborators, and teams looking for a CS & AI student with AI, analytics, full-stack, and business instincts."
-        headingLevel="h1"
-      />
+    <div className="space-y-12 pb-16">
+      <div className="max-w-2xl">
+        <h1 className="text-4xl font-black tracking-tight text-slate-900 md:text-5xl dark:text-slate-50">
+          Start a focused conversation.
+        </h1>
+        <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+          For recruiters, founders, mentors, collaborators, and teams looking for a CS & AI student with AI, analytics, full-stack, and business instincts.
+        </p>
+      </div>
 
-      <section className="grid gap-6 lg:grid-cols-[0.62fr_0.38fr]">
+      <section className="grid gap-8 lg:grid-cols-[0.6fr_0.4fr]">
         <div className="space-y-6">
           <ContactForm
             formData={formData}
@@ -128,16 +129,16 @@ export function ContactPage() {
           />
         </div>
 
-        <aside className="space-y-5">
-          <section className="rounded-lg border border-border bg-white/[0.045] p-5 backdrop-blur light:bg-white/85">
-            <p className="font-mono text-sm text-accent-cyan">// availability.signal</p>
-            <h2 className="mt-3 text-xl font-semibold text-slate-50 light:text-slate-950">
+        <aside className="space-y-6">
+          <section className="rounded-3xl border border-black/5 bg-white/60 p-6 backdrop-blur-md light:border-slate-900/10 dark:border-white/10 dark:bg-white/5">
+            <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Availability</span>
+            <h2 className="mt-4 text-2xl font-bold text-slate-900 dark:text-slate-50">
               Open to high-context technical work.
             </h2>
-            <p className="mt-3 text-sm leading-7 text-slate-300 light:text-slate-700">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
               {profile.currentStatus}
             </p>
-            <div className="mt-5 grid gap-3">
+            <div className="mt-6 grid gap-4">
               {[
                 { label: "Best fit", value: "AI/ML, RAG, analytics, SQL, full stack", icon: Target },
                 { label: "Response context", value: "Role, project, timeline, and expectations", icon: Send }
@@ -147,14 +148,14 @@ export function ContactPage() {
                 return (
                   <div
                     key={item.label}
-                    className="flex gap-3 rounded-lg border border-white/10 bg-slate-950/35 p-3 light:border-slate-950/10 light:bg-slate-950/[0.035]"
+                    className="flex gap-4 rounded-2xl border border-black/5 bg-white/80 p-4 light:border-slate-900/10 dark:border-white/5 dark:bg-black/20"
                   >
-                    <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-accent-emerald/10 text-accent-emerald">
-                      <Icon aria-hidden="true" size={16} />
+                    <span className="grid size-10 shrink-0 place-items-center rounded-full bg-slate-100 text-slate-600 dark:bg-white/5 dark:text-slate-400">
+                      <Icon aria-hidden="true" size={18} />
                     </span>
                     <div>
-                      <p className="text-sm font-semibold text-slate-100 light:text-slate-950">{item.label}</p>
-                      <p className="mt-1 text-xs leading-5 text-slate-500 light:text-slate-600">{item.value}</p>
+                      <p className="text-sm font-bold text-slate-900 dark:text-slate-100">{item.label}</p>
+                      <p className="mt-1 text-xs leading-relaxed text-slate-600 dark:text-slate-400">{item.value}</p>
                     </div>
                   </div>
                 );
@@ -162,7 +163,7 @@ export function ContactPage() {
             </div>
           </section>
 
-          <section className="grid gap-3">
+          <section className="grid gap-4">
             {contactLinks.map((link) => (
               <ContactLinkCard key={link.label} {...link} />
             ))}

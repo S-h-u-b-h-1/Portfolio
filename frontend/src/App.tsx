@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import { AppLayout } from "./components/layout/AppLayout";
 import { AboutPage } from "./routes/AboutPage";
 import { AchievementsPage } from "./routes/AchievementsPage";
-import { AskAIPage } from "./routes/AskAIPage";
 import { ContactPage } from "./routes/ContactPage";
 import { ExperiencePage } from "./routes/ExperiencePage";
 import { HomePage } from "./routes/HomePage";
@@ -21,7 +20,6 @@ export default function App() {
         <Route path="experience" element={<ExperiencePage />} />
         <Route path="skills" element={<SkillsPage />} />
         <Route path="achievements" element={<AchievementsPage />} />
-        <Route path="ask-ai" element={<AskAIPage />} />
         <Route path="writing" element={<WritingPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="*" element={<NotFoundPage />} />

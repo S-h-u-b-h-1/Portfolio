@@ -1,10 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Search } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
 import { CaseStudyModal } from "../components/projects/CaseStudyModal";
 import { ProjectCard } from "../components/projects/ProjectCard";
 import { ProjectFilterBar, type ProjectFilter } from "../components/projects/ProjectFilterBar";
-import { SectionHeader } from "../components/portfolio/SectionHeader";
 import { projectCategories, projects, type ProjectItem } from "../data";
 
 const featuredProjectIds = ["rashtram-ai", "zomato-data-analysis", "hair-salon-website"];
@@ -58,13 +57,15 @@ export function ProjectsPage() {
   }, []);
 
   return (
-    <div className="space-y-10 pb-8">
-      <SectionHeader
-        eyebrow="// featured.work"
-        title="Focused project case studies for AI, data, and software roles."
-        description="Rashtram AI is the flagship project, supported by analytics and client-facing full-stack work."
-        headingLevel="h1"
-      />
+    <div className="space-y-12 pb-16">
+      <div className="max-w-2xl">
+        <h1 className="text-4xl font-black tracking-tight text-slate-900 md:text-5xl dark:text-slate-50">
+          Selected Works & Case Studies
+        </h1>
+        <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+          Focused project case studies demonstrating AI, data, and software engineering capabilities. Rashtram AI is the flagship project, supported by analytics and full-stack work.
+        </p>
+      </div>
 
       <ProjectFilterBar
         categories={projectCategories}
@@ -77,7 +78,7 @@ export function ProjectsPage() {
 
       {isDefaultView ? (
         <>
-          <motion.section layout className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <motion.section layout className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             <AnimatePresence mode="popLayout">
               {featuredProjects.map((project, index) => (
                 <ProjectCard
@@ -91,31 +92,31 @@ export function ProjectsPage() {
           </motion.section>
 
           {otherProjects.length > 0 ? (
-            <section className="rounded-lg border border-border bg-white/[0.03] p-5 backdrop-blur light:bg-white/85">
+            <section className="rounded-3xl border border-black/5 bg-white/60 p-6 backdrop-blur-md light:border-slate-900/10 dark:border-white/10 dark:bg-white/5">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <p className="font-mono text-xs text-slate-500 light:text-slate-600">// other.work</p>
-                  <h2 className="mt-2 text-xl font-semibold text-slate-50 light:text-slate-950">Other Work</h2>
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Archive</span>
+                  <h2 className="mt-2 text-2xl font-bold text-slate-900 dark:text-slate-50">Other Work</h2>
                 </div>
-                <p className="text-sm text-slate-500 light:text-slate-600">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   Smaller proof areas available for discussion.
                 </p>
               </div>
-              <div className="mt-5 grid gap-3 md:grid-cols-2">
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
                 {otherProjects.map((project) => (
                   <button
                     key={project.id}
                     type="button"
                     onClick={() => setSelectedProject(project)}
-                    className="flex items-center justify-between gap-4 rounded-lg border border-white/10 bg-white/[0.035] p-4 text-left transition hover:border-accent-cyan/35 hover:bg-white/[0.055] light:border-slate-950/10 light:bg-white"
+                    className="group flex items-center justify-between gap-4 rounded-2xl border border-black/5 bg-white/80 p-5 text-left transition hover:border-accent-cyan/40 hover:shadow-md light:border-slate-900/10 dark:border-white/5 dark:bg-black/20"
                   >
                     <span>
-                      <span className="block text-sm font-semibold text-slate-100 light:text-slate-950">{project.title}</span>
-                      <span className="mt-1 block text-xs leading-5 text-slate-500 light:text-slate-600">
+                      <span className="block font-bold text-slate-900 dark:text-slate-100">{project.title}</span>
+                      <span className="mt-1 block text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                         {project.summary}
                       </span>
                     </span>
-                    <ArrowRight aria-hidden="true" size={17} className="shrink-0 text-accent-cyan" />
+                    <ArrowRight aria-hidden="true" size={18} className="shrink-0 text-slate-300 transition group-hover:translate-x-1 group-hover:text-accent-cyan dark:text-slate-600" />
                   </button>
                 ))}
               </div>
@@ -123,7 +124,7 @@ export function ProjectsPage() {
           ) : null}
         </>
       ) : (
-        <motion.section layout className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <motion.section layout className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <ProjectCard
@@ -141,14 +142,16 @@ export function ProjectsPage() {
         <motion.section
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          className="rounded-lg border border-border bg-white/[0.045] p-8 text-center backdrop-blur light:bg-white/85"
+          className="rounded-3xl border border-black/5 bg-white/60 p-12 text-center backdrop-blur-md light:border-slate-900/10 dark:border-white/10 dark:bg-white/5"
         >
-          <p className="font-mono text-sm text-accent-cyan">// no.match</p>
-          <h2 className="mt-3 text-2xl font-semibold text-slate-50 light:text-slate-950">
-            No projects match that filter.
+          <span className="inline-flex size-12 items-center justify-center rounded-full bg-slate-100 text-slate-400 dark:bg-white/5 dark:text-slate-500">
+            <Search size={20} />
+          </span>
+          <h2 className="mt-4 text-xl font-bold text-slate-900 dark:text-slate-50">
+            No projects found
           </h2>
-          <p className="mt-3 text-sm text-slate-400 light:text-slate-600">
-            No visible project data matches the current query.
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+            No project matches the current filter or search query.
           </p>
         </motion.section>
       ) : null}

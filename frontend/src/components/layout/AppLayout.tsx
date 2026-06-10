@@ -40,7 +40,6 @@ export function AppLayout() {
   useKeyboardShortcuts({
     onHome: () => goTo("/"),
     onProjects: () => goTo("/projects"),
-    onAskAI: () => goTo("/ask-ai"),
     onContact: () => goTo("/contact"),
     onShortcuts: () => setIsShortcutsOpen(true)
   });
@@ -51,28 +50,35 @@ export function AppLayout() {
       <div className="app-background-grid" aria-hidden="true" />
       <SectionProgressIndicator />
 
+      {/* Top Right Actions (Views & Theme) */}
+      <div className="fixed top-6 right-6 z-50 hidden md:flex items-center gap-2 rounded-full border border-black/5 bg-white/40 p-1.5 shadow-sm backdrop-blur-xl light:border-slate-900/10 light:bg-white/80 dark:border-white/10 dark:bg-black/40">
+        <div className="px-2">
+          <ViewCounter counts={visitCounts} />
+        </div>
+        <button
+          type="button"
+          onClick={() => setIsLight((value) => !value)}
+          className="grid size-8 place-items-center rounded-full transition hover:bg-black/5 text-slate-500 hover:text-slate-900 dark:hover:bg-white/10 dark:text-slate-400 dark:hover:text-slate-100"
+          aria-label="Toggle theme"
+        >
+          {isLight ? <Moon size={15} /> : <Sun size={15} />}
+        </button>
+      </div>
+
+      {/* Main Floating Pill Navigation */}
       <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
-        <div className="pointer-events-auto flex items-center gap-1 rounded-full border border-[var(--card-border)] bg-[var(--card)] p-1.5 shadow-2xl backdrop-blur-xl">
-          <Link to="/" className="ml-4 mr-2 text-sm font-bold tracking-tight text-slate-100 light:text-slate-900" aria-label="Go to home">
+        <div className="pointer-events-auto flex items-center gap-1 rounded-full border border-black/5 bg-white/70 p-1.5 shadow-md backdrop-blur-2xl light:border-slate-900/10 light:bg-white/80 dark:border-white/10 dark:bg-black/40">
+          <Link to="/" className="ml-4 mr-2 text-sm font-bold tracking-tight text-slate-900 dark:text-slate-100" aria-label="Go to home">
             Shubhaang
           </Link>
 
           <PrimaryNav />
 
-          <div className="ml-2 flex items-center gap-2 pr-1">
-            <ViewCounter counts={visitCounts} />
-            <button
-              type="button"
-              onClick={() => setIsLight((value) => !value)}
-              className="grid size-8 place-items-center rounded-full transition hover:bg-white/10 text-slate-400 hover:text-slate-100"
-              aria-label="Toggle theme"
-            >
-              {isLight ? <Moon size={15} /> : <Sun size={15} />}
-            </button>
+          <div className="ml-2 flex items-center gap-2 pr-1 md:hidden">
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(true)}
-              className="grid size-8 place-items-center rounded-full transition hover:bg-white/10 text-slate-400 hover:text-slate-100 xl:hidden"
+              className="grid size-8 place-items-center rounded-full transition hover:bg-black/5 text-slate-500 hover:text-slate-900 dark:hover:bg-white/10 dark:text-slate-400 dark:hover:text-slate-100"
               aria-label="Open menu"
             >
               <Menu aria-hidden="true" size={15} />

@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 type KeyboardShortcutHandlers = {
   onHome: () => void;
   onProjects: () => void;
-  onAskAI: () => void;
   onContact: () => void;
   onShortcuts: () => void;
 };
@@ -20,7 +19,6 @@ function isEditableTarget(target: EventTarget | null) {
 export function useKeyboardShortcuts({
   onHome,
   onProjects,
-  onAskAI,
   onContact,
   onShortcuts
 }: KeyboardShortcutHandlers) {
@@ -67,7 +65,6 @@ export function useKeyboardShortcuts({
         const shortcutMap: Record<string, () => void> = {
           h: onHome,
           p: onProjects,
-          a: onAskAI,
           c: onContact
         };
 
@@ -88,5 +85,5 @@ export function useKeyboardShortcuts({
         window.clearTimeout(resetTimerRef.current);
       }
     };
-  }, [onAskAI, onContact, onHome, onProjects, onShortcuts]);
+  }, [onContact, onHome, onProjects, onShortcuts]);
 }

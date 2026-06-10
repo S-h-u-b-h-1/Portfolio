@@ -15,6 +15,5 @@ export const navigationItems: NavigationItem[] = [
   { label: "Projects", path: "/projects", shortcut: "g p", icon: Code2 },
   { label: "Experience", path: "/experience", icon: BriefcaseBusiness },
   { label: "Skills", path: "/skills", icon: Sparkles },
-  { label: "Ask AI", path: "/ask-ai", shortcut: "g a", icon: Bot },
   { label: "Contact", path: "/contact", shortcut: "g c", icon: Mail }
 ];
