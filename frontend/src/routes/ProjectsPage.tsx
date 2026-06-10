@@ -6,7 +6,7 @@ import { ProjectCard } from "../components/projects/ProjectCard";
 import { ProjectFilterBar, type ProjectFilter } from "../components/projects/ProjectFilterBar";
 import { projectCategories, projects, type ProjectItem } from "../data";
 
-const featuredProjectIds = ["rashtram-ai", "zomato-data-analysis", "hair-salon-website"];
+const featuredProjectIds = ["employee-task-management", "rashtram-ai", "zomato-data-analysis", "hair-salon-website"];
 
 function matchesSearch(project: ProjectItem, query: string) {
   const normalizedQuery = query.trim().toLowerCase();

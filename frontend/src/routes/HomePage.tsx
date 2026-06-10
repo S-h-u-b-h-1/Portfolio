@@ -9,7 +9,7 @@ import { SuggestedQuestionGrid } from "../components/ai/SuggestedQuestionGrid";
 import { profile, projects } from "../data";
 import { askShubhaangAI } from "../services/chatApi";
 
-const featuredProjectIds = ["rashtram-ai", "zomato-data-analysis", "hair-salon-website"];
+const featuredProjectIds = ["employee-task-management", "rashtram-ai", "zomato-data-analysis", "hair-salon-website"];
 const featuredProjects = projects.filter((project) => featuredProjectIds.includes(project.id));
 
 const suggestedQuestions = [

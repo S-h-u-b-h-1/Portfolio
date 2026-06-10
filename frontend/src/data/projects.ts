@@ -12,6 +12,48 @@ export const projectCategories = [
 
 export const projects = [
   {
+    id: "employee-task-management",
+    title: "Employee Task Management & Billing",
+    slug: "employee-task-management",
+    status: "case-study-needed",
+    categories: ["Full Stack", "Business", "Freelance"],
+    tags: ["Task Management", "Billing", "Client Portal", "Full Stack"],
+    summary:
+      "A comprehensive employee task management and automated billing solution built for A K Kataruka and Company.",
+    problem:
+      "The firm needed a centralized internal platform to manage employee tasks, track billable hours, and automate client billing workflows securely without relying on disjointed spreadsheets.",
+    role:
+      "Full-stack developer responsible for architecting and delivering the end-to-end operational software.",
+    techStack: ["React", "TypeScript", "Node.js", "Database", "Tailwind CSS"],
+    process: [
+      "Gathered operational requirements directly from the firm's partners and staff",
+      "Designed an intuitive dashboard for task assignment, tracking, and time logging",
+      "Implemented a secure billing engine tied directly to tracked hours and task completions"
+    ],
+    features: [
+      "Employee task assignment and status tracking",
+      "Automated invoice and billing generation",
+      "Role-based access control (Admin vs Employee views)",
+      "Operational analytics and reporting"
+    ],
+    impact: [
+      "Streamlined internal operations and significantly reduced billing calculation errors",
+      "Replaced manual spreadsheet tracking with a robust, scalable system built for real business needs"
+    ],
+    futureImprovements: [
+      "Integrate automated email notifications for overdue tasks",
+      "Add a client-facing portal for direct invoice viewing",
+      "Implement advanced data export and tax reporting features"
+    ],
+    links: {
+      live: "https://akkc-eight.vercel.app",
+      repo: "TODO_REPO_URL",
+      caseStudy: "/projects/employee-task-management"
+    },
+    image: "/project-images/task-management-placeholder.png",
+    proofStatus: "Live application deployed."
+  },
+  {
     id: "rashtram-ai",
     title: "Rashtram AI",
     slug: "rashtram-ai",
