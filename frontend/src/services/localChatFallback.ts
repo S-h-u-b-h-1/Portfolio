@@ -15,12 +15,12 @@ const fallbackAnswers: LocalFallbackAnswer[] = [
   {
     keywords: ["shubhaang", "kataruka", "kataruak", "who is", "about", "profile", "background", "intro", "introduction"],
     answer:
-      "Shubhaang Kataruka is a 3rd-year B.Tech student in Computer Science and Artificial Intelligence at Rishihood University x Newton School of Technology.\n\nHe is an AI engineer and data systems builder who specializes in:\n\n- **AI Applications:** Developing Retrieval-Augmented Generation (RAG) systems and LLM-powered tools.\n- **Data Analytics & Databases:** Working with SQL, PostgreSQL, Pandas, dashboards, and business intelligence workflows.\n- **Full-Stack Development:** Building practical web applications with React, TypeScript, Node.js, Express, Prisma, and REST APIs."
+      "Shubhaang Kataruka is a 3rd-year B.Tech student in Computer Science and Artificial Intelligence at Rishihood University x Newton School of Technology.\n\nHe is an AI engineer and data systems builder focused on turning complex information into useful products:\n\n- **AI Applications:** Builds RAG systems and LLM-powered tools, including Rashtram AI for public policy intelligence.\n- **Data Analytics & Databases:** Works with SQL, PostgreSQL, Pandas, dashboards, and business intelligence workflows.\n- **Full-Stack Development:** Ships practical web applications with React, TypeScript, Node.js, Express, Prisma, and REST APIs."
   },
   {
     keywords: ["projects", "project", "built", "work", "demo", "live", "links"],
     answer:
-      "Featured projects include Rashtram AI, Zomato Data Analysis, Employee Task Management and Billing System, and the AI Adoption Project."
+      "Featured projects include:\n\n- **Rashtram AI:** RAG-based public policy intelligence platform.\n- **Employee Task Management and Billing System:** Full-stack business workflow system.\n- **Zomato Data Analysis:** SQL/Pandas analytics and dashboard-style business insights.\n- **AI Adoption Project:** Streamlit analytics platform for organizational AI adoption trends."
   },
   ...faqs.map((faq) => ({
     keywords: faq.keywords,
