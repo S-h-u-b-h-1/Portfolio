@@ -5,6 +5,7 @@ const UNVERIFIED_FALLBACK =
   "I don't have that specific information in my knowledge base. Please visit Shubhaang's LinkedIn, GitHub, or contact him directly for more details.";
 const FALLBACK_SOURCE = "frontend-verified-knowledge";
 const STOP_WORDS = new Set(["a", "an", "and", "are", "for", "has", "his", "is", "of", "the", "to", "what", "which", "who", "why"]);
+const PRIVATE_FAMILY_TOKENS = new Set(["parents", "parent", "father", "mother", "family", "dad", "mom"]);
 
 type LocalFallbackAnswer = {
   keywords: string[];
@@ -22,11 +23,13 @@ const fallbackAnswers: LocalFallbackAnswer[] = [
       "dad",
       "mom",
       "who are shubhaang s parents",
+      "who are shubhaang kataruka s parents",
       "shubhaang s parents",
+      "shubhaang kataruka s parents",
       "shubhaang parents"
     ],
     answer:
-      "I don't have verified public information about Shubhaang's parents in this portfolio knowledge base.\n\nTo respect privacy, I can only answer from public professional information, such as his education, projects, skills, internships, leadership, and contact channels."
+      "I don't have verified public information about Shubhaang's parents in this portfolio knowledge base. To respect privacy, I can only answer from public professional information, such as his education, projects, skills, internships, leadership, and contact channels."
   },
   {
     keywords: ["shubhaang", "kataruka", "kataruak", "who is", "about", "profile", "background", "intro", "introduction"],
@@ -57,6 +60,11 @@ function tokenize(value: string) {
 function findFallbackAnswer(question: string) {
   const normalizedQuestion = normalizeText(question);
   const questionTokens = new Set(tokenize(question));
+
+  if (isPrivateFamilyQuestion(questionTokens)) {
+    return fallbackAnswers[0].answer;
+  }
+
   let bestMatch: { answer: string; score: number } | undefined;
 
   for (const fallbackAnswer of fallbackAnswers) {
@@ -77,6 +85,14 @@ function findFallbackAnswer(question: string) {
   }
 
   return bestMatch && bestMatch.score >= 2 ? bestMatch.answer : UNVERIFIED_FALLBACK;
+}
+
+function isPrivateFamilyQuestion(questionTokens: Set<string>) {
+  const mentionsFamily = [...PRIVATE_FAMILY_TOKENS].some((token) => questionTokens.has(token));
+  const mentionsShubhaang =
+    questionTokens.has("shubhaang") || questionTokens.has("kataruka") || questionTokens.has("kataruak");
+
+  return mentionsFamily && mentionsShubhaang;
 }
 
 export function createLocalChatFallback(question: string): ChatApiResponse {

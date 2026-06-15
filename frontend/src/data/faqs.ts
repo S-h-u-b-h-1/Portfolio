@@ -5,7 +5,7 @@ export const faqs = [
     id: "private-family-info",
     question: "Who are Shubhaang's parents?",
     answer:
-      "I don't have verified public information about Shubhaang's parents in this portfolio knowledge base.\n\nTo respect privacy, I can only answer from public professional information, such as his education, projects, skills, internships, leadership, and contact channels.",
+      "I don't have verified public information about Shubhaang's parents in this portfolio knowledge base. To respect privacy, I can only answer from public professional information, such as his education, projects, skills, internships, leadership, and contact channels.",
     keywords: [
       "parents",
       "parent",
@@ -15,7 +15,9 @@ export const faqs = [
       "dad",
       "mom",
       "who are shubhaang s parents",
+      "who are shubhaang kataruka s parents",
       "shubhaang s parents",
+      "shubhaang kataruka s parents",
       "shubhaang parents"
     ]
   },

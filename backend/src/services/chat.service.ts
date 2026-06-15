@@ -41,6 +41,8 @@ const STOP_WORDS = new Set([
   "who",
   "why"
 ]);
+const PRIVATE_FAMILY_TOKENS = new Set(["parents", "parent", "father", "mother", "family", "dad", "mom"]);
+const PRIVATE_FAMILY_RESPONSE_ID = "private-family-info";
 
 const AssistantGraphState = Annotation.Root({
   question: Annotation<string>(),
@@ -113,6 +115,10 @@ function tokenize(value: string) {
 }
 
 function findBestLocalAnswer(normalizedMessage: string): KnowledgeResponse | undefined {
+  if (isPrivateFamilyQuestion(normalizedMessage)) {
+    return shubhaangKnowledge.responses.find((response) => response.id === PRIVATE_FAMILY_RESPONSE_ID);
+  }
+
   let bestMatch: { response: KnowledgeResponse; score: number } | undefined;
   const messageTokens = new Set(tokenize(normalizedMessage));
 
@@ -142,6 +148,14 @@ function findBestLocalAnswer(normalizedMessage: string): KnowledgeResponse | und
   }
 
   return bestMatch && bestMatch.score >= 2 ? bestMatch.response : undefined;
+}
+
+function isPrivateFamilyQuestion(normalizedMessage: string) {
+  const messageTokens = new Set(tokenize(normalizedMessage));
+  const mentionsFamily = [...PRIVATE_FAMILY_TOKENS].some((token) => messageTokens.has(token));
+  const mentionsShubhaang = messageTokens.has("shubhaang") || messageTokens.has("kataruka") || messageTokens.has("kataruak");
+
+  return mentionsFamily && mentionsShubhaang;
 }
 
 async function createProviderResponse(message: string): Promise<ChatResponse> {
@@ -186,6 +200,7 @@ function createSystemPrompt() {
     "- Speak in third person unless the user explicitly asks otherwise.",
     "- Maintain a confident but humble tone.",
     "- Do not invent facts, links, employers, dates, metrics, credentials, private details, or contact details not in the knowledge base.",
+    "- If asked about Shubhaang's parents, family, address, phone number, or other private personal details, say that verified public information is not available in the portfolio knowledge base and pivot to professional topics.",
     "- If information is unavailable, explicitly say so instead of guessing.",
     "- If asked about something unrelated to Shubhaang, give a short pivot back to his expertise.",
     "",
