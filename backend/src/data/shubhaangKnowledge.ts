@@ -228,9 +228,21 @@ export const shubhaangKnowledge = {
     {
       id: "who-is-shubhaang",
       question: "Who is Shubhaang Kataruka?",
-      keywords: ["who is", "about", "shubhaang", "profile", "introduction", "background", "summary", "intro", "tell me about"],
+      keywords: [
+        "who is",
+        "about",
+        "shubhaang",
+        "kataruka",
+        "kataruak",
+        "profile",
+        "introduction",
+        "background",
+        "summary",
+        "intro",
+        "tell me about"
+      ],
       answer:
-        "Shubhaang Kataruka is a 3rd-year B.Tech CS & AI student at Rishihood University x Newton School of Technology. He is focused on AI applications, data analytics, databases, and full-stack software systems."
+        "Shubhaang Kataruka is a 3rd-year B.Tech student in Computer Science and Artificial Intelligence at Rishihood University x Newton School of Technology.\n\nHe is an AI engineer and data systems builder who specializes in:\n\n- **AI Applications:** Developing Retrieval-Augmented Generation (RAG) systems and LLM-powered tools.\n- **Data Analytics & Databases:** Working with SQL, PostgreSQL, Pandas, dashboards, and business intelligence workflows.\n- **Full-Stack Development:** Building practical web applications with React, TypeScript, Node.js, Express, Prisma, and REST APIs."
     },
     {
       id: "why-hire",

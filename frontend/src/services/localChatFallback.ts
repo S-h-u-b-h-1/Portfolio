@@ -1,4 +1,4 @@
-import { faqs, profile } from "../data";
+import { faqs } from "../data";
 import type { ChatApiResponse } from "./chatApi";
 
 const UNVERIFIED_FALLBACK =
@@ -13,8 +13,9 @@ type LocalFallbackAnswer = {
 
 const fallbackAnswers: LocalFallbackAnswer[] = [
   {
-    keywords: ["shubhaang", "who is", "about", "profile", "background", "intro", "introduction"],
-    answer: `${profile.name} is a ${profile.roleSummary} ${profile.shortBio}`
+    keywords: ["shubhaang", "kataruka", "kataruak", "who is", "about", "profile", "background", "intro", "introduction"],
+    answer:
+      "Shubhaang Kataruka is a 3rd-year B.Tech student in Computer Science and Artificial Intelligence at Rishihood University x Newton School of Technology.\n\nHe is an AI engineer and data systems builder who specializes in:\n\n- **AI Applications:** Developing Retrieval-Augmented Generation (RAG) systems and LLM-powered tools.\n- **Data Analytics & Databases:** Working with SQL, PostgreSQL, Pandas, dashboards, and business intelligence workflows.\n- **Full-Stack Development:** Building practical web applications with React, TypeScript, Node.js, Express, Prisma, and REST APIs."
   },
   {
     keywords: ["projects", "project", "built", "work", "demo", "live", "links"],
