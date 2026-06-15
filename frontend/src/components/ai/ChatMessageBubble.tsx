@@ -1,4 +1,5 @@
 import { Bot, ShieldCheck } from "lucide-react";
+import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import type { ChatApiResponse } from "../../services/chatApi";
 import { cn } from "../../utils/cn";
@@ -20,8 +21,46 @@ const providerLabels: Record<ChatApiResponse["provider"], string> = {
   gemini: "Gemini provider"
 };
 
+function useTypingReveal(content: string, enabled: boolean) {
+  const [visibleContent, setVisibleContent] = useState(enabled ? "" : content);
+  const [isTyping, setIsTyping] = useState(enabled);
+
+  useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!enabled || prefersReducedMotion || content.length === 0) {
+      setVisibleContent(content);
+      setIsTyping(false);
+      return;
+    }
+
+    setVisibleContent("");
+    setIsTyping(true);
+
+    let currentIndex = 0;
+    const chunkSize = content.length > 450 ? 5 : 3;
+    const intervalMs = content.length > 450 ? 8 : 14;
+
+    const intervalId = window.setInterval(() => {
+      currentIndex = Math.min(content.length, currentIndex + chunkSize);
+      setVisibleContent(content.slice(0, currentIndex));
+
+      if (currentIndex >= content.length) {
+        window.clearInterval(intervalId);
+        setIsTyping(false);
+      }
+    }, intervalMs);
+
+    return () => window.clearInterval(intervalId);
+  }, [content, enabled]);
+
+  return { visibleContent, isTyping };
+}
+
 export function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
   const isAssistant = message.role === "assistant";
+  const { visibleContent, isTyping } = useTypingReveal(message.content, isAssistant);
 
   return (
     <article className={cn("flex w-full", isAssistant ? "justify-start" : "justify-end")}>
@@ -41,7 +80,10 @@ export function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
           )}
         >
           <div className="prose prose-sm max-w-none dark:prose-invert prose-p:leading-relaxed prose-pre:bg-black/5 dark:prose-pre:bg-white/5 whitespace-pre-wrap">
-            <ReactMarkdown>{message.content}</ReactMarkdown>
+            <ReactMarkdown>{visibleContent}</ReactMarkdown>
+            {isTyping ? (
+              <span className="ml-1 inline-block h-4 w-1 translate-y-0.5 animate-pulse rounded-full bg-slate-400 dark:bg-slate-500" />
+            ) : null}
           </div>
           {message.meta ? (
             <div className="mt-2 flex flex-wrap items-center gap-2 border-t border-black/5 pt-2 text-[10px] text-slate-500 dark:border-white/5 dark:text-slate-400">

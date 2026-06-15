@@ -13,6 +13,22 @@ type LocalFallbackAnswer = {
 
 const fallbackAnswers: LocalFallbackAnswer[] = [
   {
+    keywords: [
+      "parents",
+      "parent",
+      "father",
+      "mother",
+      "family",
+      "dad",
+      "mom",
+      "who are shubhaang s parents",
+      "shubhaang s parents",
+      "shubhaang parents"
+    ],
+    answer:
+      "I don't have verified public information about Shubhaang's parents in this portfolio knowledge base.\n\nTo respect privacy, I can only answer from public professional information, such as his education, projects, skills, internships, leadership, and contact channels."
+  },
+  {
     keywords: ["shubhaang", "kataruka", "kataruak", "who is", "about", "profile", "background", "intro", "introduction"],
     answer:
       "Shubhaang Kataruka is a 3rd-year B.Tech student in Computer Science and Artificial Intelligence at Rishihood University x Newton School of Technology.\n\nHe is an AI engineer and data systems builder focused on turning complex information into useful products:\n\n- **AI Applications:** Builds RAG systems and LLM-powered tools, including Rashtram AI for public policy intelligence.\n- **Data Analytics & Databases:** Works with SQL, PostgreSQL, Pandas, dashboards, and business intelligence workflows.\n- **Full-Stack Development:** Ships practical web applications with React, TypeScript, Node.js, Express, Prisma, and REST APIs."

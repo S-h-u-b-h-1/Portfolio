@@ -2,6 +2,24 @@ import type { FaqItem } from "./types";
 
 export const faqs = [
   {
+    id: "private-family-info",
+    question: "Who are Shubhaang's parents?",
+    answer:
+      "I don't have verified public information about Shubhaang's parents in this portfolio knowledge base.\n\nTo respect privacy, I can only answer from public professional information, such as his education, projects, skills, internships, leadership, and contact channels.",
+    keywords: [
+      "parents",
+      "parent",
+      "father",
+      "mother",
+      "family",
+      "dad",
+      "mom",
+      "who are shubhaang s parents",
+      "shubhaang s parents",
+      "shubhaang parents"
+    ]
+  },
+  {
     id: "who-is-shubhaang",
     question: "Who is Shubhaang Kataruka?",
     answer:

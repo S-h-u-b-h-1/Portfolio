@@ -226,6 +226,24 @@ export const shubhaangKnowledge = {
         "Hi, I'm Ask Shubhaang AI. Ask me about Shubhaang's AI projects, data analytics work, full-stack systems, internships, leadership, or why he could be a strong fit for your team."
     },
     {
+      id: "private-family-info",
+      question: "Who are Shubhaang's parents?",
+      keywords: [
+        "parents",
+        "parent",
+        "father",
+        "mother",
+        "family",
+        "dad",
+        "mom",
+        "who are shubhaang s parents",
+        "shubhaang s parents",
+        "shubhaang parents"
+      ],
+      answer:
+        "I don't have verified public information about Shubhaang's parents in this portfolio knowledge base.\n\nTo respect privacy, I can only answer from public professional information, such as his education, projects, skills, internships, leadership, and contact channels."
+    },
+    {
       id: "who-is-shubhaang",
       question: "Who is Shubhaang Kataruka?",
       keywords: [
