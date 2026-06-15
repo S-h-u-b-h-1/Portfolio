@@ -1,7 +1,8 @@
-import { faqs, profile, projects } from "../data";
+import { faqs, profile } from "../data";
 import type { ChatApiResponse } from "./chatApi";
 
-const UNVERIFIED_FALLBACK = "I do not have verified information about that yet.";
+const UNVERIFIED_FALLBACK =
+  "I don't have that specific information in my knowledge base. Please visit Shubhaang's LinkedIn, GitHub, or contact him directly for more details.";
 const FALLBACK_SOURCE = "frontend-verified-knowledge";
 const STOP_WORDS = new Set(["a", "an", "and", "are", "for", "has", "his", "is", "of", "the", "to", "what", "which", "who", "why"]);
 
@@ -17,10 +18,8 @@ const fallbackAnswers: LocalFallbackAnswer[] = [
   },
   {
     keywords: ["projects", "project", "built", "work", "demo", "live", "links"],
-    answer: `Featured projects include ${projects
-      .slice(0, 3)
-      .map((project) => `${project.title}${project.links.live.startsWith("TODO") ? "" : ` (${project.links.live})`}`)
-      .join(", ")}.`
+    answer:
+      "Featured projects include Rashtram AI, Zomato Data Analysis, Employee Task Management and Billing System, and the AI Adoption Project."
   },
   ...faqs.map((faq) => ({
     keywords: faq.keywords,

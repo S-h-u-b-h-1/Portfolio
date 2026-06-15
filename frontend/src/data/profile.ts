@@ -9,7 +9,7 @@ export const profile = {
     "Building AI-powered systems, data products, and scalable software.",
   longBio:
     "I am a CS & AI student at Rishihood University x Newton School of Technology, focused on building AI systems, data products, and software that solve real-world problems. My work combines machine learning, analytics, databases, and full-stack development. My flagship project is Rashtram AI, a RAG-based assistant for understanding public policies and their impact.",
-  location: "India",
+  location: "Kolkata, India",
   photo: {
     src: "https://6a23120466b5d7d9ebc84556.imgix.net/IMG_7243.jpeg",
     alt: "Portrait placeholder for Shubhaang Kataruka",
@@ -70,7 +70,7 @@ export const profile = {
     }
   ],
   contact: {
-    email: "shubhaangkataruka221@gmail.com",
+    email: "shubhaangkataruka22012007@gmail.com",
     linkedin: "https://www.linkedin.com/in/shubhaangkataruka/",
     github: "https://github.com/S-h-u-b-h-1",
     leetcode: "https://leetcode.com/u/Shubh_2201/",

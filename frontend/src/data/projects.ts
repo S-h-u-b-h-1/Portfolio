@@ -24,7 +24,7 @@ export const projects = [
       "The firm needed a centralized internal platform to manage employee tasks, track billable hours, and automate client billing workflows securely without relying on disjointed spreadsheets.",
     role:
       "Full-stack developer responsible for architecting and delivering the end-to-end operational software.",
-    techStack: ["React", "TypeScript", "Node.js", "Database", "Tailwind CSS"],
+    techStack: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Prisma"],
     process: [
       "Gathered operational requirements directly from the firm's partners and staff",
       "Designed an intuitive dashboard for task assignment, tracking, and time logging",
@@ -66,7 +66,7 @@ export const projects = [
       "Public policy documents and parliamentary material can be dense, fragmented, and difficult for learners or citizens to interpret quickly.",
     role:
       "AI/ML Engineer Intern responsible for helping build the assistant experience and RAG-oriented product flow.",
-    techStack: ["RAG", "LLM application", "Embeddings", "Vector search", "Full-stack app", "Policy knowledge base"],
+    techStack: ["RAG", "LLM application", "Embeddings", "Vector search", "Pinecone", "Policy knowledge base"],
     process: [
       "Mapped target users such as policy students, UPSC aspirants, law students, public leadership learners, and citizens",
       "Structured policy content for retrieval and response generation",
@@ -136,6 +136,48 @@ export const projects = [
     },
     image: "/project-images/zomato-analysis-placeholder.png",
     proofStatus: "Public Tableau dashboard added. Add dataset source, notebook, and final insight notes."
+  },
+  {
+    id: "ai-adoption-project",
+    title: "AI Adoption Project",
+    slug: "ai-adoption-project",
+    status: "case-study-needed",
+    categories: ["AI/ML", "Data Analytics", "Business"],
+    tags: ["AI Adoption", "Streamlit", "Dashboards", "Business Insights"],
+    summary:
+      "An AI and analytics platform that analyzes organizational AI adoption trends and business integration patterns.",
+    problem:
+      "Organizations are adopting AI at different speeds, but decision-makers need clearer visibility into adoption trends, business impact, and implementation maturity.",
+    role:
+      "Developer and analyst responsible for shaping the analytics flow, dashboard experience, and insight presentation.",
+    techStack: ["Python", "Data Analytics", "Streamlit", "Dashboard Development"],
+    process: [
+      "Structured AI adoption signals into analysis-ready views",
+      "Built interactive dashboard flows for trend exploration",
+      "Translated adoption patterns into business-friendly insights"
+    ],
+    features: [
+      "AI adoption analytics",
+      "Interactive dashboards",
+      "Trend visualization",
+      "Business insight summaries"
+    ],
+    impact: [
+      "Shows Shubhaang's ability to combine analytics with AI business context",
+      "Creates a practical view of how organizations are integrating artificial intelligence"
+    ],
+    futureImprovements: [
+      "Add richer datasets and sector-level filters",
+      "Add downloadable insight summaries",
+      "Add benchmark comparisons across adoption maturity levels"
+    ],
+    links: {
+      live: "https://kataruka.streamlit.app",
+      repo: "TODO_REPO_URL",
+      caseStudy: "/projects/ai-adoption-project"
+    },
+    image: "/project-images/ai-adoption-placeholder.png",
+    proofStatus: "Live Streamlit demo added. Add screenshots and methodology notes."
   },
   {
     id: "hair-salon-website",
