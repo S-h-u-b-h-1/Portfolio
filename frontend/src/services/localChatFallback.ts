@@ -29,7 +29,7 @@ const fallbackAnswers: LocalFallbackAnswer[] = [
       "shubhaang parents"
     ],
     answer:
-      "I don't have verified public information about Shubhaang's parents in this portfolio knowledge base. To respect privacy, I can only answer from public professional information, such as his education, projects, skills, internships, leadership, and contact channels."
+      "Shubhaang Kataruka's parents are CA Ashok Kataruka and Mrs. Sumaan Shree Kataruka."
   },
   {
     keywords: ["shubhaang", "kataruka", "kataruak", "who is", "about", "profile", "background", "intro", "introduction"],
