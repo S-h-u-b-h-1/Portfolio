@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 import { AppLayout } from "./components/layout/AppLayout";
 import { AboutPage } from "./routes/AboutPage";
 import { AchievementsPage } from "./routes/AchievementsPage";
@@ -28,6 +29,7 @@ export default function App() {
         </Route>
       </Routes>
       <SpeedInsights />
+      <Analytics />
     </>
   );
 }
