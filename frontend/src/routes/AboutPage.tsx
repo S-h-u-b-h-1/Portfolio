@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Bot, Code2, Database } from "lucide-react";
 import { profile } from "../data";
+import { useSEO } from "../hooks/useSEO";
 
 const focusCards = [
   {
@@ -21,6 +22,12 @@ const focusCards = [
 ] as const;
 
 export function AboutPage() {
+  useSEO({
+    title: "About Shubhaang Kataruka | AI Engineer & Builder",
+    description: "Learn more about Shubhaang Kataruka, an AI Engineer specializing in RAG systems, public policy technology, data systems, and full-stack software delivery.",
+    keywords: "about shubhaang kataruka, bio, AI engineer profile, public policy RAG, Newton School of Technology, Ashok Kataruka, Sumaan Shree Kataruka"
+  });
+
   return (
     <div className="space-y-12 pb-16">
       <div className="grid gap-8 md:grid-cols-2 items-stretch">

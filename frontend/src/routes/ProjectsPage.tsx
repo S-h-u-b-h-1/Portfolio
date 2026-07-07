@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Search } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
+import { useSEO } from "../hooks/useSEO";
 import { CaseStudyModal } from "../components/projects/CaseStudyModal";
 import { ProjectCard } from "../components/projects/ProjectCard";
 import { ProjectFilterBar, type ProjectFilter } from "../components/projects/ProjectFilterBar";
@@ -35,6 +36,12 @@ export function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState<ProjectFilter>("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+
+  useSEO({
+    title: "Projects & Case Studies | Shubhaang Kataruka",
+    description: "Explore tech projects by Shubhaang Kataruka, including Rashtram AI (RAG policy system), employee billing SaaS, and data analytics work.",
+    keywords: "projects portfolio, case studies, Rashtram AI, full stack SaaS, Zomato data analysis, python, react projects"
+  });
 
   const filteredProjects = useMemo(
     () =>

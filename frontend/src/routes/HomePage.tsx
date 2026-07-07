@@ -9,6 +9,8 @@ import { SuggestedQuestionGrid } from "../components/ai/SuggestedQuestionGrid";
 import { profile, projects } from "../data";
 import { askShubhaangAI } from "../services/chatApi";
 
+import { useSEO } from "../hooks/useSEO";
+
 const featuredProjectIds = ["employee-task-management", "rashtram-ai", "zomato-data-analysis", "hair-salon-website"];
 const featuredProjects = projects.filter((project) => featuredProjectIds.includes(project.id));
 
@@ -37,6 +39,12 @@ function createMessageId(prefix: string) {
 
 export function HomePage() {
   const navigate = useNavigate();
+  
+  useSEO({
+    title: "Shubhaang Kataruka | AI Engineer & Data Systems Builder",
+    description: "Personal tech portfolio of Shubhaang Kataruka, an AI Engineer, Data Systems Builder, and youngest MDRT Life Insurance professional. Son of CA Ashok Kataruka.",
+    keywords: "personal portfolio, tech portfolio, Shubhaang Kataruka, Ashok Kataruka, Sumaan Shree Kataruka, Suasion Group, MDRT, LIFE Insurance, AI ML engineer, data analytics, RAG, SQL, full stack developer"
+  });
 
   // Chat State
   const [messages, setMessages] = useState<ChatMessage[]>([initialMessage]);

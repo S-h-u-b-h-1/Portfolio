@@ -5,6 +5,7 @@ import { ContactLinkCard } from "../components/contact/ContactLinkCard";
 import { frontendEnv, isPlaceholderValue } from "../config/env";
 import { profile } from "../data";
 import { sendContactMessage, type ContactPayload } from "../services/contactApi";
+import { useSEO } from "../hooks/useSEO";
 
 const initialFormData: ContactPayload = {
   name: "",
@@ -19,6 +20,12 @@ export function ContactPage() {
   const [status, setStatus] = useState<ContactFormStatus>({ type: "idle", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const abortControllerRef = useRef<AbortController | null>(null);
+
+  useSEO({
+    title: "Contact Shubhaang Kataruka | Get in Touch",
+    description: "Reach out to Shubhaang Kataruka for AI/ML engineering, data analytics, or software development opportunities. Open to collaborations and internships.",
+    keywords: "hire shubhaang kataruka, contact email, linkedin, github, software developer contact"
+  });
 
   const resumeUrl = frontendEnv.resumeUrl;
   const hasEmail = !isPlaceholderValue(profile.contact.email);

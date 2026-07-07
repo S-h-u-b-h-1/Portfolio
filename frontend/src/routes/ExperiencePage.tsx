@@ -2,8 +2,15 @@ import { motion } from "framer-motion";
 import { BriefcaseBusiness } from "lucide-react";
 import { SectionHeader } from "../components/portfolio/SectionHeader";
 import { experience } from "../data";
+import { useSEO } from "../hooks/useSEO";
 
 export function ExperiencePage() {
+  useSEO({
+    title: "Experience & Internships | Shubhaang Kataruka",
+    description: "Shubhaang Kataruka's professional experience as an AI/ML Engineer Intern, Data Strategy Intern, and freelance full-stack developer.",
+    keywords: "career history, internships, AI ML intern, Rishihood placement intern, software engineering work"
+  });
+
   return (
     <div className="space-y-10 pb-8">
       <SectionHeader

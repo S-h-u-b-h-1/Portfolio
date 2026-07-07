@@ -57,16 +57,18 @@ export async function createPortfolioVisit(input: CreatePortfolioVisitInput) {
 
 export async function getPortfolioVisitCounts(): Promise<PortfolioVisitCounts> {
   try {
-    const [totalViews, visitorGroups] = await Promise.all([
+    const [totalViews, rawResult] = await Promise.all([
       prisma.portfolioVisit.count(),
-      prisma.portfolioVisit.groupBy({
-        by: ["visitorId"]
-      })
+      prisma.$queryRaw<Array<{ count: number }>>`
+        SELECT COUNT(DISTINCT "visitorId")::int as count FROM "PortfolioVisit"
+      `
     ]);
+
+    const uniqueVisitors = rawResult[0]?.count ?? 0;
 
     return {
       totalViews,
-      uniqueVisitors: visitorGroups.length,
+      uniqueVisitors,
       storageAvailable: true
     };
   } catch (error) {

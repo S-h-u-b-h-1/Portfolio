@@ -27,11 +27,19 @@ const additionalBackground = [
   "Interested in stock market patterns and investment planning."
 ] as const;
 
+import { useSEO } from "../hooks/useSEO";
+
 const technicalHighlights = achievements
   .filter((achievement) => technicalHighlightIds.includes(achievement.id as (typeof technicalHighlightIds)[number]))
   .sort((a, b) => a.priority - b.priority);
 
 export function AchievementsPage() {
+  useSEO({
+    title: "Achievements & Leadership | Shubhaang Kataruka",
+    description: "Notable milestones of Shubhaang Kataruka, including youngest MDRT qualifier, PAN IIT 2026 delegate, and Hacktoberfest contributor.",
+    keywords: "achievements, MDRT qualifier, PAN IIT conference delegate, hacktoberfest contributor, house captain, Ashok Kataruka"
+  });
+
   return (
     <div className="space-y-10 pb-8">
       <SectionHeader

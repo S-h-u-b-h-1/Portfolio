@@ -9,6 +9,8 @@ import {
 import { skills } from "../data";
 import { cn } from "../utils/cn";
 
+import { useSEO } from "../hooks/useSEO";
+
 const skillIcons = {
   "ai-ml": BrainCircuit,
   "data-analytics": BarChart3,
@@ -23,6 +25,11 @@ const levelStyles = {
 };
 
 export function SkillsPage() {
+  useSEO({
+    title: "Technical Skills | Shubhaang Kataruka",
+    description: "Technical proficiency of Shubhaang Kataruka in AI/ML (Generative AI, LangChain, RAG), Data (SQL, Pandas, Tableau), Software, and DSA.",
+    keywords: "developer stack, technical skills, python, typescript, react, postgresql, vector databases, DSA"
+  });
   return (
     <div className="space-y-16 pb-16">
       {/* Hero Section */}
