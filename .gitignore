@@ -43,3 +43,5 @@ backend/prisma/*.db
 backend/prisma/*.db-journal
 backend/generated/
 backend/.prisma/
+.vercel
+.env*
