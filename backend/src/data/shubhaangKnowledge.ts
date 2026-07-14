@@ -346,7 +346,7 @@ export const shubhaangKnowledge = {
       question: "Which projects demonstrate his AI capabilities?",
       keywords: ["ai", "ml", "machine learning", "ai capability", "ai capabilities", "llm", "rag project"],
       answer:
-        "His clearest AI proof point is **Rashtram AI**, where he worked with RAG, LLM application design, embeddings, vector search, and policy intelligence.\n\nThe **AI Adoption Project** adds an analytics angle by exploring how organizations integrate AI through dashboards and trend visualization."
+        "Shubhaang's AI capabilities are demonstrated by several advanced systems:\n\n- **CA Intelligence:** A compliance operating system using the Gemini API to parse complex tax documents, execute cross-document verification, and run a context-aware AI Copilot.\n- **MFPulse:** An investment research platform that utilizes LLMs to generate mutual fund suitability theses and risk-profile evaluations.\n- **Rashtram AI:** A Retrieval-Augmented Generation (RAG) assistant designed to query and explain parliamentary bills and public policy records."
     },
     {
       id: "zomato-analytics",
