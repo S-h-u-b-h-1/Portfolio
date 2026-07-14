@@ -12,6 +12,90 @@ export const projectCategories = [
 
 export const projects = [
   {
+    id: "mf-pulse",
+    title: "MFPulse",
+    slug: "mf-pulse",
+    status: "case-study-needed",
+    categories: ["AI/ML", "Data Analytics", "Full Stack", "Business"],
+    tags: ["AI Mutual Fund Research", "Portfolio Intelligence", "Explainable Analytics", "Next.js", "AI Integration"],
+    summary:
+      "An AI-powered mutual fund research and investment intelligence platform combining market data, explainable scoring, and portfolio analytics.",
+    problem:
+      "Investors and wealth managers often rely on black-box fund recommendations and screeners without clear, transparent metrics explaining why a fund fits or performs well.",
+    role:
+      "Creator and Lead Developer, designing the database schema, quantitative models, AI thesis pipelines, and responsive Next.js frontend.",
+    techStack: ["Next.js", "React", "Node.js", "Neon PostgreSQL", "Supabase", "Vercel", "Python", "LLMs"],
+    process: [
+      "Designed automated data ingestion pipelines for mutual fund schemes and NAV updates",
+      "Built custom quantitative models for rolling returns, diversification scoring, and overlap detection",
+      "Integrated Large Language Models to generate suitability theses, risk assessments, and strengths/weaknesses profiling"
+    ],
+    features: [
+      "AI-generated suitability assessment and fund DNA profiling",
+      "Portfolio overlap detection and diversification analysis",
+      "Explainable analytics showing calculation methodology, weightage, and confidence",
+      "Professional PDF report generation with performance and rolling returns"
+    ],
+    impact: [
+      "Consolidated market data, portfolio analytics, and AI reasoning into a single transparent ecosystem",
+      "Enabled investors to understand the driving metrics behind mutual fund recommendations"
+    ],
+    futureImprovements: [
+      "Integrate real-time transaction processing for direct fund purchasing",
+      "Expand dataset to include stock portfolios and international funds",
+      "Develop advanced advisory models for automated robo-allocation suggestions"
+    ],
+    links: {
+      live: "https://mf-pulse.vercel.app",
+      repo: "TODO_REPO_URL",
+      caseStudy: "/projects/mf-pulse"
+    },
+    image: "/project-images/mf-pulse-placeholder.png",
+    proofStatus: "Live platform deployed."
+  },
+  {
+    id: "ca-intelligence",
+    title: "CA Intelligence",
+    slug: "ca-intelligence",
+    status: "case-study-needed",
+    categories: ["AI/ML", "Data Analytics", "Full Stack", "Business"],
+    tags: ["AI Compliance OS", "Document Intelligence", "Tax Reconciliation", "FastAPI", "Gemini API"],
+    summary:
+      "An AI-powered compliance operating system and workspace for Chartered Accountants, consolidating client management, Indian tax document processing, and reconciliation.",
+    problem:
+      "Chartered Accountants manage client compliance across fragmented tools, spreadsheets, and government portals, leading to repetitive manual checks and high risk of compliance errors.",
+    role:
+      "Lead Developer, designing the FastAPI backend services, document parsing framework, deterministic cross-document reconciliation engines, and the React UI.",
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Python", "FastAPI", "PostgreSQL", "Gemini API", "Vercel"],
+    process: [
+      "Designed digital PDF parsing, text extraction, and OCR pipelines for Indian tax documents (AIS, TIS, Form 26AS, GSTR)",
+      "Implemented a deterministic cross-document verification engine comparing different sources (e.g. AIS vs 26AS)",
+      "Built a context-aware AI Copilot using Gemini API to summarize circulars, draft notice replies, and explain discrepancies"
+    ],
+    features: [
+      "Indian tax document intelligence and OCR parsing (AIS/TIS/26AS/GSTR)",
+      "Deterministic cross-document reconciliation and mismatch highlights",
+      "Client applicability engine matching government circulars to entity profiles",
+      "Interactive compliance due-date calendar and firm dashboard"
+    ],
+    impact: [
+      "Consolidated document storage, tax analysis, and communication into a single unified firm workspace",
+      "Reduced manual audit verification and spreadsheet comparison workflows for compliance checks"
+    ],
+    futureImprovements: [
+      "Integrate direct filing submissions to government portals via API",
+      "Extend bank intelligence module to support custom ledger format rules",
+      "Develop a client-facing document upload portal with automated classification"
+    ],
+    links: {
+      live: "https://ca-intel.vercel.app",
+      repo: "TODO_REPO_URL",
+      caseStudy: "/projects/ca-intelligence"
+    },
+    image: "/project-images/ca-intel-placeholder.png",
+    proofStatus: "Live platform deployed."
+  },
+  {
     id: "employee-task-management",
     title: "Employee Task Management & Billing",
     slug: "employee-task-management",

@@ -87,6 +87,32 @@
   },
   "projects": [
     {
+      "name": "MFPulse",
+      "type": "Flagship AI Project",
+      "description": "An AI-powered mutual fund research and investment intelligence platform built to help investors make transparent, data-driven decisions.",
+      "technologies": ["Next.js", "React", "Node.js", "Neon PostgreSQL", "Supabase", "Vercel", "Python", "LLMs"],
+      "demo": "https://mf-pulse.vercel.app",
+      "highlights": [
+        "AI-generated suitability assessment and fund DNA profiling",
+        "Portfolio overlap detection and diversification analysis",
+        "Explainable analytics showing calculation methodology, weightage, and confidence",
+        "Professional PDF report generation with performance and rolling returns"
+      ]
+    },
+    {
+      "name": "CA Intelligence",
+      "type": "Flagship AI Project",
+      "description": "An AI-powered compliance operating system and workspace for Chartered Accountants, consolidating client management, Indian tax document processing, and reconciliation.",
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Python", "FastAPI", "PostgreSQL", "Gemini API", "Vercel"],
+      "demo": "https://ca-intel.vercel.app",
+      "highlights": [
+        "Indian tax document intelligence and OCR parsing (AIS/TIS/26AS/GSTR)",
+        "Deterministic cross-document reconciliation and mismatch highlights",
+        "Client applicability engine matching government circulars to entity profiles",
+        "Interactive compliance due-date calendar and firm dashboard"
+      ]
+    },
+    {
       "name": "Rashtram AI",
       "type": "Flagship AI Project",
       "description": "An AI-powered public policy intelligence platform built using Retrieval-Augmented Generation. It helps users understand parliamentary bills, policies, amendments, and their societal impact.",

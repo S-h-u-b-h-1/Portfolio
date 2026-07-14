@@ -99,6 +99,34 @@ export const shubhaangKnowledge = {
   },
   projects: [
     {
+      name: "MFPulse",
+      type: "Flagship AI Project",
+      description:
+        "An AI-powered mutual fund research and investment intelligence platform combining market data, explainable scoring, and portfolio analytics.",
+      technologies: ["Next.js", "React", "Node.js", "Neon PostgreSQL", "Supabase", "Vercel", "Python", "LLMs"],
+      demo: "https://mf-pulse.vercel.app",
+      highlights: [
+        "AI-generated suitability assessment and fund DNA profiling",
+        "Portfolio overlap detection and diversification analysis",
+        "Explainable analytics showing calculation methodology, weightage, and confidence",
+        "Professional PDF report generation with performance and rolling returns"
+      ]
+    },
+    {
+      name: "CA Intelligence",
+      type: "Flagship AI Project",
+      description:
+        "An AI-powered compliance operating system and workspace for Chartered Accountants, consolidating client management, Indian tax document processing, and reconciliation.",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Python", "FastAPI", "PostgreSQL", "Gemini API", "Vercel"],
+      demo: "https://ca-intel.vercel.app",
+      highlights: [
+        "Indian tax document intelligence and OCR parsing (AIS/TIS/26AS/GSTR)",
+        "Deterministic cross-document reconciliation and mismatch highlights",
+        "Client applicability engine matching government circulars to entity profiles",
+        "Interactive compliance due-date calendar and firm dashboard"
+      ]
+    },
+    {
       name: "Rashtram AI",
       type: "Flagship AI Project",
       description:
@@ -290,7 +318,21 @@ export const shubhaangKnowledge = {
       question: "What projects has Shubhaang built?",
       keywords: ["projects", "project", "work", "built", "demo", "live", "links", "portfolio", "what has he built"],
       answer:
-        "Shubhaang's strongest projects show a mix of AI, analytics, and full-stack execution:\n\n- **Rashtram AI:** RAG-based public policy intelligence platform. Demo: https://rashtram-ai.vercel.app\n- **Employee Task Management and Billing System:** Full-stack business workflow system. Demo: https://akkc-eight.vercel.app\n- **Zomato Data Analysis:** Data cleaning, EDA, SQL/Pandas analysis, and dashboard-style business insights.\n- **AI Adoption Project:** Streamlit analytics platform for organizational AI adoption trends. Demo: https://kataruka.streamlit.app"
+        "Shubhaang's strongest projects show a mix of AI, analytics, and full-stack execution:\n\n- **MFPulse:** AI-powered mutual fund research & investment intelligence platform. Demo: https://mf-pulse.vercel.app\n- **CA Intelligence:** AI-powered operating system for Chartered Accountants. Demo: https://ca-intel.vercel.app\n- **Rashtram AI:** RAG-based public policy intelligence platform. Demo: https://rashtram-ai.vercel.app\n- **Employee Task Management and Billing System:** Full-stack business workflow system. Demo: https://akkc-eight.vercel.app"
+    },
+    {
+      id: "mf-pulse",
+      question: "What is MFPulse?",
+      keywords: ["mf pulse", "mfpulse", "mutual fund", "mutual funds", "investment platform", "finance project"],
+      answer:
+        "MFPulse is an AI-powered mutual fund research and investment intelligence platform built to help investors make transparent, data-driven decisions. It features AI suitability theses, risk and portfolio quality analytics, and explainable scoring that shows the methodology behind every rating.\n\nDemo: https://mf-pulse.vercel.app"
+    },
+    {
+      id: "ca-intelligence",
+      question: "What is CA Intelligence?",
+      keywords: ["ca intelligence", "ca-intel", "chartered accountant", "tax tool", "compliance OS"],
+      answer:
+        "CA Intelligence is an AI-powered operating system for Chartered Accountants and compliance practices in India. It processes tax documents (AIS, TIS, Form 26AS, GSTR), performs cross-document verification, tracks statutory deadlines, and matches government updates to client profiles.\n\nDemo: https://ca-intel.vercel.app"
     },
     {
       id: "rashtram-ai",

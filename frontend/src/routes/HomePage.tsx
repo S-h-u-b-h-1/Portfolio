@@ -11,7 +11,7 @@ import { askShubhaangAI } from "../services/chatApi";
 
 import { useSEO } from "../hooks/useSEO";
 
-const featuredProjectIds = ["employee-task-management", "rashtram-ai", "zomato-data-analysis", "hair-salon-website"];
+const featuredProjectIds = ["mf-pulse", "ca-intelligence", "employee-task-management", "rashtram-ai"];
 const featuredProjects = projects.filter((project) => featuredProjectIds.includes(project.id));
 
 const suggestedQuestions = [

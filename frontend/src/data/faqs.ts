@@ -64,6 +64,20 @@ export const faqs = [
     keywords: ["ai", "ml", "machine learning", "projects", "ability", "capabilities", "llm", "rag"]
   },
   {
+    id: "what-is-mf-pulse",
+    question: "What is MFPulse?",
+    answer:
+      "MFPulse is an AI-powered mutual fund research and investment intelligence platform built to help investors make transparent, data-driven decisions. It features AI suitability theses, risk and portfolio quality analytics, and explainable scoring that shows the methodology behind every rating.\n\nDemo: https://mf-pulse.vercel.app",
+    keywords: ["mf pulse", "mfpulse", "mutual fund", "mutual funds", "investment platform", "finance project"]
+  },
+  {
+    id: "what-is-ca-intelligence",
+    question: "What is CA Intelligence?",
+    answer:
+      "CA Intelligence is an AI-powered operating system for Chartered Accountants and compliance practices in India. It processes tax documents (AIS, TIS, Form 26AS, GSTR), performs cross-document verification, tracks statutory deadlines, and matches government updates to client profiles.\n\nDemo: https://ca-intel.vercel.app",
+    keywords: ["ca intelligence", "ca-intel", "chartered accountant", "tax tool", "compliance OS"]
+  },
+  {
     id: "what-is-rashtram-ai",
     question: "What is Rashtram AI?",
     answer:
