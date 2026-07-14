@@ -15,7 +15,7 @@ export const projects = [
     id: "mf-pulse",
     title: "MFPulse",
     slug: "mf-pulse",
-    status: "case-study-needed",
+    status: "case-study-ready",
     categories: ["AI/ML", "Data Analytics", "Full Stack", "Business"],
     tags: ["AI Mutual Fund Research", "Portfolio Intelligence", "Explainable Analytics", "Next.js", "AI Integration"],
     summary:
@@ -23,26 +23,28 @@ export const projects = [
     problem:
       "Investors and wealth managers often rely on black-box fund recommendations and screeners without clear, transparent metrics explaining why a fund fits or performs well.",
     role:
-      "Creator and Lead Developer, designing the database schema, quantitative models, AI thesis pipelines, and responsive Next.js frontend.",
+      "Creator and Lead Developer. Designed the data schema, quantitative models, AI thesis generation pipeline, and the Next.js frontend application.",
     techStack: ["Next.js", "React", "Node.js", "Neon PostgreSQL", "Supabase", "Vercel", "Python", "LLMs"],
     process: [
       "Designed automated data ingestion pipelines for mutual fund schemes and NAV updates",
       "Built custom quantitative models for rolling returns, diversification scoring, and overlap detection",
-      "Integrated Large Language Models to generate suitability theses, risk assessments, and strengths/weaknesses profiling"
+      "Integrated Large Language Models to generate suitability theses, risk assessments, and strengths/weaknesses profiling",
+      "Designed an explainable scoring interface displaying the mathematical weights and confidence for every ranking"
     ],
     features: [
-      "AI-generated suitability assessment and fund DNA profiling",
-      "Portfolio overlap detection and diversification analysis",
-      "Explainable analytics showing calculation methodology, weightage, and confidence",
-      "Professional PDF report generation with performance and rolling returns"
+      "AI Suitability & DNA Profiling: Custom thesis builder analyzing fund DNA and suitability parameters",
+      "Portfolio Overlap & Health: Interactive scanner detecting fund correlations and overlap percentages",
+      "Explainable Analytics: Complete breakdown of every ranking score, detailing weightage and drivers",
+      "Professional Report Builder: Generation of detailed PDF investment packs containing rolling returns",
+      "Market & AMC Intelligence: Daily briefs, sector rotation indices, and tracking of industry fund flows"
     ],
     impact: [
       "Consolidated market data, portfolio analytics, and AI reasoning into a single transparent ecosystem",
-      "Enabled investors to understand the driving metrics behind mutual fund recommendations"
+      "Enabled investors to understand the driving metrics behind mutual fund recommendations without black-box ratings"
     ],
     futureImprovements: [
-      "Integrate real-time transaction processing for direct fund purchasing",
-      "Expand dataset to include stock portfolios and international funds",
+      "Integrate direct investing transactions directly from the dashboard",
+      "Expand research database to include stock portfolios and international funds",
       "Develop advanced advisory models for automated robo-allocation suggestions"
     ],
     links: {
@@ -57,7 +59,7 @@ export const projects = [
     id: "ca-intelligence",
     title: "CA Intelligence",
     slug: "ca-intelligence",
-    status: "case-study-needed",
+    status: "case-study-ready",
     categories: ["AI/ML", "Data Analytics", "Full Stack", "Business"],
     tags: ["AI Compliance OS", "Document Intelligence", "Tax Reconciliation", "FastAPI", "Gemini API"],
     summary:
@@ -65,18 +67,21 @@ export const projects = [
     problem:
       "Chartered Accountants manage client compliance across fragmented tools, spreadsheets, and government portals, leading to repetitive manual checks and high risk of compliance errors.",
     role:
-      "Lead Developer, designing the FastAPI backend services, document parsing framework, deterministic cross-document reconciliation engines, and the React UI.",
+      "Lead Developer. Designed the FastAPI backend services, document parsing framework, deterministic cross-document reconciliation engines, and the React UI.",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Python", "FastAPI", "PostgreSQL", "Gemini API", "Vercel"],
     process: [
       "Designed digital PDF parsing, text extraction, and OCR pipelines for Indian tax documents (AIS, TIS, Form 26AS, GSTR)",
       "Implemented a deterministic cross-document verification engine comparing different sources (e.g. AIS vs 26AS)",
-      "Built a context-aware AI Copilot using Gemini API to summarize circulars, draft notice replies, and explain discrepancies"
+      "Built a context-aware AI Copilot using Gemini API to summarize circulars, draft notice replies, and explain discrepancies",
+      "Built parser frameworks utilizing vision-based OCR fallback for Indian tax formats"
     ],
     features: [
-      "Indian tax document intelligence and OCR parsing (AIS/TIS/26AS/GSTR)",
-      "Deterministic cross-document reconciliation and mismatch highlights",
-      "Client applicability engine matching government circulars to entity profiles",
-      "Interactive compliance due-date calendar and firm dashboard"
+      "Document Parsing Engine: Structured extraction of fields from PDF tax records (AIS/TIS/Form 16/GSTR-2B)",
+      "Cross-Document Verification: Auto-matching systems linking tax statement credits to bank inputs and highlighting mismatches",
+      "Client Applicability Matching: Intelligent circular mapping that flags relevant statutory updates for specific business entities",
+      "Filing Workspace: Guided checklists managing tax cases from document collection to ready-for-filing verification",
+      "Interactive Compliance Calendar: Unified tracking of entity obligations (Income Tax, GST, TDS, ROC) and due dates",
+      "Evidence Graph: Graph-backed audit trail mapping clients, documents, compliance rules, and AI findings"
     ],
     impact: [
       "Consolidated document storage, tax analysis, and communication into a single unified firm workspace",
@@ -99,7 +104,7 @@ export const projects = [
     id: "employee-task-management",
     title: "Employee Task Management & Billing",
     slug: "employee-task-management",
-    status: "case-study-needed",
+    status: "case-study-ready",
     categories: ["Full Stack", "Business", "Freelance"],
     tags: ["Task Management", "Billing", "Client Portal", "Full Stack"],
     summary:
@@ -141,7 +146,7 @@ export const projects = [
     id: "rashtram-ai",
     title: "Rashtram AI",
     slug: "rashtram-ai",
-    status: "case-study-needed",
+    status: "case-study-ready",
     categories: ["AI/ML", "Public Policy", "Full Stack"],
     tags: ["RAG", "LLM App", "Vector Search", "Public Policy", "AI Engineering"],
     summary:
@@ -183,7 +188,7 @@ export const projects = [
     id: "zomato-data-analysis",
     title: "Zomato Data Analysis",
     slug: "zomato-data-analysis",
-    status: "case-study-needed",
+    status: "case-study-ready",
     categories: ["Data Analytics", "Business"],
     tags: ["Data Cleaning", "EDA", "SQL/Pandas", "Dashboards", "Business Insights"],
     summary:
@@ -223,9 +228,9 @@ export const projects = [
   },
   {
     id: "ai-adoption-project",
-    title: "AI Adoption Project",
+    title: "AI Adoption Trends Tracker",
     slug: "ai-adoption-project",
-    status: "case-study-needed",
+    status: "case-study-ready",
     categories: ["AI/ML", "Data Analytics", "Business"],
     tags: ["AI Adoption", "Streamlit", "Dashboards", "Business Insights"],
     summary:
@@ -265,9 +270,9 @@ export const projects = [
   },
   {
     id: "hair-salon-website",
-    title: "Hair Salon Website",
+    title: "Vibes Salon - Booking and E-Commerce System",
     slug: "hair-salon-website",
-    status: "case-study-needed",
+    status: "case-study-ready",
     categories: ["Full Stack", "Freelance"],
     tags: ["Client Website", "Responsive UI", "Booking", "Services", "Contact"],
     summary:
