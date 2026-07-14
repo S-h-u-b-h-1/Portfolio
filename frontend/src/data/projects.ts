@@ -88,7 +88,7 @@ export const projects = [
       "Add evaluation sets for answer accuracy and groundedness"
     ],
     links: {
-      live: "https://rashtramai.vercel.app/",
+      live: "https://rashtram-ai.vercel.app",
       repo: "TODO_REPO_URL",
       caseStudy: "/projects/rashtram-ai"
     },

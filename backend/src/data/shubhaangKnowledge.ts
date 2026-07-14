@@ -104,7 +104,7 @@ export const shubhaangKnowledge = {
       description:
         "An AI-powered public policy intelligence platform built using Retrieval-Augmented Generation. It helps users understand parliamentary bills, policies, amendments, and their societal impact.",
       technologies: ["RAG", "LLMs", "Embeddings", "Vector Search", "Pinecone", "Policy Intelligence"],
-      demo: "https://rashtramai.vercel.app",
+      demo: "https://rashtram-ai.vercel.app",
       highlights: [
         "Policy search and question answering",
         "Bill summarization",
@@ -290,14 +290,14 @@ export const shubhaangKnowledge = {
       question: "What projects has Shubhaang built?",
       keywords: ["projects", "project", "work", "built", "demo", "live", "links", "portfolio", "what has he built"],
       answer:
-        "Shubhaang's strongest projects show a mix of AI, analytics, and full-stack execution:\n\n- **Rashtram AI:** RAG-based public policy intelligence platform. Demo: https://rashtramai.vercel.app\n- **Employee Task Management and Billing System:** Full-stack business workflow system. Demo: https://akkc-eight.vercel.app\n- **Zomato Data Analysis:** Data cleaning, EDA, SQL/Pandas analysis, and dashboard-style business insights.\n- **AI Adoption Project:** Streamlit analytics platform for organizational AI adoption trends. Demo: https://kataruka.streamlit.app"
+        "Shubhaang's strongest projects show a mix of AI, analytics, and full-stack execution:\n\n- **Rashtram AI:** RAG-based public policy intelligence platform. Demo: https://rashtram-ai.vercel.app\n- **Employee Task Management and Billing System:** Full-stack business workflow system. Demo: https://akkc-eight.vercel.app\n- **Zomato Data Analysis:** Data cleaning, EDA, SQL/Pandas analysis, and dashboard-style business insights.\n- **AI Adoption Project:** Streamlit analytics platform for organizational AI adoption trends. Demo: https://kataruka.streamlit.app"
     },
     {
       id: "rashtram-ai",
       question: "What is Rashtram AI?",
       keywords: ["rashtram", "rag", "public policy", "policy", "bills", "parliament", "government", "ai assistant"],
       answer:
-        "Rashtram AI is Shubhaang's flagship AI project: a RAG-based public policy intelligence platform.\n\nIt helps users understand parliamentary bills, policies, amendments, and societal impact through retrieval, context-aware search, and LLM-powered answers. It demonstrates his ability to apply AI to dense, high-context knowledge domains.\n\nDemo: https://rashtramai.vercel.app"
+        "Rashtram AI is Shubhaang's flagship AI project: a RAG-based public policy intelligence platform.\n\nIt helps users understand parliamentary bills, policies, amendments, and societal impact through retrieval, context-aware search, and LLM-powered answers. It demonstrates his ability to apply AI to dense, high-context knowledge domains.\n\nDemo: https://rashtram-ai.vercel.app"
     },
     {
       id: "ai-projects",

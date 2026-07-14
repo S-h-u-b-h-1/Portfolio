@@ -91,7 +91,7 @@
       "type": "Flagship AI Project",
       "description": "An AI-powered public policy intelligence platform built using Retrieval-Augmented Generation. It helps users understand parliamentary bills, policies, amendments, and their societal impact.",
       "technologies": ["RAG", "LLMs", "Embeddings", "Vector Search", "Pinecone", "Policy Intelligence"],
-      "demo": "https://rashtramai.vercel.app",
+      "demo": "https://rashtram-ai.vercel.app",
       "highlights": [
         "Policy search and question answering",
         "Bill summarization",

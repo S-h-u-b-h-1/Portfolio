@@ -57,7 +57,7 @@
   {
     "id": "what-is-rashtram-ai",
     "question": "What is Rashtram AI?",
-    "answer": "Rashtram AI is Shubhaang's flagship AI project: a RAG-based public policy intelligence platform.\n\nIt helps users understand parliamentary bills, policies, amendments, and societal impact through retrieval, context-aware search, and LLM-powered answers. It demonstrates his ability to apply AI to dense, high-context knowledge domains.\n\nDemo: https://rashtramai.vercel.app",
+    "answer": "Rashtram AI is Shubhaang's flagship AI project: a RAG-based public policy intelligence platform.\n\nIt helps users understand parliamentary bills, policies, amendments, and societal impact through retrieval, context-aware search, and LLM-powered answers. It demonstrates his ability to apply AI to dense, high-context knowledge domains.\n\nDemo: https://rashtram-ai.vercel.app",
     "keywords": ["rashtram", "rag", "public policy", "policy", "bills", "parliament", "government"]
   },
   {
