@@ -38,7 +38,7 @@ export function AboutPage() {
           className="relative aspect-[4/5] md:aspect-auto w-full overflow-hidden rounded-[2rem] border border-black/5 dark:border-white/10 shadow-xl"
         >
           <img 
-            src="https://6a23120466b5d7d9ebc84556.imgix.net/IMG_7243.jpeg" 
+            src="/photos/image.jpeg" 
             alt="Shubhaang Kataruka" 
             className="h-full w-full object-cover"
           />
