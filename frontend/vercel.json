@@ -4,7 +4,7 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/((?!assets/|favicon.svg|og-image.svg|robots.txt|site.webmanifest|resume/).*)",
+      "source": "/((?!assets/|favicon.svg|og-image.svg|robots.txt|site.webmanifest|resume/|photos/).*)",
       "destination": "/index.html"
     }
   ],
