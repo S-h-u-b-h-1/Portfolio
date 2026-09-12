@@ -19,105 +19,224 @@
     ]
   },
   {
+    "id": "parents-profession",
+    "question": "What do his parents do?",
+    "answer": "His father is listed publicly as CA Ashok Kataruka. Public metadata also mentions his mother, Mrs. Sumaan Shree Kataruka.",
+    "keywords": ["parents profession", "father profession", "mother profession", "ashok kataruka", "sumaan shree kataruka"]
+  },
+  {
+    "id": "where-is-he-from",
+    "question": "Where is he from?",
+    "answer": "Shubhaang is from Kolkata, West Bengal, India.",
+    "keywords": [
+      "where is he from",
+      "where are you from",
+      "from",
+      "kolkata",
+      "west bengal",
+      "location",
+      "hometown",
+      "city"
+    ]
+  },
+  {
+    "id": "family-background",
+    "question": "Tell me about his family background.",
+    "answer": "Shubhaang is the son of CA Ashok Kataruka and Mrs. Sumaan Shree Kataruka. Public metadata also associates his family with Suasion Group and Aditya Birla Capital context.",
+    "keywords": [
+      "family background",
+      "family",
+      "family history",
+      "lineage",
+      "suasion group",
+      "ashok",
+      "sumaan",
+      "house"
+    ]
+  },
+  {
     "id": "who-is-shubhaang",
     "question": "Who is Shubhaang Kataruka?",
-    "answer": "Shubhaang Kataruka is a 3rd-year B.Tech student in Computer Science and Artificial Intelligence at Rishihood University x Newton School of Technology.\n\nHe is an AI engineer and data systems builder focused on turning complex information into useful products:\n\n- **AI Applications:** Builds RAG systems and LLM-powered tools, including Rashtram AI for public policy intelligence.\n- **Data Analytics & Databases:** Works with SQL, PostgreSQL, Pandas, dashboards, and business intelligence workflows.\n- **Full-Stack Development:** Ships practical web applications with React, TypeScript, Node.js, Express, Prisma, and REST APIs.",
-    "keywords": ["who is", "about", "shubhaang", "kataruka", "kataruak", "profile", "background", "intro", "introduction"]
+    "answer": "Shubhaang Kataruka is a 3rd-year B.Tech CS & AI student at Rishihood University x Newton School of Technology and a practical builder in AI, data, and web systems.\n\nHe is focused on:\n- AI applications (RAG, LLM workflows, policy and business intelligence)\n- Data systems (SQL, PostgreSQL, analytics, dashboards)\n- Full-stack software delivery (React, Node.js, Prisma, REST APIs)",
+    "keywords": [
+      "who is",
+      "about",
+      "shubhaang",
+      "kataruka",
+      "kataruak",
+      "profile",
+      "background",
+      "intro",
+      "introduction",
+      "summary"
+    ]
   },
   {
-    "id": "why-hire",
-    "question": "Why should I hire Shubhaang?",
-    "answer": "Shubhaang is a strong fit for teams that need someone who can learn fast, build seriously, and connect AI with real business problems.\n\nHe brings:\n\n- **AI engineering proof:** Rashtram AI, a RAG-based public policy intelligence system.\n- **Data ability:** SQL, Pandas, dashboards, and analytics projects like Zomato Data Analysis.\n- **Full-stack execution:** React, TypeScript, Node.js, Express, PostgreSQL, Prisma, and deployed business applications.\n- **Problem-solving discipline:** 1700+ LeetCode rating and 300+ DSA problems solved.\n- **Initiative:** Internships, freelance work, open-source contributions, and leadership experience.",
-    "keywords": ["hire", "recruit", "why", "fit", "stand out", "value", "hire him"]
+    "id": "what-is-curriculum",
+    "question": "What is his education?",
+    "answer": "He is currently pursuing a B.Tech in Computer Science and Artificial Intelligence. Publicly listed details mention he is in 3rd year, with an 8.5 GPA and an expected graduation around 2028 at Rishihood University x Newton School of Technology.",
+    "keywords": ["education", "college", "university", "rishihood", "newton", "btech", "csai", "academic", "cgpa", "gpa", "gpa 8.5", "degree"]
   },
   {
-    "id": "what-makes-him-different",
-    "question": "What makes him different?",
-    "answer": "Shubhaang stands out because he works across **AI, data systems, and software engineering** instead of staying in one narrow lane.\n\nHe does not only study concepts; he builds applied systems: a RAG policy assistant, analytics dashboards, workflow automation tools, and full-stack business applications.",
-    "keywords": ["different", "unique", "stand out", "what makes him", "why him", "edge"]
+    "id": "schooling",
+    "question": "What does his schooling look like?",
+    "answer": "His public education section also references Bhavan's Gangabux Kanoria Vidyamandir in the portfolio context. Verified class-level numbers appear there as school percentages.",
+    "keywords": ["schooling", "bhavans", "cbse", "class 10", "class 12", "school", "early education"]
   },
   {
-    "id": "open-to-opportunities",
-    "question": "Is he open to opportunities?",
-    "answer": "Yes. Shubhaang is open to internships, collaborations, and project opportunities where he can build meaningful technology.\n\nBest-fit areas:\n\n- AI Engineering\n- Machine Learning Applications\n- Data Analytics\n- Data Engineering\n- Full-Stack Product Development\n- Impact-driven technology initiatives",
-    "keywords": ["open", "opportunities", "roles", "looking", "career", "job", "internship", "collaboration", "available"]
+    "id": "hobbies",
+    "question": "What are his interests and hobbies?",
+    "answer": "His stated interests and recurring themes include AI and product engineering, data storytelling, full-stack development, finance awareness, and outdoor/hiking-type exploration. He also values practical problem-solving and building useful tools.",
+    "keywords": ["hobbies", "interests", "outside work", "free time", "mountain", "travel", "outdoor", "tech interests", "music", "personal"]
+  },
+  {
+    "id": "certifications",
+    "question": "What certifications does he have?",
+    "answer": "Verified public certifications include Inner Engineering (Isha Foundation), Soft Skills (Newton School), Problem Solving (HackerRank), Introduction to Programming Using Python (HackerRank), Hacktoberfest Super Contributor recognition, and HPAIR’25 delegate.",
+    "keywords": ["certification", "certifications", "hackerrank", "inner engineering", "hpair", "contributor", "awards", "licenses"]
   },
   {
     "id": "strongest-skills",
     "question": "What are his strongest technical skills?",
-    "answer": "Shubhaang's strongest technical areas are:\n\n- **AI/ML:** RAG, NLP, embeddings, vector databases, LLM applications, prompt engineering.\n- **Data:** SQL, PostgreSQL, Pandas, Tableau, dashboards, exploratory data analysis.\n- **Software:** React, TypeScript, Node.js, Express, Prisma, REST APIs.\n- **Problem Solving:** 1700+ LeetCode rating and 300+ DSA problems solved.",
-    "keywords": ["skills", "technical", "stack", "strongest", "tools", "technologies", "languages"]
+    "answer": "**AI/ML:** RAG, NLP, embeddings, vector search, LLM integrations, prompt engineering.\n**Data:** SQL, PostgreSQL, Pandas, Tableau, dashboard-first analysis.\n**Software:** React, TypeScript, Node.js, Express, Prisma, REST APIs.\n**Problem solving:** 1700+ LeetCode rating and 300+ DSA problems.",
+    "keywords": ["skills", "technical", "strongest", "stack", "tools", "technologies", "languages", "coding", "expertise"]
+  },
+  {
+    "id": "full-stack-experience",
+    "question": "What is his full-stack development experience?",
+    "answer": "Shubhaang builds across frontend and backend layers. Commonly used stack: React, TypeScript, Node.js, Express, PostgreSQL, Prisma, and REST APIs. He has delivered portfolio apps, internal workflow tools, and client-facing systems.",
+    "keywords": ["full-stack", "full stack", "software", "react", "node", "express", "frontend", "backend", "api", "prisma", "typescript"]
   },
   {
     "id": "ai-projects",
     "question": "Which projects demonstrate his AI capabilities?",
-    "answer": "Shubhaang's AI capabilities are demonstrated by several advanced systems:\n\n- **CA Intelligence:** A compliance operating system using the Gemini API to parse complex tax documents, execute cross-document verification, and run a context-aware AI Copilot.\n- **MFPulse:** An investment research platform that utilizes LLMs to generate mutual fund suitability theses and risk-profile evaluations.\n- **Rashtram AI:** A Retrieval-Augmented Generation (RAG) assistant designed to query and explain parliamentary bills and public policy records.",
-    "keywords": ["ai", "ml", "machine learning", "projects", "ability", "capabilities", "llm", "rag"]
+    "answer": "Key AI projects include:\n- CA Intelligence (compliance automation + doc reasoning)\n- MFPulse (investment analysis + explainable recommendations)\n- Rashtram AI (policy-focused RAG assistant)\n- Ask Shubhaang AI (knowledge-grounded conversational assistant)",
+    "keywords": ["ai", "ml", "machine learning", "projects", "ability", "capabilities", "llm", "rag", "ca intelligence", "mf-pulse", "rashtram"]
   },
   {
     "id": "what-is-mf-pulse",
     "question": "What is MFPulse?",
-    "answer": "MFPulse is an AI-powered mutual fund research and investment intelligence platform built to help investors make transparent, data-driven decisions. It features AI suitability theses, risk and portfolio quality analytics, and explainable scoring that shows the methodology behind every rating.\n\nDemo: https://mf-pulse.vercel.app",
-    "keywords": ["mf pulse", "mfpulse", "mutual fund", "mutual funds", "investment platform", "finance project"]
+    "answer": "MFPulse is an AI-powered mutual-fund intelligence platform with explainable scoring, portfolio overlap checks, and investment clarity features.",
+    "keywords": ["mf pulse", "mfpulse", "mutual fund", "investment", "fintech", "portfolio", "risk profile", "finance project"]
   },
   {
     "id": "what-is-ca-intelligence",
     "question": "What is CA Intelligence?",
-    "answer": "CA Intelligence is an AI-powered operating system for Chartered Accountants and compliance practices in India. It processes tax documents (AIS, TIS, Form 26AS, GSTR), performs cross-document verification, tracks statutory deadlines, and matches government updates to client profiles.\n\nDemo: https://ca-intel.vercel.app",
-    "keywords": ["ca intelligence", "ca-intel", "chartered accountant", "tax tool", "compliance OS"]
+    "answer": "CA Intelligence is a compliance and document-intelligence platform for CA workflows. It is designed around tax document parsing, cross-document verification, and workflow support.",
+    "keywords": ["ca intelligence", "ca-intel", "chartered accountant", "tax tool", "compliance", "document intelligence", "fastapi", "gemini"]
   },
   {
     "id": "what-is-rashtram-ai",
     "question": "What is Rashtram AI?",
-    "answer": "Rashtram AI is Shubhaang's flagship AI project: a RAG-based public policy intelligence platform.\n\nIt helps users understand parliamentary bills, policies, amendments, and societal impact through retrieval, context-aware search, and LLM-powered answers. It demonstrates his ability to apply AI to dense, high-context knowledge domains.\n\nDemo: https://rashtram-ai.vercel.app",
-    "keywords": ["rashtram", "rag", "public policy", "policy", "bills", "parliament", "government"]
+    "answer": "Rashtram AI is a Retrieval-Augmented Generation assistant for public policy text: users can explore bills, policies, and parliamentary context through grounded Q&A.",
+    "keywords": ["rashtram", "rag", "public policy", "policy", "bills", "government", "legislative", "retrieval", "llm assistant"]
   },
   {
     "id": "data-analytics",
     "question": "What is his data analytics experience?",
-    "answer": "Shubhaang's data analytics experience is strongest in cleaning, exploring, querying, and presenting business data.\n\nIn **Zomato Data Analysis**, he used Python, Pandas, SQL, EDA, visualization, and dashboard thinking to find patterns in restaurant and customer data and convert them into business-friendly insights.",
-    "keywords": ["data", "analytics", "zomato", "sql", "pandas", "dashboard", "tableau", "business intelligence"]
-  },
-  {
-    "id": "full-stack",
-    "question": "What is his full-stack development experience?",
-    "answer": "Shubhaang has full-stack experience across frontend, backend, APIs, and databases.\n\nHis stack includes React, TypeScript, Node.js, Express, REST APIs, PostgreSQL, and Prisma. His proof points include the Employee Task Management and Billing System, this portfolio backend, and client-facing freelance websites.",
-    "keywords": ["full-stack", "full stack", "software", "react", "node", "express", "freelance", "website", "frontend", "backend"]
+    "answer": "His analytics work includes SQL/Python data workflows, EDA, dashboard thinking, and translating patterns into practical business insights (for example, Zomato data analysis and AI-adoption trend views).",
+    "keywords": ["data", "analytics", "sql", "pandas", "dashboard", "tableau", "insights", "zomato", "eda", "data cleaning"]
   },
   {
     "id": "employee-task-management",
     "question": "Tell me about the Employee Task Management and Billing System.",
-    "answer": "The Employee Task Management and Billing System is a full-stack business application built for A K Kataruka & Company.\n\nIt helps manage employee tasks, client work, billing operations, invoice generation, role-based access, and operational analytics. This project shows Shubhaang's ability to build software for real workflow problems, not just portfolio demos.\n\nDemo: https://akkc-eight.vercel.app",
-    "keywords": ["employee", "task management", "billing", "kataruka", "akkc", "client portal", "invoice", "workflow"]
+    "answer": "This is a full-stack workflow system for A K Kataruka & Company with task assignment, role-based access, billing, invoice generation, and operational reporting. Demo: https://akkc-eight.vercel.app",
+    "keywords": ["employee task", "billing", "akkc", "workflow", "invoice", "client portal", "business app"]
   },
   {
     "id": "ai-adoption-project",
     "question": "What is the AI Adoption Project?",
-    "answer": "The AI Adoption Project is an analytics platform for understanding how organizations adopt artificial intelligence.\n\nIt uses interactive dashboards and trend visualization to turn AI adoption data into business insights. It highlights Shubhaang's interest in the intersection of AI, analytics, and decision-making.\n\nDemo: https://kataruka.streamlit.app",
-    "keywords": ["ai adoption", "streamlit", "kataruka streamlit", "adoption analytics", "trend visualization"]
+    "answer": "An analytics dashboard-style platform for visualizing AI adoption patterns across organizations and teams, with trend and readiness views. Demo: https://kataruka.streamlit.app",
+    "keywords": ["ai adoption", "streamlit", "adoption analytics", "trend visualization", "organizational ai", "dashboard"]
+  },
+  {
+    "id": "why-hire",
+    "question": "Why should I hire Shubhaang?",
+    "answer": "He is a practical builder who combines AI, data, and engineering:\n\n- Applied RAG/LLM and AI systems (Rashtram AI, CA Intelligence, MFPulse)\n- SQL and analytics experience for decision-ready insights\n- Strong full-stack execution across React, Node.js, PostgreSQL, Prisma\n- Proven commitment: 1700+ LeetCode rating, 300+ problems solved\n- Initiative via internships, freelancing, and open-source participation",
+    "keywords": ["hire", "recruit", "why", "fit", "stand out", "value", "candidate", "better than others"]
+  },
+  {
+    "id": "what-makes-him-different",
+    "question": "What makes him different?",
+    "answer": "He is not just a theory-focused profile. He combines AI engineering, data systems, and implementation end-to-end, then wraps it into usable workflows for real users.",
+    "keywords": ["different", "unique", "stand out", "what makes him", "why him", "edge", "competitive edge", "competitive advantage"]
+  },
+  {
+    "id": "open-to-opportunities",
+    "question": "Is he open to opportunities?",
+    "answer": "Yes. He is open to internships, collaborations, and project opportunities in AI/ML, data analytics, full-stack development, and impact-driven product work.",
+    "keywords": ["open", "opportunities", "roles", "looking", "career", "job", "internship", "collaboration", "available", "hiring"]
   },
   {
     "id": "internships",
     "question": "What internships has he completed?",
-    "answer": "Shubhaang has completed two key internships:\n\n- **AI/ML Engineer Intern, Rashtram School of Public Leadership:** Worked on RAG systems, policy intelligence, LLM applications, and AI product development.\n- **Hiring Research and Strategy Intern, Rishihood University:** Worked around research, strategy, talent acquisition, and leadership exposure.",
-    "keywords": ["internship", "internships", "intern", "experience", "work experience", "rashtram", "placement", "strategy"]
+    "answer": "Publicly listed internships:\n- AI/ML Engineer Intern at Rashtram School of Public Leadership\n- Hiring Research and Strategy Intern at Rishihood University",
+    "keywords": ["internship", "internships", "intern", "work experience", "rashtram", "rishihood", "placement"]
   },
   {
-    "id": "career-goals",
-    "question": "What are his career goals?",
-    "answer": "Short term, Shubhaang wants to build production-grade AI systems, strengthen his data and database expertise, and gain hands-on industry experience.\n\nLong term, he aims to become an AI and Data Systems Engineer who builds intelligent products that improve decision-making and create practical societal impact.",
-    "keywords": ["career goals", "goals", "short term", "long term", "future", "aspiration", "aspirations"]
+    "id": "freelance-work",
+    "question": "What freelance or client work has he done?",
+    "answer": "He has done client-side full-stack and website work, including business utility apps and client-facing web experiences.",
+    "keywords": ["freelance", "client", "client work", "hair salon website", "business website", "contract", "real projects"]
   },
   {
-    "id": "leadership-business",
-    "question": "Tell me about his leadership experience.",
-    "answer": "Shubhaang's leadership record shows initiative beyond coursework:\n\n- PAN IIT 2026 representative\n- Hacktoberfest Super Contributor\n- Youngest MDRT Qualifier FY25 at Aditya Birla Capital\n- House Captain\n- National Integration Camp Volunteer\n\nThese experiences show ownership, communication, adaptability, and execution under responsibility.",
-    "keywords": ["leadership", "business", "finance", "investment", "stock", "mdrt", "pan iit", "sponsorship", "house captain", "national integration"]
+    "id": "where-does-he-work",
+    "question": "Where does he work?",
+    "answer": "Public metadata links him to Suasion Group context and Aditya Birla Capital context. He has also worked as an AI intern at Rashtram School of Public Leadership and has done freelance project work.",
+    "keywords": ["where does he work", "works at", "company", "suasion", "aditya birla", "professional", "experience", "work"]
+  },
+  {
+    "id": "leadership",
+    "question": "Tell me about his leadership and achievements.",
+    "answer": "Publicly listed highlights include PAN IIT 2026 representative, Hacktoberfest Super Contributor, youngest MDRT qualifier FY25 at Aditya Birla Capital, House Captain, and National Integration Camp Volunteer.",
+    "keywords": ["leadership", "achievements", "house captain", "pan iit", "mdrt", "hacktoberfest", "award", "achievement", "volunteer"]
+  },
+  {
+    "id": "dsa-leetcode",
+    "question": "What are his DSA and LeetCode achievements?",
+    "answer": "He is listed with a 1700+ LeetCode contest rating and more than 300 problems solved in DSA practice.",
+    "keywords": ["leetcode", "dsa", "algorithm", "algorithms", "rating", "problems", "competitive programming", "coding"]
+  },
+  {
+    "id": "open-source",
+    "question": "Does he have open-source experience?",
+    "answer": "Yes. He has Hacktoberfest Super Contributor recognition and practical GitHub workflow experience across contribution-oriented development.",
+    "keywords": ["open source", "hacktoberfest", "github", "contribution", "pr", "pull request", "opensource", "hacktoberfest super contributor"]
+  },
+  {
+    "id": "github-profile",
+    "question": "What is his GitHub profile?",
+    "answer": "His GitHub profile is https://github.com/S-h-u-b-h-1 and contains project repos that reflect AI, full-stack, and data work.",
+    "keywords": ["github", "github profile", "repository", "projects on github", "open source"]
+  },
+  {
+    "id": "github-activity",
+    "question": "What can I expect from his GitHub activity?",
+    "answer": "His GitHub shows a builder focus with project delivery and collaboration indicators, including Hacktoberfest-related contribution signals and applied full-stack repos.",
+    "keywords": ["github activity", "github repos", "commits", "languages", "star", "contributors", "projects", "commit activity"]
+  },
+  {
+    "id": "linkedin-profile",
+    "question": "What does his LinkedIn show?",
+    "answer": "His public LinkedIn is https://www.linkedin.com/in/shubhaangkataruka and lists his portfolio focus, internships, education, and career direction.",
+    "keywords": ["linkedin", "linkedin profile", "professional profile", "network", "experience"]
+  },
+  {
+    "id": "resume",
+    "question": "Can I see his resume?",
+    "answer": "Yes. The public resume link is: https://drive.google.com/file/d/1TiUlCxBPT8fbTvBZwaf1pAMHKKVZPGmG/view?usp=sharing",
+    "keywords": ["resume", "cv", "curriculum vitae", "document", "download", "view resume", "download resume"]
   },
   {
     "id": "contact",
     "question": "How can I contact him?",
-    "answer": "You can contact Shubhaang by email at shubhaangkataruka22012007@gmail.com or connect with him on LinkedIn: https://www.linkedin.com/in/shubhaangkataruka\n\nFor code and project work, his GitHub is: https://github.com/S-h-u-b-h-1",
-    "keywords": ["contact", "email", "reach out", "message", "linkedin", "github", "connect"]
+    "answer": "Email: shubhaangkataruka22012007@gmail.com\nLinkedIn: https://www.linkedin.com/in/shubhaangkataruka\nGitHub: https://github.com/S-h-u-b-h-1",
+    "keywords": ["contact", "email", "reach out", "message", "linkedin", "github", "connect", "social", "contact him"]
+  },
+  {
+    "id": "career-goals",
+    "question": "What are his career goals?",
+    "answer": "Short-term: strengthen engineering depth in AI, data, and production systems, and grow industry exposure. Long-term: become a strong AI and Data Systems Engineer with societal impact.",
+    "keywords": ["career goals", "goals", "future", "aspiration", "aspirations", "long term", "short term", "direction"]
   }
 ]

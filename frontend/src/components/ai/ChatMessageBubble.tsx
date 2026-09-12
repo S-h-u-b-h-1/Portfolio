@@ -21,16 +21,24 @@ const providerLabels: Record<ChatApiResponse["provider"], string> = {
   gemini: "Gemini provider"
 };
 
+const normalizeMessage = (value: string) =>
+  value
+    .trim()
+    .replace(/\r\n/g, "\n")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n");
+
 function useTypingReveal(content: string, enabled: boolean) {
-  const [visibleContent, setVisibleContent] = useState(enabled ? "" : content);
+  const normalizedContent = normalizeMessage(content);
+  const [visibleContent, setVisibleContent] = useState(enabled ? "" : normalizedContent);
   const [isTyping, setIsTyping] = useState(enabled);
 
   useEffect(() => {
     const prefersReducedMotion =
       typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (!enabled || prefersReducedMotion || content.length === 0) {
-      setVisibleContent(content);
+    if (!enabled || prefersReducedMotion || normalizedContent.length === 0) {
+      setVisibleContent(normalizedContent);
       setIsTyping(false);
       return;
     }
@@ -39,21 +47,20 @@ function useTypingReveal(content: string, enabled: boolean) {
     setIsTyping(true);
 
     let currentIndex = 0;
-    const chunkSize = content.length > 600 ? 4 : 2;
-    const intervalMs = content.length > 600 ? 12 : 18;
+    const intervalMs = normalizedContent.length > 800 ? 10 : 12;
 
     const intervalId = window.setInterval(() => {
-      currentIndex = Math.min(content.length, currentIndex + chunkSize);
-      setVisibleContent(content.slice(0, currentIndex));
+      currentIndex = Math.min(normalizedContent.length, currentIndex + 1);
+      setVisibleContent(normalizedContent.slice(0, currentIndex));
 
-      if (currentIndex >= content.length) {
+      if (currentIndex >= normalizedContent.length) {
         window.clearInterval(intervalId);
         setIsTyping(false);
       }
     }, intervalMs);
 
     return () => window.clearInterval(intervalId);
-  }, [content, enabled]);
+  }, [normalizedContent, enabled]);
 
   return { visibleContent, isTyping };
 }
@@ -79,7 +86,7 @@ export function ChatMessageBubble({ message }: ChatMessageBubbleProps) {
               : "rounded-3xl rounded-br-xl bg-accent-cyan/10 border border-accent-cyan/20 text-cyan-700 dark:bg-accent-cyan/10 dark:border-accent-cyan/20 dark:text-accent-cyan"
           )}
         >
-          <div className="prose prose-sm max-w-none dark:prose-invert prose-p:my-1 prose-p:leading-relaxed prose-ul:my-1 prose-ol:my-1 prose-li:my-0 prose-pre:bg-black/5 dark:prose-pre:bg-white/5 [&_*:first-child]:mt-0 [&_*:last-child]:mb-0">
+          <div className="prose prose-sm max-w-none dark:prose-invert prose-p:my-0 prose-p:leading-relaxed prose-ul:my-0.5 prose-ol:my-0.5 prose-li:my-0 prose-pre:bg-black/5 dark:prose-pre:bg-white/5 [&_*:first-child]:mt-0 [&_*:last-child]:mb-0">
             <ReactMarkdown>{visibleContent}</ReactMarkdown>
             {isTyping ? (
               <span className="ml-1 inline-block h-4 w-1 translate-y-0.5 animate-pulse rounded-full bg-slate-400 dark:bg-slate-500" />
