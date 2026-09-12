@@ -6,6 +6,7 @@ export type CreateContactMessageInput = {
   company?: string;
   purpose: string;
   message: string;
+  visitorId?: string;
 };
 
 export function createContactMessage(input: CreateContactMessageInput) {

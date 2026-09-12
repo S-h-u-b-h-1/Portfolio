@@ -4,14 +4,15 @@ import { optionalString, requiredEmail, requiredString } from "../utils/validati
 
 export async function createContactMessageController(req: Request, res: Response, next: NextFunction) {
   try {
-    const { name, email, company, message, purpose } = req.body ?? {};
+    const { name, email, company, message, purpose, visitorId } = req.body ?? {};
 
     const savedMessage = await createContactMessage({
       name: requiredString(name, "name", { max: 120 }),
       email: requiredEmail(email),
       company: optionalString(company, "company", { max: 160 }),
       purpose: requiredString(purpose, "purpose", { max: 120 }),
-      message: requiredString(message, "message", { min: 10, max: 4000 })
+      message: requiredString(message, "message", { min: 10, max: 4000 }),
+      visitorId: optionalString(visitorId, "visitorId", { max: 160 })
     });
 
     res.status(201).json({

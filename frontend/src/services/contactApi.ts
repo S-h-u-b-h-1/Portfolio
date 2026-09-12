@@ -6,6 +6,7 @@ export type ContactPayload = {
   company?: string;
   purpose: string;
   message: string;
+  visitorId?: string;
 };
 
 export type ContactApiResponse = {

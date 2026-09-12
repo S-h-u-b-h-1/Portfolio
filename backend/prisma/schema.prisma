@@ -15,6 +15,7 @@ model ContactMessage {
   company   String?
   purpose   String
   message   String
+  visitorId String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -44,13 +45,21 @@ model ChatLog {
 model PortfolioVisit {
   id        String   @id @default(cuid())
   visitorId String
+  sessionId String
   path      String
   referrer  String?
   userAgent String?
+  language  String?
+  timezone  String?
+  utmSource String?
+  utmMedium String?
+  utmCampaign String?
   ipHash    String?
   createdAt DateTime @default(now())
 
   @@index([visitorId])
+  @@index([sessionId])
+  @@index([visitorId, sessionId])
   @@index([path])
   @@index([createdAt])
 }

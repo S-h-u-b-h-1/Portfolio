@@ -10,8 +10,14 @@ export type VisitCounts = {
 
 export type VisitPayload = {
   visitorId: string;
+  sessionId: string;
   path: string;
   referrer?: string;
+  language?: string;
+  timezone?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
 };
 
 export async function fetchVisitCounts(signal?: AbortSignal): Promise<VisitCounts> {

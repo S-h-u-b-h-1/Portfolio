@@ -34,6 +34,7 @@ npm run prisma:studio
 - `POST /api/contact`
 - `GET /api/visits/count`
 - `POST /api/visits`
+- `GET /api/visits/identified` (requires `VISIT_ADMIN_TOKEN`)
 
 ## Environment
 
@@ -65,6 +66,8 @@ Required production variables:
 - `FRONTEND_URL`: Vercel frontend URL
 - `CORS_ORIGIN`: Vercel frontend domains, comma-separated
 - `VISITOR_HASH_SALT`: random string for hashing visitor IP addresses before analytics storage
+- `VISIT_ADMIN_TOKEN`: token to access `/api/visits/identified`
+- `VISIT_SESSION_TTL_MINUTES`: session window used for deduplicating visit recording (default `30`)
 
 Optional AI variables:
 
@@ -96,7 +99,16 @@ With no `AI_API_KEY`, the assistant still answers from the local knowledge base 
 
 ## Visit Analytics
 
-`POST /api/visits` records an anonymous visit in the `PortfolioVisit` table. It stores the frontend-generated visitor ID, route path, referrer, user agent, hashed IP address, and timestamp. Raw IP addresses are not stored.
+`POST /api/visits` records an anonymous visit in the `PortfolioVisit` table. It stores the frontend-generated visitor/session IDs, route path, referrer, user agent, timezone/language hints, UTM values, hashed IP address, and timestamp. Raw IP addresses are not stored.
+
+`GET /api/visits/identified` (requires `x-visit-admin-token` header or `Authorization: Bearer ...`) returns the most recent contact-linked visitors, including who reached out and their first/last seen visit context.
+
+Example:
+
+```bash
+curl -H "x-visit-admin-token: $VISIT_ADMIN_TOKEN" \
+  "https://your-backend-domain/api/visits/identified?limit=50"
+```
 
 `GET /api/visits/count` returns:
 

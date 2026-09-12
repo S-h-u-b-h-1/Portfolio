@@ -1,6 +1,7 @@
-const DEFAULT_RESUME_URL = "/resume/Shubhaang_Kataruka_Resume_PLACEHOLDER.html";
 import { profile } from "../data";
+const DEFAULT_RESUME_URL = "/resume/Shubhaang_Kataruka_Resume_PLACEHOLDER.html";
 const DEFAULT_API_BASE_URL = "http://localhost:5001";
+const DEFAULT_VISIT_SESSION_TTL_MINUTES = 30;
 
 const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL?.trim().length
@@ -8,6 +9,11 @@ const API_BASE_URL =
     : typeof window !== "undefined"
     ? window.location.origin
     : "";
+
+function parsePositiveInt(value: string | undefined, fallback: number) {
+  const parsed = value !== undefined ? Number.parseInt(value, 10) : NaN;
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
 
 function normalizeUrl(value: string | undefined) {
   return value?.trim().replace(/\/+$/, "") ?? "";
@@ -29,7 +35,8 @@ export function isPlaceholderValue(value: string | undefined) {
 export const frontendEnv = {
   apiBaseUrl: normalizeUrl(API_BASE_URL) || DEFAULT_API_BASE_URL,
   resumeUrl: resolvePath(import.meta.env.VITE_RESUME_URL, profile?.contact?.resume || DEFAULT_RESUME_URL),
-  siteUrl: normalizeUrl(import.meta.env.VITE_SITE_URL)
+  siteUrl: normalizeUrl(import.meta.env.VITE_SITE_URL),
+  visitSessionTtlMinutes: parsePositiveInt(import.meta.env.VITE_VISIT_SESSION_TTL_MINUTES, DEFAULT_VISIT_SESSION_TTL_MINUTES)
 };
 
 export function getApiBaseUrl() {

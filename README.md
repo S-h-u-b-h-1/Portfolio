@@ -70,6 +70,7 @@ Frontend variables:
 
 ```txt
 VITE_API_BASE_URL=http://localhost:5001
+VITE_VISIT_SESSION_TTL_MINUTES=30
 VITE_SITE_URL=
 VITE_RESUME_URL=/resume/Shubhaang_Kataruka_Resume_PLACEHOLDER.html
 ```
@@ -83,6 +84,8 @@ FRONTEND_URL=http://localhost:5173
 DATABASE_URL=postgresql://USER:PASSWORD@HOST-pooler.REGION.aws.neon.tech/DATABASE?sslmode=require
 DIRECT_URL=postgresql://USER:PASSWORD@HOST.REGION.aws.neon.tech/DATABASE?sslmode=require
 VISITOR_HASH_SALT=change-me-in-production
+VISIT_ADMIN_TOKEN=optional-admin-token-for-visit-identification
+VISIT_SESSION_TTL_MINUTES=30
 AI_PROVIDER=openai-compatible
 AI_API_KEY=
 AI_BASE_URL=https://api.openai.com/v1
@@ -115,6 +118,7 @@ Do not commit real `.env` files. Only `.env.example` files should be tracked.
 - `POST /api/chat`
 - `GET /api/visits/count`
 - `POST /api/visits`
+- `GET /api/visits/identified`
 - `GET /api/health/db`
 
 `POST /api/contact` expects:
@@ -216,7 +220,11 @@ npx prisma migrate dev
 
 No seed script is required right now because portfolio content is static JSON/TS data and the database stores contact/chat records created by users.
 
-Visit analytics are stored in the `PortfolioVisit` table. The app records an anonymous browser visitor ID, route path, referrer, user agent, hashed IP address, and timestamp. Raw IP addresses are not stored. If the counter returns `storageAvailable: false`, call `GET /api/health/db` to see a sanitized issue such as `missing-database-url`, `database-unreachable`, or `missing-table-or-migration`.
+Visit analytics are stored in the `PortfolioVisit` table. The app records an anonymous browser visitor ID and session ID, route path, referrer, user agent, language/timezone hints, UTM parameters, hashed IP address, and timestamp. Raw IP addresses are not stored. If the counter returns `storageAvailable: false`, call `GET /api/health/db` to see a sanitized issue such as `missing-database-url`, `database-unreachable`, or `missing-table-or-migration`.
+
+To identify leads, add `VISIT_ADMIN_TOKEN` and call:
+
+- `GET /api/visits/identified` (use header `x-visit-admin-token: <token>`)
 
 ## GitHub Setup
 

@@ -5,6 +5,7 @@ import { ContactLinkCard } from "../components/contact/ContactLinkCard";
 import { frontendEnv, isPlaceholderValue } from "../config/env";
 import { profile } from "../data";
 import { sendContactMessage, type ContactPayload } from "../services/contactApi";
+import { getOrCreateVisitorId } from "../utils/visitTracking";
 import { useSEO } from "../hooks/useSEO";
 
 const initialFormData: ContactPayload = {
@@ -82,6 +83,7 @@ export function ContactPage() {
     try {
       await sendContactMessage(
         {
+          visitorId: getOrCreateVisitorId(),
           ...formData,
           company: formData.company?.trim() || undefined
         },

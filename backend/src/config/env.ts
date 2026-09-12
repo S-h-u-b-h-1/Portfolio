@@ -37,6 +37,8 @@ export const env = {
   CORS_ORIGIN: process.env.CORS_ORIGIN,
   DATABASE_URL: process.env.DATABASE_URL,
   VISITOR_HASH_SALT: process.env.VISITOR_HASH_SALT ?? "portfolio-visit-salt",
+  VISIT_ADMIN_TOKEN: process.env.VISIT_ADMIN_TOKEN,
+  VISIT_SESSION_TTL_MINUTES: numberFromEnv("VISIT_SESSION_TTL_MINUTES", 30),
   AI_PROVIDER,
   AI_API_KEY: process.env.AI_API_KEY ?? process.env.OPENAI_API_KEY ?? process.env.GEMINI_API_KEY,
   AI_BASE_URL: normalizeUrl(process.env.AI_BASE_URL ?? process.env.OPENAI_BASE_URL ?? DEFAULT_AI_BASE_URL),
